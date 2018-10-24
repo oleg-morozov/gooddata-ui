@@ -13,11 +13,36 @@
 &lt;Heatmap
     projectId={&lt;project-id&gt;}
     measure={&lt;measure&gt;}
-    trendBy={&lt;attribute&gt;}
-    segmentBy={&lt;attribute&gt;}
+    rows={&lt;attribute&gt;}
+    columns={&lt;attribute&gt;}
     config={&lt;chart-config&gt;}
     …
 /&gt;
+</code></pre>
+<p>The following example shows the supported <code>config</code> structure with sample values. To see descriptions of individual options, see <a href="/gooddata-ui/docs/next/chart_config.html">ChartConfig section</a>.</p>
+<pre><code class="hljs css javascript">{
+    <span class="hljs-attr">xaxis</span>: {
+        <span class="hljs-attr">visible</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">labelsEnabled</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">rotation</span>: <span class="hljs-string">'auto'</span>
+    },
+    <span class="hljs-attr">yaxis</span>: {
+        <span class="hljs-attr">visible</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">labelsEnabled</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">rotation</span>: <span class="hljs-string">'auto'</span>
+    },
+    <span class="hljs-attr">legend</span>: {
+        <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">position</span>: <span class="hljs-string">'top'</span>
+    },
+    <span class="hljs-attr">dataLabels</span>: {
+        <span class="hljs-attr">visible</span>: <span class="hljs-string">'auto'</span>
+    },
+    <span class="hljs-attr">separators</span>: {
+        <span class="hljs-attr">thousand</span>: <span class="hljs-string">','</span>,
+        <span class="hljs-attr">decimal</span>: <span class="hljs-string">'.'</span>
+    }
+}
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h2>
 <pre><code class="hljs css jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">'@gooddata/react-components/styles/css/main.css'</span>;
@@ -60,8 +85,8 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">Heatmap</span>
         <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
         <span class="hljs-attr">measure</span>=<span class="hljs-string">{totalSales}</span>
-        <span class="hljs-attr">trendBy</span>=<span class="hljs-string">{locationState}</span>
-        <span class="hljs-attr">segmentBy</span>=<span class="hljs-string">{menuCategory}</span>
+        <span class="hljs-attr">rows</span>=<span class="hljs-string">{locationState}</span>
+        <span class="hljs-attr">columns</span>=<span class="hljs-string">{menuCategory}</span>
         <span class="hljs-attr">onLoadingChanged</span>=<span class="hljs-string">{this.onLoadingChanged}</span>
         <span class="hljs-attr">onError</span>=<span class="hljs-string">{this.onError}</span>
     /&gt;</span>
@@ -75,8 +100,8 @@
 <tbody>
 <tr><td style="text-align:left">projectId</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">The project ID</td></tr>
 <tr><td style="text-align:left">measure</td><td style="text-align:left">true</td><td style="text-align:left">Measure</td><td style="text-align:left">A measure definition</td></tr>
-<tr><td style="text-align:left">trendBy</td><td style="text-align:left">false</td><td style="text-align:left">Attribute</td><td style="text-align:left">An attribute definition</td></tr>
-<tr><td style="text-align:left">segmentBy</td><td style="text-align:left">false</td><td style="text-align:left">Attribute</td><td style="text-align:left">An attribute definition</td></tr>
+<tr><td style="text-align:left">rows</td><td style="text-align:left">false</td><td style="text-align:left">Attribute</td><td style="text-align:left">An attribute definition</td></tr>
+<tr><td style="text-align:left">columns</td><td style="text-align:left">false</td><td style="text-align:left">Attribute</td><td style="text-align:left">An attribute definition</td></tr>
 <tr><td style="text-align:left">filters</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/next/filter_visual_components.html">Filter[]</a></td><td style="text-align:left">An array of filter definitions</td></tr>
 <tr><td style="text-align:left">config</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/next/chart_config.html">ChartConfig</a></td><td style="text-align:left">The chart configuration object</td></tr>
 <tr><td style="text-align:left">locale</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">The localization of the chart. Defaults to <code>en-US</code>. For other languages, see the <a href="https://github.com/gooddata/gooddata-react-components/tree/master/src/translations">full list of available localizations</a>.</td></tr>

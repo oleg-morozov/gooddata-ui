@@ -2155,12 +2155,12 @@ table tbody tr:nth-of-type(odd) {
   font-size: 1rem;
   text-decoration: none;
 }
-@media only screen and (max-width: 735px) {
+@media only screen and (max-width: 1024px) {
   .fixedHeaderContainer header h3 {
     right: 0;
   }
 }
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 1025px) {
   .fixedHeaderContainer {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
     background: #fdfdfd;
@@ -2172,16 +2172,15 @@ table tbody tr:nth-of-type(odd) {
   flex: 1 1 auto;
 }
 .navigationSlider .slidingNav {
-  padding: 0 20px;
+  padding: 0 2rem;
 }
-@media only screen and (max-width: 735px) {
+@media only screen and (max-width: 1024px) {
   .navigationSlider .slidingNav ul {
     justify-content: space-evenly;
     margin-top: 64px;
-    background-color: rgba(250, 250, 250, 0.9);
   }
 }
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 1025px) {
   .navigationSlider .slidingNav ul {
     margin-right: 218px;
   }
@@ -2190,23 +2189,23 @@ table tbody tr:nth-of-type(odd) {
   flex: 0 1 auto;
   padding: 0;
 }
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 1025px) {
   .navigationSlider .slidingNav ul li {
     flex: 0 0 auto;
   }
 }
 .navigationSlider .slidingNav ul li a {
-  padding: 0 1.4rem;
+  padding: 0 1rem;
   border-bottom: 2px solid transparent;
   color: rgba(0, 0, 0, 0.7);
-  font-size: 0.95rem;
+  font-size: 15px;
   text-decoration: none;
   transition: all 0.2s;
 }
 .navigationSlider .slidingNav ul li a:empty {
   display: none;
 }
-@media only screen and (max-width: 735px) {
+@media only screen and (max-width: 1024px) {
   .navigationSlider .slidingNav ul li a {
     height: 1.5rem;
     margin: 0;
@@ -2214,7 +2213,7 @@ table tbody tr:nth-of-type(odd) {
     line-height: 1.5rem;
   }
 }
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 1025px) {
   .navigationSlider .slidingNav ul li a {
     height: 4rem;
     line-height: 4rem;
@@ -2237,7 +2236,7 @@ table tbody tr:nth-of-type(odd) {
 }
 @media only screen and (min-width: 1025px) {
   .navigationSlider .slidingNav ul li a {
-    margin: 0 1.4rem;
+    margin: 0 1rem;
   }
 }
 .navigationSlider .slidingNav ul li a:focus,
@@ -2260,13 +2259,13 @@ table tbody tr:nth-of-type(odd) {
   width: 218px;
   margin-top: -14px;
 }
-@media only screen and (max-width: 735px) {
+@media only screen and (max-width: 1024px) {
   .navigationSlider .slidingNav .navSearchWrapper {
     top: 32px;
     right: 100px;
   }
 }
-@media only screen and (max-width: 735px) {
+@media only screen and (max-width: 1024px) {
   .navigationSlider .slidingNav {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
     background: #fdfdfd;
@@ -2275,7 +2274,26 @@ table tbody tr:nth-of-type(odd) {
     box-shadow: none;
   }
 }
-@media only screen and (min-width: 736px) {
+.navigationSlider nav.slidingNav {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  background: #fdfdfd;
+}
+@media only screen and (min-width: 1025px) {
+  .navigationSlider nav.slidingNav {
+    background: none;
+    height: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: auto;
+  }
+}
+@media only screen and (min-width: 1025px) {
   .navigationSlider {
     overflow: visible;
   }
@@ -2291,7 +2309,7 @@ table tbody tr:nth-of-type(odd) {
   flex-direction: column;
   padding-top: 88px;
 }
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 1025px) {
   .navPusher {
     padding-top: 64px;
   }
@@ -2523,7 +2541,7 @@ nav.toc .toggleNav .navToggle i::before, nav.toc .toggleNav .navToggle i::after 
   display: none;
 }
 
-@media only screen and (max-width: 735px) {
+@media only screen and (max-width: 1024px) {
   .reactNavSearchWrapper {
     top: 15px;
   }
@@ -2627,7 +2645,7 @@ nav.toc .toggleNav .navToggle i::before, nav.toc .toggleNav .navToggle i::after 
   border: none;
   line-height: inherit;
 }
-@media only screen and (max-width: 735px) {
+@media only screen and (max-width: 1024px) {
   .reactNavSearchWrapper .aa-dropdown-menu {
     width: 90%;
     right: 5% !important;
