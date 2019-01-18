@@ -2315,14 +2315,6 @@ table tbody tr:nth-of-type(odd) {
   }
 }
 
-footer.nav-footer {
-  flex: 0 0 auto;
-  padding: 1rem 0;
-  box-shadow: none;
-  color: #fff;
-  background-color: #404040;
-}
-
 h1,
 .mainContainer .wrapper .post h1,
 .mainContainer .wrapper .post h2,
@@ -2795,15 +2787,58 @@ a:hover, a:focus, a:active {
   text-decoration: none;
 }
 
-footer .copyright {
-  color: rgba(255, 255, 255, 0.8);
+footer.nav-footer {
+  flex: 0 0 auto;
+  padding: 0;
+  box-shadow: none;
+  color: #6d7680;
+  text-align: center;
+  background-color: rgba(89, 98, 107, 0.11);
 }
-footer .copyright a {
+footer.nav-footer .copyright {
+  padding: 1rem 20px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #404040;
+}
+footer.nav-footer .copyright a {
   color: inherit;
   text-decoration: underline;
 }
-footer .copyright a:hover, footer .copyright a:active, footer .copyright a:focus {
+footer.nav-footer .copyright a:hover, footer.nav-footer .copyright a:active, footer.nav-footer .copyright a:focus {
   color: #fff;
+}
+
+.footer-links {
+  display: none;
+  padding: 20px;
+}
+body.doc .footer-links {
+  display: block;
+}
+.footer-links h3 {
+  margin: 1.5rem 0;
+  color: inherit;
+}
+.footer-links .social-buttons {
+  margin-top: 0;
+  padding: 1.5rem 0 0;
+  border-top-color: rgba(109, 118, 128, 0.5);
+  color: inherit;
+}
+.footer-links .social-buttons a {
+  color: inherit;
+}
+.footer-links .social-button.github::before {
+  background-image: url("../img/footer/github-logo.png");
+}
+.footer-links .social-button.stackoverflow::before {
+  background-image: url("../img/footer/stackoverflow-logo.png");
+}
+.footer-links .social-button.twitter::before {
+  background-image: url("../img/footer/twitter-logo.png");
+}
+.footer-links .social-button.npm::before {
+  background-image: url("../img/footer/npm-logo.png");
 }
 
 .homeSplashFade {
@@ -2975,6 +3010,9 @@ footer .copyright a:hover, footer .copyright a:active, footer .copyright a:focus
 }
 .social-button:hover::before, .social-button:focus::before, .social-button:active::before {
   opacity: 1;
+}
+.social-button:first-child {
+  margin-left: 0;
 }
 .social-button.github::before {
   background-image: url("../img/homepage/github-logo.png");
