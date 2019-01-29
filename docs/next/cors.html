@@ -26,6 +26,9 @@
          <span class="hljs-string">"headers"</span>: {
              <span class="hljs-string">"host"</span>: <span class="hljs-string">"secure.gooddata.com"</span>,
              <span class="hljs-string">"origin"</span>: <span class="hljs-literal">null</span>
+         },
+         <span class="hljs-string">"onProxyReq"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">proxyReq, req, res</span>) </span>{
+             proxyReq.setHeader(<span class="hljs-string">'accept-encoding'</span>, <span class="hljs-string">'identity'</span>)
          }
      }));
      app.use(proxy(<span class="hljs-string">"/*.html"</span>, {
