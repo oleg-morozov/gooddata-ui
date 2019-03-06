@@ -44,11 +44,9 @@
 
  sdk.user.isLoggedIn().then((isLogged) =&gt; {
    if (isLogged) {
-     ReactDOM.render(
-      &lt;App /&gt;,
-       document.getElementById('root')
-     );
+     // write your own application logic for logged-in users here
    } else {
+     // redirect to the login page providing the URL to redirect to upon a successful login
      window.location.replace(`${domain}/account.html?lastUrl=${encodeURIComponent(window.location)}`);
    }
  };
