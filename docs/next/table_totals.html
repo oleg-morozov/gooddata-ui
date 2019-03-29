@@ -88,10 +88,10 @@
 </span></code></pre>
 <h2><a class="anchor" aria-hidden="true" id="subtotal"></a><a href="#subtotal" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subtotal</h2>
 <p>A subtotal aggregates data for all values in an attribute group. A subtotal is displayed as a regular table row with data and is not pinned to the bottom of the table.</p>
-<p><strong>NOTE:</strong> Although the Execute component supports both grand totals and sub totals on any dimension, the Table component supports only grand totals on rows.</p>
 <p>A subtotal is defined the same way a grant total is, except <code>attributeIdentifier</code> is defined by the attribute that is being grouped.</p>
+<p><strong>NOTE:</strong> Although the Execute component supports both grand totals and subtotals on any dimension, the Table component supports only grand totals on rows. In addition, the subtotals are supported only for tables sorted by the first row attribute, and this is the default sorting for tables.</p>
 <p><strong>Example:</strong></p>
-<p><img src="/gooddata-ui/docs/assets/pivot_table_subtotals.png" alt="Sub Totals for Columns"></p>
+<p><img src="/gooddata-ui/docs/assets/pivot_table_subtotals.png" alt="Subtotals for Columns"></p>
 <pre><code class="hljs css jsx"><span class="hljs-keyword">const</span> measures = [
     {
         <span class="hljs-attr">measure</span>: {

@@ -28,7 +28,7 @@
         rotation: <span class="hljs-string">'auto'</span>, <span class="hljs-comment">// string</span>
         min: <span class="hljs-string">'300'</span>, <span class="hljs-comment">// numeral string</span>
         max: <span class="hljs-string">'400'</span>, <span class="hljs-comment">// numeral string</span>
-        measures: [<span class="hljs-string">'metricLocalIdentifier'</span>]
+        measures: [<span class="hljs-string">'measureLocalIdentifier'</span>]
     },
     <span class="hljs-attr">legend</span>: {
         <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
@@ -245,7 +245,7 @@ For more information on how to create predicates, see <a href="/gooddata-ui/docs
             rotation: '-90',
             min: '1500',
             max: '4400',
-            measures: ['metricLocalIdentifier1', 'metricLocalIdentifier2']
+            measures: ['measureLocalIdentifier1', 'measureLocalIdentifier2']
         }
     }}
 /&gt;
@@ -275,12 +275,12 @@ For more information on how to create predicates, see <a href="/gooddata-ui/docs
 <li><a href="/gooddata-ui/docs/next/column_chart_component.html">Column charts</a></li>
 <li>Charts with the <a href="#Configure-axes">secondary axis</a></li>
 </ul></li>
-<li>To display the total contribution of each metric, enable <code>config.stackMeasures</code>.
+<li>To display the total contribution of each measure, enable <code>config.stackMeasures</code>.
 <ul>
 <li>For area charts, <code>config.stackMeasures</code> is enabled by default.</li>
 <li>For bar charts, column charts, and charts with the secondary axis, <code>config.stackMeasures</code> is ignored when the chart has only one measure.</li>
 </ul></li>
-<li>To display the percentage contribution of each metric, enable <code>config.stackMeasuresToPercent</code>.
+<li>To display the percentage contribution of each measure, enable <code>config.stackMeasuresToPercent</code>.
 <ul>
 <li>If both <code>config.stackMeasuresToPercent</code> and <code>config.stackMeasures</code> are present, <code>config.stackMeasuresToPercent</code> overwrites <code>config.stackMeasures</code>.</li>
 <li>For charts with the secondary axis, <code>config.stackMeasuresToPercent</code> is applied only to the left axis.</li>
