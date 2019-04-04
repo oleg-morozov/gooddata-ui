@@ -69,7 +69,7 @@ When using an attribute in a data prop, specify the identifier of the attribute'
 <p>The <strong>object identifier</strong> is a reference to a project object. The object identifier is a text string. Example: <code>franchiseFeesAdRoyaltyIdentifier</code></p>
 <p>Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the <strong>object identifiers</strong>, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the <strong>same</strong> object identifier in <strong>any</strong> of those projects.</p>
 <h4><a class="anchor" aria-hidden="true" id="measure-definition"></a><a href="#measure-definition" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measure definition</h4>
-<p>You can find full TypeScript typings <a href="https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L94">here</a>.</p>
+<p>You can find full TypeScript typings <a href="https://github.com/gooddata/gooddata-typings/blob/v2.10.0/src/VisualizationInput.ts">here</a>.</p>
 <pre><code class="hljs css ts">IMeasure = {
   measure: {
     localIdentifier: <span class="hljs-built_in">string</span> 
@@ -88,7 +88,7 @@ IMeasureDefinition = {
             <span class="hljs-comment">// URI or identifier of a specific measure from your project</span>
         aggregation: <span class="hljs-built_in">string</span> 
             <span class="hljs-comment">// Optional; possible values: sum, count, avg, min, max, median, runsum (when set to 'count', ignores the measure's 'format' value and uses the default value '#,##0' instead)</span>
-        filters: VisualizationObjectFilter[] 
+        filters: IFilter[] 
             <span class="hljs-comment">// Optional; an array of attribute filters or date filters (for more information, see Filter Visual Components)</span>
         computeRatio: <span class="hljs-built_in">boolean</span> 
             <span class="hljs-comment">// Optional; returns values as ratios; useful for showing percents (ignores the measure's 'format' value and uses the default value '#,##0.00%' instead)</span>
@@ -126,7 +126,7 @@ IArithmeticMeasureDefinition = {
 <p>For more information about the derived measures, see <a href="/gooddata-ui/docs/next/time_over_time_comparison.html">Time Over Time Comparison</a>.</p>
 <p>For more information about the arithmetic measures, see <a href="/gooddata-ui/docs/next/arithmetic_measure.html">Arithmetic Measure</a>.</p>
 <h4><a class="anchor" aria-hidden="true" id="attribute-definition"></a><a href="#attribute-definition" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attribute definition</h4>
-<p>You can find full TypeScript typings <a href="https://github.com/gooddata/gooddata-typings/blob/v2.6.0/src/VisualizationObject.ts#L104">here</a>.</p>
+<p>You can find full TypeScript typings <a href="https://github.com/gooddata/gooddata-typings/blob/v2.10.0/src/VisualizationInput.ts">here</a>.</p>
 <pre><code class="hljs css ts">IVisualizationAttribute = {
     visualizationAttribute: {
         localIdentifier: Identifier <span class="hljs-comment">// An arbitrary identifier, which is later used in sorting and filtering</span>
