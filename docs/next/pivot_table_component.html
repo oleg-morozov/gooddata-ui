@@ -146,14 +146,14 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </span></code></pre>
 <h2><a class="anchor" aria-hidden="true" id="grouping"></a><a href="#grouping" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grouping</h2>
-<p>By default, the same values in column attributes are grouped across the rows, which helps improve data readability in pivot tables. The header of the grouped columns is displayed at the top of the table even when you scroll through a long group.</p>
-<p>The grouping is applied when the following conditions are both met:</p>
+<p>The same values in column attributes are grouped across the rows, which helps improve data readability in pivot tables. The header of the grouped columns is displayed at the top of the table even when you scroll through a long group.</p>
+<p>The grouping is applied when the following conditions are <strong>all</strong> met:</p>
 <ul>
+<li>The <code>groupRows</code> property is set to <code>true</code> (see <a href="#properties">Properties</a>).</li>
 <li>The table is sorted by the <strong>first</strong> column attribute (either in ascending or descending order).</li>
 <li>The table has <strong>two or more</strong> column attributes.</li>
 </ul>
 <p><img src="/gooddata-ui/docs/assets/pivot_table_grouping.png" alt="Pivot Table Grouping" title="Pivot Table Grouping"></p>
-<p>To disable grouping, set the <code>groupRows</code> property to <code>false</code> (see <a href="#properties">Properties</a>).</p>
 <h2><a class="anchor" aria-hidden="true" id="totals"></a><a href="#totals" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Totals</h2>
 <p>You can display rows with aggregated measure data using the <code>totals</code> prop. For more information, see <a href="/gooddata-ui/docs/next/table_totals.html">Specify Table Totals</a>.</p>
 <p>Alternatively, you can enable the menu through which you can turn on the totals. For more information, see <a href="#configuration-menu">Configuration menu</a>.</p>
@@ -203,7 +203,7 @@
 <tr><td style="text-align:left">filters</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/next/filter_visual_components.html">Filter[]</a></td><td style="text-align:left">An array of filter definitions</td></tr>
 <tr><td style="text-align:left">config</td><td style="text-align:left">false</td><td style="text-align:left"><a href="#configuration-menu">ConfigObject</a></td><td style="text-align:left">The configuration object</td></tr>
 <tr><td style="text-align:left">sortBy</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/next/result_specification.html#sorting">SortItem[]</a></td><td style="text-align:left">An array of sort definitions</td></tr>
-<tr><td style="text-align:left">groupRows</td><td style="text-align:left">false</td><td style="text-align:left">boolean</td><td style="text-align:left">Specifies whether <a href="#grouping">grouping of the same values in attribute columns</a> is enabled (<code>true</code>; default) or disabled (<code>false</code>).</td></tr>
+<tr><td style="text-align:left">groupRows</td><td style="text-align:left">false</td><td style="text-align:left">boolean</td><td style="text-align:left">Specifies whether <a href="#grouping">grouping of the same values in attribute columns</a> is disabled (<code>false</code>; default) or enabled (<code>true</code>).</td></tr>
 <tr><td style="text-align:left">locale</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">The localization of the table. Defaults to <code>en-US</code>. For other languages, see the <a href="https://github.com/gooddata/gooddata-react-components/tree/master/src/translations">full list of available localizations</a>.</td></tr>
 <tr><td style="text-align:left">drillableItems</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/next/drillable_item.html">DrillableItem[]</a></td><td style="text-align:left">An array of points and attribute values to be drillable.</td></tr>
 <tr><td style="text-align:left">sdk</td><td style="text-align:left">false</td><td style="text-align:left">SDK</td><td style="text-align:left">A configuration object where you can define a custom domain and other API options</td></tr>
