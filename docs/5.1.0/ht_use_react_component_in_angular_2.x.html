@@ -104,7 +104,7 @@ npm install --save-dev @types/react @types/react-intl
 yarn add @types/react @types/react-intl --dev
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="2-declare-the-angular-wrapper-component"></a><a href="#2-declare-the-angular-wrapper-component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Declare the Angular wrapper component</h2>
-<p>Angular wrapper component renders a React component and re-renders it on property change.</p>
+<p>The Angular wrapper component renders a React component and re-renders it on a property change.</p>
 <p>The component wrapper must be able to render React components imported from <code>@gooddata/react-components</code>.
 You can import any supported components from the package, and then either put them together using multiple <code>React.createElement</code> functions, or make an abstract wrapper component that accepts a React component reference as a parameter.</p>
 <p>The following examples are using a single KPI component.</p>
@@ -194,8 +194,54 @@ interface KpiProps {
   }
 }
 </code></pre>
-<p>When this article was last updated, there was an <a href="https://github.com/angular/angular/issues/14252">outstanding issue in Angular 4</a>. <code>ngOnDestroy</code> is called <em>after</em> a DOM node has already been removed. Not calling <code>ReactDOM.unmountComponentAtNode(this.getRootDomNode())</code> results in memory leaks.</p>
-<p>Verify whether the issue is present in your version of Angular. If not, uncomment the commented out line in <code>ngOnDestroy</code>.</p>
+<p>If you want to render some charts, do the following:</p>
+<ol>
+<li><p>Use a root dom node with the size defined:</p>
+<p><strong>columnchart.component.ts</strong>:</p>
+<pre><code class="hljs css language-javascript">...
+
+import { ColumnChart } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/react-components'</span>;
+
+...
+
+@Component({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">'app-column-chart'</span>,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div style="height: 300px" [id]="rootDomID"&gt;&lt;/div&gt;'</span>
+})
+
+...
+}
+</code></pre></li>
+<li><p>Import the <code>main.css</code> file from <code>@gooddata/react-components</code> to your global styles:</p>
+<p><strong>styles.css</strong>:</p>
+<pre><code class="hljs css language-css">@<span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/react-components/styles/css/main.css"</span>
+
+</code></pre>
+<p>or</p>
+<p><strong>angular.json</strong>:</p>
+<pre><code class="hljs css language-json">{
+  ...
+  "architect": {
+      "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+
+            "styles": [
+              "src/styles.css",
+              "node_modules/@gooddata/react-components/styles/css/main.css"
+            ],
+            "scripts": []
+          },
+          ...
+      }
+  ...
+}
+
+</code></pre></li>
+</ol>
+<p>For more details about importing global styles in an Angular app, see the <a href="https://angular.io/guide/workspace-config#styles-and-scripts-configuration">Angular documentation</a>.</p>
+<p><strong>NOTE:</strong> When this article was last updated, there was an <a href="https://github.com/angular/angular/issues/14252">outstanding issue in Angular 4</a>. <code>ngOnDestroy</code> is called <em>after</em> a DOM node has already been removed. Not calling <code>ReactDOM.unmountComponentAtNode(this.getRootDomNode())</code> results in memory leaks.</p>
+<p>Verify whether the issue is present in your version of Angular. If not, uncomment the commented-out line in <code>ngOnDestroy</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="3-use-the-component"></a><a href="#3-use-the-component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Use the component</h2>
 <p>You are now ready to use the GoodData React components in your Angular app.</p>
 <p>You can use wrapped components across your app, pass the component props to it, and even update them using data-binding.</p>
