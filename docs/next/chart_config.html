@@ -275,17 +275,18 @@ For more information on how to create predicates, see <a href="/gooddata-ui/docs
 /&gt;
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="configure-axes"></a><a href="#configure-axes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure axes</h2>
+<p>The properties listed in this section are specific to the <strong>X</strong> axis. To get the properties for the <strong>Y</strong> axis, replace <code>xaxis</code> with <code>yaxis</code> in a property's name.</p>
 <ul>
-<li><p>To change axis visibility, set the <code>config.xaxis.visible</code> property.</p></li>
-<li><p>To hide axis labels, set the <code>config.xaxis.labelsEnabled</code> property to <code>false</code>.</p>
+<li><p>To hide the axis, set <code>config.xaxis.visible</code> to <code>false</code>. If not set, it defaults to <code>true</code> (the axis is visible).</p></li>
+<li><p>To hide axis labels, set <code>config.xaxis.labelsEnabled</code> to <code>false</code>. If not set, it defaults to <code>true</code> (the axis labels are visible).</p>
 <p><strong>NOTE:</strong> When <code>config.xaxis.visible</code> is set to <code>false</code>, axis labels are hidden automatically regardless of what <code>config.xaxis.labelsEnabled</code> is set to.</p></li>
 <li><p>To rotate axis labels, set <code>config.xaxis.rotation</code> to a desired value.</p></li>
-<li><p>To set the axis scale, set <code>config.xaxis.min</code> and <code>config.xaxis.max</code>.</p></li>
-<li><p>To show measures on a secondary axis, set <code>config.secondary_xaxis.measures</code>. If <code>config.secondary_xaxis.measures</code> is not configured, all measures are displayed on the main axis by default.</p></li>
+<li><p>To set the axis scale, set <code>config.xaxis.min</code> and <code>config.xaxis.max</code> to desired values.</p></li>
+<li><p>To show measures on a secondary axis, set <code>config.secondary_xaxis.measures</code> to the measures that you want to display. If <code>config.secondary_xaxis.measures</code> is not set, all measures are displayed on the main axis by default.</p></li>
+<li><p>To hide the axis name, set <code>config.xaxis.name.visible</code> to <code>false</code>. If not set, it defaults to <code>true</code> (the axis name is visible).</p></li>
+<li><p>To set the axis name position, set <code>config.xaxis.name.position</code> to one of the possible values: <code>low</code>, <code>middle</code>, <code>high</code>.</p>
+<p><strong>NOTE:</strong> If the axis represents more than one attribute/measure, the <code>config.xaxis.name.visible</code> and <code>config.xaxis.name.position</code> properties are both ignored, and the axis name is hidden.</p></li>
 </ul>
-<blockquote>
-<p>For the properties of the Y axis, replace <code>xaxis</code> with <code>yaxis</code>.</p>
-</blockquote>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { Visualization } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/react-components'</span>;
 
 <span class="hljs-comment">// Example of embedding a visualization with settings for the x-axis</span>
@@ -298,7 +299,10 @@ For more information on how to create predicates, see <a href="/gooddata-ui/docs
             labelsEnabled: false,
             rotation: '-90',
             min: '150',
-            max: '440'
+            max: '440',
+            name: {
+                position: 'low', // 'low', 'middle', 'high'
+            }
         },
         secondary_xaxis: {
             visible: true,
@@ -306,6 +310,9 @@ For more information on how to create predicates, see <a href="/gooddata-ui/docs
             rotation: '-90',
             min: '1500',
             max: '4400',
+            name: {
+                visible: false
+            }
             measures: ['measureLocalIdentifier1', 'measureLocalIdentifier2']
         }
     }}
