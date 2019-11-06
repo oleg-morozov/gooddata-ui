@@ -127,11 +127,6 @@
         );
     };
 
-    onCancel = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-        <span class="hljs-comment">// eslint-disable-next-line no-console</span>
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"DateFilterExample onCancel"</span>);
-    };
-
     render() {
         <span class="hljs-keyword">return</span> (
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">width:</span> <span class="hljs-attr">300</span> }}&gt;</span>
@@ -143,9 +138,6 @@
                     <span class="hljs-attr">customFilterName</span>=<span class="hljs-string">"Date filter name"</span>
                     <span class="hljs-attr">dateFilterMode</span>=<span class="hljs-string">"active"</span>
                     <span class="hljs-attr">onApply</span>=<span class="hljs-string">{this.onApply}</span>
-                    <span class="hljs-attr">onCancel</span>=<span class="hljs-string">{this.onCancel}</span>
-                    <span class="hljs-attr">onOpen</span>=<span class="hljs-string">{this.onOpen}</span>
-                    <span class="hljs-attr">onClose</span>=<span class="hljs-string">{this.onClose}</span>
                 /&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         );
@@ -165,6 +157,7 @@
 <tr><td style="text-align:left">availableGranularities</td><td style="text-align:left">true</td><td style="text-align:left"><a href="/gooddata-ui/docs/next/date_filter_option.html#date-filter-granularity">DateFilterGranularity[]</a></td><td style="text-align:left">An array of available types of granularity for the Relative Form</td></tr>
 <tr><td style="text-align:left">customFilterName</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">A custom filter label</td></tr>
 <tr><td style="text-align:left">dateFilterMode</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">Filter mode; can be <code>readonly</code>, <code>hidden</code>, or <code>active</code></td></tr>
+<tr><td style="text-align:left">locale</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">The localization of the component. Defaults to <code>en-US</code>. For other languages, see the <a href="https://github.com/gooddata/gooddata-react-components/tree/master/src/translations">full list of available localizations</a>.</td></tr>
 <tr><td style="text-align:left">onApply</td><td style="text-align:left">true</td><td style="text-align:left">Function</td><td style="text-align:left">A callback when the selection is confirmed by the user</td></tr>
 <tr><td style="text-align:left">onCancel</td><td style="text-align:left">false</td><td style="text-align:left">Function</td><td style="text-align:left">A callback when the selection is canceled by the user</td></tr>
 <tr><td style="text-align:left">onOpen</td><td style="text-align:left">false</td><td style="text-align:left">Function</td><td style="text-align:left">A callback when the filter dropdown is opened by the user</td></tr>
