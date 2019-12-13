@@ -290,10 +290,12 @@
                 <span class="hljs-attr">direction</span>: <span class="hljs-string">'asc'</span>,   <span class="hljs-comment">// or 'desc',</span>
                 <span class="hljs-comment">// Type: LocatorItem[]</span>
                 locators: [
-                    attributeLocatorItem: {
-                        <span class="hljs-attr">attributeIdentifier</span>: <span class="hljs-string">'&lt;attribute-local-identifier&gt;'</span>,
-                        <span class="hljs-attr">element</span>: <span class="hljs-string">'&lt;attribute-value-uri&gt;'</span>
-                    };
+                    {
+                        <span class="hljs-attr">attributeLocatorItem</span>: {
+                            <span class="hljs-attr">attributeIdentifier</span>: <span class="hljs-string">'&lt;attribute-local-identifier&gt;'</span>,
+                            <span class="hljs-attr">element</span>: <span class="hljs-string">'&lt;attribute-value-uri&gt;'</span>
+                        }
+                    }
                 ]
             }
         }

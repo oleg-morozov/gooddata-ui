@@ -103,7 +103,7 @@
 <li><code>localIdentifier(identifier)</code> for setting the localIdentifier</li>
 <li><code>title(measureTitle)</code> for setting the title</li>
 </ul>
-<p><strong>NOTE:</strong> If you do not explicitly specify the <code>localIdentifier</code>, a unique one will be automatically generated for you.</p>
+<p><strong>NOTE:</strong> If you do not specify the <code>localIdentifier</code>, a unique one will be automatically generated for you. An automatically generated <code>localIdentifier</code> may change between calls of the helper. If you are using the same measure more than once, having different <code>localIdentifier</code>s may result in unexpected behavior such as unnecessary UI re-rendering or extra API calls. To avoid this, either reuse the same helper result, or set the <code>localIdentifier</code> manually.</p>
 <h3><a class="anchor" aria-hidden="true" id="measure-helper"></a><a href="#measure-helper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>measure helper</h3>
 <p>This helper creates a measure. You can use it for most of the measures.</p>
 <p><strong>Example:</strong></p>
@@ -337,7 +337,7 @@ myMeasure is equivalent to
 <li><code>alias(aliasValue)</code> for setting the alias</li>
 <li><code>localIdentifier(identifier)</code> for setting the localIdentifier</li>
 </ul>
-<p><strong>NOTE:</strong> If you do not explicitly specify the <code>localIdentifier</code>, a unique one will be automatically generated for you.</p>
+<p><strong>NOTE:</strong> If you do not specify the <code>localIdentifier</code>, a unique one will be automatically generated for you. An automatically generated <code>localIdentifier</code> may change between calls of the helper. If you are using the same attribute more than once, having different <code>localIdentifier</code>s may result in unexpected behavior such as unnecessary UI re-rendering or extra API calls. To avoid this, either reuse the same helper result, or set the <code>localIdentifier</code> manually.</p>
 <p><strong>Example:</strong></p>
 <pre><code class="hljs css language-js harmony"><span class="hljs-keyword">import</span> { Model } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/react-components'</span>;
 
