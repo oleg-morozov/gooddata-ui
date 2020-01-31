@@ -77,15 +77,64 @@
 <h2><a class="anchor" aria-hidden="true" id="implementing-authentication"></a><a href="#implementing-authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementing authentication</h2>
 <p>Choose the use case depending on whether SSO is implemented on your site.</p>
 <h3><a class="anchor" aria-hidden="true" id="sso-is-implemented-on-your-site"></a><a href="#sso-is-implemented-on-your-site" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSO is implemented on your site</h3>
-<p>Update your application code so that the application calls the GoodData SSO resource for authentication. For more information about GoodData SSO setup, see <a href="https://help.gooddata.com/display/doc/SAML+SSO+with+GoodData">SAML SSO with GoodData</a> and <a href="https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On">GoodData PGP Single Sign-On</a>.</p>
-<p>This is how authentication process works:</p>
-<ol>
-<li><p>The user goes to the URL where your analytical application runs. For example:</p>
-<p><code>https://my.app.com/</code></p></li>
-<li><p>The SSO authentication process authenticates the user.</p></li>
-<li><p>If authentication is successful, the SSO provider redirects the user to the GoodData platform.</p></li>
-<li><p>The GoodData platform verifies whether the application is allowed and redirects the user to the analytical application.</p></li>
-</ol>
+<p>GoodData supports SAML 2.0-based and PGP-based authentication. For more information, see <a href="https://help.gooddata.com/display/doc/Single+Sign-On+Overview">Single Sign-On Overview</a>.</p>
+<p>Setting up authentication depends on what type of SSO is implemented on your site.</p>
+<ul>
+<li><p>If you use the <a href="https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On">GoodData PGP SSO</a> implementation, you can use the <code>loginSSO</code> method from <a href="https://github.com/gooddata/gooddata-js">GoodData Javascript SDK</a>. Note that although this method requires a mandatory parameter of <code>targetUrl</code>, this parameter is used very rarely in the context of GoodData.UI, because in a typical scenario there is no need to redirect a user to any GoodData URL. But as this parameter is mandatory, set it to an arbitrary URL (for example, the absolute path to your application).</p>
+<pre><code class="hljs">  ```javascript
+  import { factory } from '@gooddata/gooddata-js';
+
+  const domain = 'https://my.app.com/';
+  const sdk = factory({ domain });
+  const encryptedClaims = 'your-generated-encrypted-claims';
+  const ssoProvider = 'your-sso-provider-name';
+  const targetUrl = 'your-target-url'; // set to an arbitrary URL
+
+  sdk.user
+   .loginSso(encryptedClaims, ssoProvider, targetUrl)
+   .then(() =&gt; {
+     // now you are logged in, and calls to GoodData will be authorized
+   })
+   .catch(error =&gt; {
+     // something went wrong, see the browser console for details
+     console.error(error);
+   });
+  ```
+</code></pre></li>
+<li><p>If you use a <a href="https://help.gooddata.com/display/doc/SAML+SSO+with+GoodData">SAML SSO</a> implementation with the <strong>Service Provider-initiated</strong> scenario, obtain the value of the <code>loginUrl</code> parameter from <code>/gdc/account/samlrequest</code> and use this URL to get logged in.</p>
+<p><code>/gdc/account/samlrequest</code> also contains the <code>relayState</code> parameter that should point to the URL where your application runs (the page where the user is redirected after a successful login).</p>
+<pre><code class="hljs">  ```
+  {
+    &quot;samlRequests&quot;: {
+      &quot;items&quot;: [ {
+        &quot;samlRequest&quot;: {
+          &quot;loginUrl&quot;: &quot;https://yourIdentityProvider.com/pathToSAMLResource?SAMLRequest=encodedMessage&amp;RelayState=https%3A%2F%2FyourRelayState.com&quot;,
+          &quot;ssoProvider&quot;: &quot;yourSsoProvider.com&quot;
+        }
+      } ]
+    }
+  }
+  ```
+</code></pre>
+<p>The following is an example of login code:</p>
+<pre><code class="hljs">  ```javascript
+  import sdk from '@gooddata/gooddata-js';
+  import qs from 'qs';
+
+  const relayState = 'https://my.app.com/';
+
+  sdk.xhr
+    .get(`/gdc/account/samlrequest?${qs.stringify({ relayState })}`)
+    .then(data =&gt; data.getData())
+    .then(response =&gt; {
+      const loginUrl = response.samlRequests.items[0].samlRequest.loginUrl;
+      window.location.assign(loginUrl);
+    });
+  ```
+</code></pre>
+<p><strong>NOTE:</strong> Service Provider-initiated SSO cannot be used if you are using a development proxy due to proxy limitations.</p></li>
+<li><p>If you use a <a href="https://help.gooddata.com/display/doc/SAML+SSO+with+GoodData">SAML SSO</a> implementation with the <strong>Identity Provider-initiated</strong> scenario, make sure that login is done via your Identity Provider (Okta, Auth0 and so on) and the login code in your app queries the Identity Provider’s API.</p></li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="sso-is-not-implemented-on-your-site"></a><a href="#sso-is-not-implemented-on-your-site" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSO is not implemented on your site</h3>
 <p>You do not have to perform any steps for authentication to start working. It is automatically enabled as long as the <a href="#Prerequisites">prerequisites</a> are met.</p>
 <p>This is how authentication process works:</p>
@@ -106,7 +155,7 @@
      // redirect to the login page providing the URL to redirect to upon a successful login
      window.location.replace(`${domain}/account.html?lastUrl=${encodeURIComponent(window.location)}`);
    }
- };
+ });
  ```
 </code></pre>
 <p><strong>NOTE:</strong> If you want to pass multiple arguments in <code>lastUrl</code>, protect them by using <code>encodeURIComponent</code>.</p></li>
@@ -123,7 +172,7 @@
 <ol>
 <li><p>Customize the link in the invitation email: set the <code>invitationWelcomePage</code> platform setting to the URL where your application runs. For example:</p>
 <p><code>&quot;invitationWelcomePage&quot;: &quot;https://my.app.com&quot;</code></p>
-<p>For more information, see <a href="https://help.gooddata.com/display/doc/Platform+Settings">Platform Settings</a> and the <a href="https://help.gooddata.com/display/doc/API+Reference#/reference/hierarchical-configuration">API for updating the platform settings</a>.</p></li>
+<p>For more information, see <a href="https://help.gooddata.com/display/doc/Configure+Various+Features+via+Platform+Settings">Configure Various Features via Platform Settings</a> and the <a href="https://help.gooddata.com/display/doc/API+Reference#/reference/hierarchical-configuration">API for updating the platform settings</a>.</p></li>
 <li><p>Invite the users to your GoodData project via the <a href="https://help.gooddata.com/display/doc/Managing+Users+in+Projects">GoodData Portal</a>.</p>
 <p>The link in the invitation email will redirect an invited user to the URL where your application runs. The users with no GoodData account will additionally be asked to  create a GoodData account.</p></li>
 </ol>
