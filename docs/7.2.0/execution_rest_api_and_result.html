@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Execution Response and Execution Result · GoodData.UI</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;This article describes how to call executions on the server using either &lt;a href=&quot;https://github.com/gooddata/gooddata-js&quot;&gt;gooddata-js&lt;/a&gt; functions or direct API calls.&lt;/p&gt;
+"/><meta name="docsearch:version" content="7.2.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Execution Response and Execution Result · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://gooddata.github.io/gooddata-ui/index.html"/><meta property="og:description" content="&lt;p&gt;This article describes how to call executions on the server using either &lt;a href=&quot;https://github.com/gooddata/gooddata-js&quot;&gt;gooddata-js&lt;/a&gt; functions or direct API calls.&lt;/p&gt;
+"/><meta property="og:image" content="https://gooddata.github.io/gooddata-ui/img/metaimage.jpg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://gooddata.github.io/gooddata-ui/img/metaimage.jpg"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>7.2.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://developer.gooddata.com/data-integration" target="_self">Data Integration</a></li><li class=""><a href="https://developer.gooddata.com/api-and-sdks" target="_self">API &amp; SDKs</a></li><li class=""><a href="https://gooddata-examples.herokuapp.com/" target="_blank">Examples</a></li><li class=""><a href="https://github.com/gooddata/gooddata-react-components/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Custom Visualizations</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/live_examples.html">Live Examples</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/platform_intro.html">Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/ht_create_your_first_visualization_toolkit.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/ht_create_your_first_visualization.html">Create Your First Application from Scratch</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/visualization_component.html">Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/afm_components.html">AFM Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/date_filter_component.html">DateFilter Component</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/on_fire_drill_event.html">OnFireDrillEvent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/create_new_visualization.html">Create Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/afm.html">Set Up an AFM Query</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/result_specification.html">Specify Result Structure</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/execute_component.html">Execute API Call</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/7.2.0/execution_rest_api_and_result.html">Execution Response and Execution Result</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/time_over_time_comparison.html">Time Over Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/gdc_catalog_export.html">Get Identifiers from the Platform</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/model_helpers.html">Model Helpers</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/cors.html">Deal with Cross-Origin Issues</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/data_layer.html">Access Low Level API</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/create_custom_attribute_filter.html">Create Custom Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/clean_up_your_code.html">Clean Up Your Code</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/ht_use_react_components_with_vanilla_js.html">Use Vanilla JavaScript</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/ht_use_react_component_in_angular_1.x.html">Use Angular 1.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/ht_use_react_component_in_angular_2.x.html">Use Angular 2+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/7.2.0/ht_create_predicates.html">Create Predicates</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Execution Response and Execution Result</h1></header><article><div><span><p>This article describes how to call executions on the server using either <a href="https://github.com/gooddata/gooddata-js">gooddata-js</a> functions or direct API calls.</p>
+<h2><a class="anchor" aria-hidden="true" id="using-gooddata-js"></a><a href="#using-gooddata-js" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using gooddata-js</h2>
+<p>The <a href="https://github.com/gooddata/gooddata-js">gooddata-js</a> library is a low-level wrapper of the Gooddata API. You can use it to run executions on the server.</p>
+<p>Import <code>gooddata-js</code> to your project:</p>
+<pre><code class="hljs css language-javascripts"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">factory</span> <span class="hljs-keyword">as</span> SdkFactory } from <span class="hljs-string">'@gooddata/gooddata-js'</span>;
+<span class="hljs-keyword">const</span> sdk = SdkFactory();
+</code></pre>
+<p>To obtain data from the server, you have to call <code>gooddata-js</code> twice. This is because the result may be large. When you get the execution response, you can decide whether you want to download the whole result or just a part of it, or you do not want to download the result at all because your visualization cannot render it.</p>
+<ol>
+<li>You send your requests for execution. As a response, you get a so-called &quot;execution response&quot; that contains information about where the result will be stored and its general structure.</li>
+<li>You request the result data.</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="get-an-execution-response"></a><a href="#get-an-execution-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get an execution response</h3>
+<p>The execution response informs you about the future result.  It contains dimensions with headers that show the result size and its headers. The execution response also contains a link to the execution result where your data is stored.</p>
+<p>To get the execution response, provide the project ID and the definition of the execution:</p>
+<pre><code class="hljs css language-javascript">sdk.execution.getExecutionResponse(<span class="hljs-string">'&lt;project-id&gt;'</span>, execution)
+    .then(
+        <span class="hljs-function">(<span class="hljs-params">executionResponse</span>) =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(executionResponse);
+        }
+    );
+</code></pre>
+<p>The <code>execution</code> parameter consists of <a href="/gooddata-ui/docs/7.2.0/afm.html">AFM</a> and <a href="/gooddata-ui/docs/7.2.0/result_specification.html">resultSpec</a>. It can be defined as follows:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> afm = {
+    <span class="hljs-attr">measures</span>: [
+        {
+            <span class="hljs-attr">localIdentifier</span>: <span class="hljs-string">'&lt;local-identifier&gt;'</span>,
+            <span class="hljs-attr">definition</span>: {
+                <span class="hljs-attr">measure</span>: {
+                    <span class="hljs-attr">item</span>: {
+                        <span class="hljs-attr">identifier</span>: <span class="hljs-string">'&lt;measure-identifier&gt;'</span>
+                    }
+                }
+            }
+        }
+    ]
+};
+
+<span class="hljs-keyword">const</span> resultSpec = {
+    <span class="hljs-attr">dimensions</span>: [
+        {
+            <span class="hljs-attr">itemIdentifiers</span>: [<span class="hljs-string">'measureGroup'</span>]
+        }
+    ]
+};
+
+<span class="hljs-keyword">const</span> execution = {
+    <span class="hljs-attr">execution</span>: {
+        afm,
+        resultSpec
+    }
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-the-whole-executionresult"></a><a href="#get-the-whole-executionresult" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get the whole executionResult</h3>
+<p>If you want to get the whole result (all the data), use a <code>getExecutionResult</code> call. You will receive the whole result in one object. As a parameter, you pass the link that you have obtained in the execution response.</p>
+<pre><code class="hljs css language-javascript">sdk.execution.getExecutionResult(<span class="hljs-string">'&lt;execution-result-uri&gt;'</span>)
+    .then(
+        <span class="hljs-function">(<span class="hljs-params">executionResult</span>) =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(executionResult);
+        }
+    );
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-a-part-of-executionresult"></a><a href="#get-a-part-of-executionresult" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get a part of executionResult</h3>
+<p>In some cases, you may need only a part of the data contained in the execution result. For example, you may be implementing paging in a table or building a preview, therefore you do not need all data. In this situation, call <code>getPartialExecutionResult</code>. As parameters, this call takes the link to the result from the execution response, page size, and offset.</p>
+<p>The <strong>page size</strong> is a two-dimensional array that defines how big the data you are downloading from the server is.</p>
+<p>The <strong>offset</strong> determines coordinates where the page is going to start in your result matrix. Because the offset is a two-dimensional array, you can scroll the result up and down and from the left to the right.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// requesting first page (offset [0,0]) with size 100 x 100</span>
+sdk.execution.getPartialExecutionResult(<span class="hljs-string">'&lt;execution-result-uri&gt;'</span>, [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>], [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>])
+    .then(
+        <span class="hljs-function">(<span class="hljs-params">partialExecutionResult</span>) =&gt;</span> { 
+            <span class="hljs-built_in">console</span>.log(partialExecutionResult);
+        }
+    );
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="using-direct-api-calls"></a><a href="#using-direct-api-calls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using direct API calls</h2>
+<p>If you cannot or do not want to use the <code>gooddata-js</code> library, you can call the server API directly.</p>
+<h3><a class="anchor" aria-hidden="true" id="executeafm-endpoint"></a><a href="#executeafm-endpoint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>executeAfm endpoint</h3>
+<pre><code class="hljs css language-bash">POST /gdc/app/projects/&lt;project-id&gt;/executeAfm
+</code></pre>
+<p>The request body consists of <a href="/gooddata-ui/docs/7.2.0/afm.html">AFM</a> and <a href="/gooddata-ui/docs/7.2.0/result_specification.html">resultSpec</a>:</p>
+<pre><code class="hljs css language-javascript">{ <span class="hljs-string">"execution"</span>:
+  { <span class="hljs-string">"afm"</span>: { ... }, <span class="hljs-string">"resultSpec"</span>:{ ... } }
+}
+</code></pre>
+<p>The response returns <code>HTTP 201 Created</code>:</p>
+<pre><code class="hljs css language-javascript">{ <span class="hljs-string">"executionResponse"</span>:
+  { <span class="hljs-string">"dimensions"</span>: [ ... ],
+    <span class="hljs-string">"links"</span>: { <span class="hljs-string">"executionResult"</span>:<span class="hljs-string">"/gdc/app/projects/.../executionResults/1234?...&amp;offset=0%2C0&amp;limit=1000%2C1000&amp;dimensions=2&amp;totals=0%2C0"</span> }
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="executionresults-and-polling"></a><a href="#executionresults-and-polling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>executionResults and polling</h3>
+<p>If fetching data from the GoodData infrastructure takes longer than expected, the API may periodically ask if the result is ready (polling). In this case, poll the URL from <code>executionResponse.link.executionResult</code> in the <code>executeAfm</code> response.</p>
+<p>You can change the parameters to request different pages from the result. For example, to request only 10 items for both dimensions, set <code>limit=10,10</code>.</p>
+<p><code>totals=0,0</code> represents the number of expected table total types in dimensions.</p>
+<pre><code class="hljs css language-bash">GET /gdc/app/projects/.../executionResults/1234?...&amp;offset=0%2C0&amp;<span class="hljs-built_in">limit</span>=10%2C10&amp;dimensions=2&amp;totals=0%2C0
+</code></pre>
+<p>You receive one of the following requests:</p>
+<ul>
+<li><p><code>HTTP 200 OK</code>
+: the first page of the result data is returned in the response, as follows:</p>
+<pre><code class="hljs css language-javascript">{ <span class="hljs-string">"executionResult"</span>:
+  { <span class="hljs-string">"data"</span>: [ ... ],
+    <span class="hljs-string">"headerItems"</span>: [ ... ],
+    <span class="hljs-string">"paging"</span>: {<span class="hljs-string">"count"</span>: [<span class="hljs-number">10</span>,<span class="hljs-number">10</span>],
+    <span class="hljs-string">"offset"</span>: [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+    <span class="hljs-string">"total"</span>: [<span class="hljs-number">30</span>,<span class="hljs-number">50</span>] }
+  }
+}
+</code></pre></li>
+<li><p><code>HTTP 202 Accepted</code>: the data is not ready yet, request again</p></li>
+<li><p><code>HTTP 204 No content</code>: execution returned no data</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="multidimensional-paging"></a><a href="#multidimensional-paging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multidimensional paging</h3>
+<p>For a single defined dimension, the <code>offset</code> and <code>limits</code> parameters have only one number each.</p>
+<p>For two dimensions, the parameters have two values separated by a comma. In the response, it is an array with two values. The first value represents the first dimension, the second value represents the second dimension.</p>
+<p>For example, if you set the limit to <code>3,2</code>, the pages could be retrieved in four requests with offsets <code>0,0</code> and <code>0,2</code> and <code>3,0</code> and <code>3,2</code> respectively.</p>
+<table>
+<thead>
+<tr><th style="text-align:left">[ 11, 12 ] <br> [ 21, 22 ] <br> [ 31, 32 ]</th><th style="text-align:left">[ 13 ] <br> [ 23 ] <br> [ 33 ]</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">[ 41, 42 ]</td><td style="text-align:left">[ 43 ]</td></tr>
+</tbody>
+</table>
+<p>The first dimension of the data is the &quot;rows&quot;, the second is the &quot;columns&quot;. For more information, see 'Dimensions' in <a href="/gooddata-ui/docs/7.2.0/result_specification.html">Result Specification (resultSpec)</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/7.2.0/execute_component.html"><span class="arrow-prev">← </span><span>Execute API Call</span></a><a class="docs-next button" href="/gooddata-ui/docs/7.2.0/time_over_time_comparison.html"><span>Time Over Time Comparison</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#using-gooddata-js">Using gooddata-js</a><ul class="toc-headings"><li><a href="#get-an-execution-response">Get an execution response</a></li><li><a href="#get-the-whole-executionresult">Get the whole executionResult</a></li><li><a href="#get-a-part-of-executionresult">Get a part of executionResult</a></li></ul></li><li><a href="#using-direct-api-calls">Using direct API calls</a><ul class="toc-headings"><li><a href="#executeafm-endpoint">executeAfm endpoint</a></li><li><a href="#executionresults-and-polling">executionResults and polling</a></li><li><a href="#multidimensional-paging">Multidimensional paging</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="footer-links"><h3>Find more about GoodData.UI on</h3><div class="social-buttons"><a href="https://github.com/gooddata/gooddata-react-components" target="_blank" class="social-button github">Github</a><a href="https://stackoverflow.com/questions/tagged/gooddata" target="_blank" class="social-button stackoverflow">Stack Overflow</a><a href="https://twitter.com/gooddata_dev" target="_blank" class="social-button twitter">Twitter</a><a href="https://www.npmjs.com/package/@gooddata/react-components" target="_blank" class="social-button npm">NPM</a></div></section><section class="copyright"><div class="wrapper">Copyright © 2007–2020 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">CC BY-NC 4.0 for trial experience and GoodData.UI EULA for commercial use.</a>.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
