@@ -203,11 +203,11 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </span></code></pre>
 <h2><a class="anchor" aria-hidden="true" id="grouping"></a><a href="#grouping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grouping</h2>
-<p>By default, the same values in column attributes are grouped across the rows, which helps improve data readability in pivot tables. The header of the grouped columns is displayed at the top of the table even when you scroll through a long group.</p>
+<p>By default, the same row attribute values in a column are grouped across the rows, which helps improve data readability in pivot tables. The header of the grouped columns is displayed at the top of the table even when you scroll through a long group.</p>
 <p>The grouping is applied when the following conditions are both met:</p>
 <ul>
-<li>The table is sorted by the <strong>first</strong> column attribute (either in ascending or descending order).</li>
-<li>The table has <strong>two or more</strong> column attributes.</li>
+<li>The table is sorted by the <strong>first</strong> row attribute (either in ascending or descending order).</li>
+<li>The table has <strong>two or more</strong> row attributes.</li>
 </ul>
 <p><img src="/gooddata-ui/docs/assets/pivot_table_grouping.png" alt="Pivot Table Grouping" title="Pivot Table Grouping"></p>
 <p>To disable grouping, set the <code>groupRows</code> property to <code>false</code> (see <a href="#properties">Properties</a>).</p>
@@ -237,21 +237,18 @@
 <li>If you manually adjust the column width, the adjusted width is preserved only temporarily and will be reset to the previously set value after the table is re-rendered.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="manual-resizing"></a><a href="#manual-resizing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manual resizing</h3>
-<blockquote>
-<p><strong>The manual resizing feature is in the beta stage.</strong></p>
-</blockquote>
 <p>To set the width of the columns, add the <code>columnWidths</code> prop to the <code>columnSizing</code> prop.</p>
 <pre><code class="hljs css language-jsx">columnSizing: {
    <span class="hljs-attr">columnWidths</span>: [
         {
             <span class="hljs-attr">attributeColumnWidthItem</span>: {
-                <span class="hljs-attr">width</span>: <span class="hljs-number">100</span>,
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">100</span> },
                 <span class="hljs-attr">attributeIdentifier</span>: <span class="hljs-string">'day'</span>
             }
         },
         {
             <span class="hljs-attr">measureColumnWidthItem</span>: {
-                <span class="hljs-attr">width</span>: <span class="hljs-number">200</span>,
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">200</span> },
                 <span class="hljs-attr">locators</span>: [
                     {
                         <span class="hljs-attr">attributeLocatorItem</span>: {
@@ -290,22 +287,41 @@
 </code></pre>
 <p>A change of the column width calls the provided callback function with all the current column width definitions as a parameter.</p></li>
 <li><p>To set the same width for all measure columns, add the <code>allMeasureColumnWidthItem</code> prop:</p>
-<pre><code class="hljs css language-jsx">columnSizing: {
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> allMeasureColumnWidthItem = {
+    <span class="hljs-attr">measureColumnWidthItem</span>: {
+        <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">200</span> },
+    }
+};
+columnSizing: {
     <span class="hljs-attr">columnWidths</span>: [
-        {
-            <span class="hljs-attr">measureColumnWidthItem</span>: {
-                <span class="hljs-attr">width</span>: <span class="hljs-number">200</span>,
-            }
-        }
+        allMeasureColumnWidthItem
     ]
 }
-</code></pre>
-<p><strong>NOTE</strong>: <code>measureColumnWidthItem</code> defined for a specific column overrides the value set by <code>allMeasureColumnWidthItem</code> for this column. The width of this column is set to the value of the <code>width</code> prop in <code>measureColumnWidthItem</code>.</p></li>
+</code></pre></li>
+<li><p>To set the same width for all columns of a specific measure (applicable when column attributes are used), add the <code>weakMeasureColumnWidthItem</code> prop:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> weakMeasureColumnWidthItem = {
+    <span class="hljs-attr">measureColumnWidthItem</span>: {
+        <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">200</span> },
+        <span class="hljs-attr">locator</span>: {
+            <span class="hljs-attr">measureLocatorItem</span>: {
+                <span class="hljs-attr">measureIdentifier</span>: <span class="hljs-string">'franchiseFees'</span>
+            }
+        }
+    }
+};
+columnSizing: {
+    <span class="hljs-attr">columnWidths</span>: [
+        weakMeasureColumnWidthItem
+    ]
+}
+</code></pre></li>
 </ul>
-<p><strong>TIP:</strong> Instead of creating <code>attributeColumnWidthItem</code>, <code>measureColumnWidthItem</code>, and <code>allMeasureColumnWidthItem</code> manually, you can use the <a href="/gooddata-ui/docs/next/model_helpers.html#width-item-helpers-for-pivot-tables">width item helpers</a>.</p>
+<p><strong>TIP:</strong> Instead of creating <code>attributeColumnWidthItem</code>, <code>measureColumnWidthItem</code>, <code>allMeasureColumnWidthItem</code> or <code>weakMeasureColumnWidthItem</code> manually, you can use the <a href="/gooddata-ui/docs/next/model_helpers.html#width-item-helpers-for-pivot-tables">width item helpers</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="priorities-of-column-width-definitions"></a><a href="#priorities-of-column-width-definitions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Priorities of column width definitions</h3>
+<p><code>measureColumnWidthItem</code> defined for a specific column overrides the value set by <code>weakMeasureColumnWidthItem</code> for a group of columns of one measure. <code>measureColumnWidthItem</code> for this column also overrides the value specified by <code>allMeasureColumnWidthItem</code> for all measure columns.</p>
 <h3><a class="anchor" aria-hidden="true" id="combining-auto-resizing-and-manual-resizing"></a><a href="#combining-auto-resizing-and-manual-resizing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Combining auto resizing and manual resizing</h3>
 <p>To combine auto resizing and manual resizing, add both the <code>defaultWidth</code> and <code>columnWidths</code> props under the <code>columnSizing</code> prop.</p>
-<p><strong>Example:</strong> In the following code sample:</p>
+<p><strong>Example 1:</strong> In the following code sample:</p>
 <ul>
 <li>The width of the columns that are defined under <code>columnWidths</code> is set according to the values of their appropriate <code>width</code> props (see <a href="#manual-resizing">Manual resizing</a>).</li>
 <li>All the other columns are resized to fit the content (see <a href="#auto-resizing">Auto resizing</a>).</li>
@@ -315,13 +331,13 @@
     <span class="hljs-attr">columnWidths</span>: [
         {
             <span class="hljs-attr">attributeColumnWidthItem</span>: {
-                <span class="hljs-attr">width</span>: <span class="hljs-number">100</span>,
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">100</span> },
                 <span class="hljs-attr">attributeIdentifier</span>: <span class="hljs-string">'day'</span>
             }
         },
         {
             <span class="hljs-attr">measureColumnWidthItem</span>: {
-                <span class="hljs-attr">width</span>: <span class="hljs-number">200</span>,
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">200</span> },
                 <span class="hljs-attr">locators</span>: [
                    {
                         <span class="hljs-attr">attributeLocatorItem</span>: {
@@ -340,10 +356,10 @@
     ]
 }
 </code></pre>
-<p><strong>Example:</strong> In the following code sample:</p>
+<p><strong>Example 2:</strong> In the following code sample:</p>
 <ul>
 <li>The width of all the measure columns is set to the value of the <code>width</code> prop under <code>allMeasureColumnWidthItem</code> (see <a href="#manual-resizing">Manual resizing</a>).</li>
-<li>However, the <code>measureColumnWidthItem</code> prop overrides the value set by <code>allMeasureColumnWidthItem</code> for the measure columns that are defined under <code>measureColumnWidthItem</code>. Notice that the <code>width</code> prop under <code>measureColumnWidthItem</code> is set to <code>&quot;auto&quot;</code> and not to a number as in the previous example. This means that at the initial rendering these measure columns will be resized to fit the content (see <a href="#auto-resizing">Auto resizing</a>), while all the other measure columns will be set to the width defined by <code>allMeasureColumnWidthItem</code>.</li>
+<li>However, the <code>measureColumnWidthItem</code> prop overrides the value set by <code>allMeasureColumnWidthItem</code> for the measure columns that are defined under <code>measureColumnWidthItem</code>. Notice that the <code>width</code> prop under <code>measureColumnWidthItem</code> is set to <code>&quot;auto&quot;</code> and not to a number as in <strong>Example 1</strong>. This means that at the initial rendering these measure columns will be resized to fit the content (see <a href="#auto-resizing">Auto resizing</a>), while all the other measure columns will be set to the width defined by <code>allMeasureColumnWidthItem</code>.</li>
 <li>All the attribute columns, if any, are resized to fit the content (see <a href="#auto-resizing">Auto resizing</a>).</li>
 </ul>
 <pre><code class="hljs css language-jsx">columnSizing: {
@@ -351,12 +367,12 @@
     <span class="hljs-attr">columnWidths</span>: [
         {
             <span class="hljs-attr">measureColumnWidthItem</span>: {
-                <span class="hljs-attr">width</span>: <span class="hljs-number">200</span>,
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">200</span> },
             }
         },
         {
             <span class="hljs-attr">measureColumnWidthItem</span>: {
-                <span class="hljs-attr">width</span>: <span class="hljs-string">"auto"</span>,
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-string">"auto"</span> },
                 <span class="hljs-attr">locators</span>: [
                    {
                         <span class="hljs-attr">attributeLocatorItem</span>: {
@@ -375,6 +391,64 @@
     ]
 }
 </code></pre>
+<p><strong>Example 3:</strong> In the following code sample:</p>
+<ul>
+<li>The width of all the measure columns is set to the value of the <code>width</code> prop under <code>allMeasureColumnWidthItem</code> (see <a href="#manual-resizing">Manual resizing</a>).</li>
+<li>The width of all columns of the selected measure is set to the value of the <code>width</code> prop under <code>weakMeasureColumnWidthItem</code> and overrides value from <code>allMeasureColumnWidthItem</code> (see <a href="#manual-resizing">Manual resizing</a>).</li>
+<li>However, the <code>measureColumnWidthItem</code> prop overrides the value set by <code>allMeasureColumnWidthItem</code> and <code>weakMeasureColumnWidthItem</code> for the measure column that is defined under <code>measureColumnWidthItem</code>. Notice that the <code>width</code> prop under <code>measureColumnWidthItem</code> is set to <code>&quot;auto&quot;</code> and not to a number as in <strong>Example 1</strong>. This means that at the initial rendering this measure column will be resized to fit the content (see <a href="#auto-resizing">Auto resizing</a>), while all the other measure columns will be set to the width defined by <code>allMeasureColumnWidthItem</code> or <code>weakMeasureColumnWidthItem</code>.</li>
+<li>All the attribute columns, if any, are resized to fit the content (see <a href="#auto-resizing">Auto resizing</a>).</li>
+</ul>
+<pre><code class="hljs css language-jsx">columnSizing: {
+    <span class="hljs-attr">defaultWidth</span>: <span class="hljs-string">"viewport"</span>,
+    <span class="hljs-attr">columnWidths</span>: [
+        {
+            <span class="hljs-attr">measureColumnWidthItem</span>: {
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">200</span> },
+            }
+        },
+        {
+            <span class="hljs-attr">measureColumnWidthItem</span>: {
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">400</span> },
+                <span class="hljs-attr">locator</span>: {
+                    <span class="hljs-attr">measureLocatorItem</span>: {
+                        <span class="hljs-attr">measureIdentifier</span>: <span class="hljs-string">'totalSalesIdentifier'</span>
+                    }
+                }
+            }
+        },
+        {
+            <span class="hljs-attr">measureColumnWidthItem</span>: {
+                <span class="hljs-attr">width</span>: { <span class="hljs-attr">value</span>: <span class="hljs-string">"auto"</span> },
+                <span class="hljs-attr">locators</span>: [
+                   {
+                        <span class="hljs-attr">attributeLocatorItem</span>: {
+                            <span class="hljs-attr">attributeIdentifier</span>: <span class="hljs-string">'month'</span>,
+                            <span class="hljs-attr">element</span>: monthDateIdentifierJanuary
+                        }
+                   },
+                   {
+                        <span class="hljs-attr">measureLocatorItem</span>: {
+                            <span class="hljs-attr">measureIdentifier</span>: <span class="hljs-string">'franchiseFeesIdentifier'</span>
+                        }
+                   }
+                ]
+            }
+        }
+    ]
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="resizing-visible-columns-to-fill-up-the-container"></a><a href="#resizing-visible-columns-to-fill-up-the-container" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resizing visible columns to fill up the container</h3>
+<p>To make the currently visible columns take the available screen space, add the <code>growToFit</code> prop to the <code>columnSizing</code> object and set it to <code>true</code>.</p>
+<pre><code class="hljs css language-jsx">columnSizing: {
+    <span class="hljs-attr">defaultWidth</span>: <span class="hljs-string">"viewport"</span>,
+    <span class="hljs-attr">growToFit</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>This behavior is not applied to the <a href="#manual-resizing">manually resized columns</a>. It is applied only to the columns that are <strong>not</strong> inside the <code>columnWidths</code> object.</li>
+<li>If <a href="#auto-resizing">auto resizing</a> is enabled, the columns that are visible during the initial rendering of the table are automatically resized to fit their content. If these columns do not fit the screen, they will be resized to fill up the container.</li>
+</ul>
 <h3><a class="anchor" aria-hidden="true" id="resizing-a-column-to-a-custom-width"></a><a href="#resizing-a-column-to-a-custom-width" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resizing a column to a custom width</h3>
 <ol>
 <li><p>Hover over the right side of the column header until a horizontal resize cursor appears.</p></li>
@@ -389,6 +463,13 @@
 <p>All the measures columns are resized to the set width.</p>
 <p>The new column widths are propagated via the <code>onColumnResized</code> callback array. All the <code>measureColumnWidthItem</code> props are removed. The <code>allMeasureColumnWidthItem</code> prop is added.</p></li>
 </ol>
+<h3><a class="anchor" aria-hidden="true" id="resizing-all-columns-of-a-specific-measure-at-once-to-a-custom-width"></a><a href="#resizing-all-columns-of-a-specific-measure-at-once-to-a-custom-width" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resizing all columns of a specific measure at once to a custom width</h3>
+<ol>
+<li><p>Hover over the right side of the header of any column of the specific measure until a horizontal resize cursor appears.</p></li>
+<li><p>Press and hold <strong>Alt</strong> or <strong>Option</strong>, and drag the column line.</p>
+<p>All columns of the corresponding measure are resized to the set width.</p>
+<p>The new column widths are propagated via the <code>onColumnResized</code> callback array. All the <code>measureColumnWidthItem</code> props of the corresponding measure are removed. The <code>weakMeasureColumnWidthItem</code> prop is added.</p></li>
+</ol>
 <h3><a class="anchor" aria-hidden="true" id="resizing-a-column-to-fit-its-content"></a><a href="#resizing-a-column-to-fit-its-content" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resizing a column to fit its content</h3>
 <ol>
 <li><p>Hover over the right side of the column header until a horizontal resize cursor appears.</p></li>
@@ -399,14 +480,21 @@
 <p><strong>NOTES:</strong></p>
 <ul>
 <li>This behavior is not applied if <a href="#auto-resizing">auto resizing</a> is enabled and you double-click a column that was visible and auto-resized at the initial rendering and then its width was manually adjusted in the UI. Such column is removed from the <code>onColumnResized</code> callback array.</li>
-<li>If <a href="#auto-resizing">auto resizing</a> is enabled, and <code>columnWidths</code> includes the <code>allMeasureColumnWidthItem</code> prop, and you double-click a measure column, the <code>measureColumnWidthItem</code> prop with <code>width</code> set to <code>&quot;auto&quot;</code> is added to the <code>onColumnResized</code> callback array.</li>
+<li>If <a href="#auto-resizing">auto resizing</a> is enabled, and <code>columnWidths</code> includes the <code>allMeasureColumnWidthItem</code> or <code>weakMeasureColumnWidthItem</code> prop, and you double-click a measure column, the <code>measureColumnWidthItem</code> prop with <code>width</code> set to <code>&quot;auto&quot;</code> is added to the <code>onColumnResized</code> callback array.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="resizing-all-measure-columns-at-once-to-fit-their-content"></a><a href="#resizing-all-measure-columns-at-once-to-fit-their-content" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resizing all measure columns at once to fit their content</h3>
 <ol>
 <li><p>Hover over the right side of the header of any measure column until a horizontal resize cursor appears.</p></li>
-<li><p>Press and hold the <strong>Ctrl</strong> or <strong>Command</strong> key, and double-click the column line.</p>
+<li><p>Press and hold <strong>Ctrl</strong> or <strong>Command</strong>, and double-click the column line.</p>
 <p>All measure columns are resized to fit their content.</p>
 <p>The new column widths are propagated via the <code>onColumnResized</code> callback array. All the <code>allMeasureColumnWidthItem</code> props are removed.</p></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="resizing-all-columns-of-a-specific-measure-at-once-to-fit-their-content"></a><a href="#resizing-all-columns-of-a-specific-measure-at-once-to-fit-their-content" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resizing all columns of a specific measure at once to fit their content</h3>
+<ol>
+<li><p>Hover over the right side of the header of any column of the specific measure until a horizontal resize cursor appears.</p></li>
+<li><p>Press and hold <strong>Alt</strong> or <strong>Option</strong>, and double-click the column line.</p>
+<p>All columns of the corresponding measure are resized to fit their content.</p>
+<p>The new column widths are propagated via the <code>onColumnResized</code> callback array. All the <code>weakMeasureColumnWidthItem</code> props are removed.</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="switching-to-the-default-resizing"></a><a href="#switching-to-the-default-resizing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Switching to the default resizing</h3>
 <p>To switch to the default behavior (all columns have the same fixed size), do not provide <code>columnSizing</code> at all or set <code>columnSizing</code> to:</p>
@@ -505,7 +593,7 @@
 | height | false | number | Height of the component in pixels |
 | pushData | false | Function | A callback after AFM is resolved |
 -->
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/next/pie_chart_component.html"><span class="arrow-prev">← </span><span>Pie Chart</span></a><a class="docs-next button" href="/gooddata-ui/docs/next/scatter_plot_component.html"><span>Scatter Plot</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#structure">Structure</a></li><li><a href="#examples">Examples</a><ul class="toc-headings"><li><a href="#pivot-table">Pivot table</a></li><li><a href="#flat-table">Flat table</a></li></ul></li><li><a href="#sorting-in-pivot-tables">Sorting in pivot tables</a><ul class="toc-headings"><li><a href="#example-sorting-by-measure">Example: Sorting by measure</a></li></ul></li><li><a href="#grouping">Grouping</a></li><li><a href="#totals">Totals</a></li><li><a href="#maximum-height">Maximum height</a></li><li><a href="#column-width-resizing">Column width resizing</a><ul class="toc-headings"><li><a href="#auto-resizing">Auto resizing</a></li><li><a href="#manual-resizing">Manual resizing</a></li><li><a href="#combining-auto-resizing-and-manual-resizing">Combining auto resizing and manual resizing</a></li><li><a href="#resizing-a-column-to-a-custom-width">Resizing a column to a custom width</a></li><li><a href="#resizing-all-measure-columns-at-once-to-a-custom-width">Resizing all measure columns at once to a custom width</a></li><li><a href="#resizing-a-column-to-fit-its-content">Resizing a column to fit its content</a></li><li><a href="#resizing-all-measure-columns-at-once-to-fit-their-content">Resizing all measure columns at once to fit their content</a></li><li><a href="#switching-to-the-default-resizing">Switching to the default resizing</a></li></ul></li><li><a href="#configuration-menu">Configuration menu</a></li><li><a href="#properties">Properties</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/platform-trial/" id="developer-footer-platform-trial" class="nav-footer-link">Platform trial</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://stackoverflow.com/questions/tagged/gooddata" id="developer-footer-stackoverflow" class="nav-footer-link nav-footer-logo nav-footer-logo-stackoverflow" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2020 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/next/pie_chart_component.html"><span class="arrow-prev">← </span><span>Pie Chart</span></a><a class="docs-next button" href="/gooddata-ui/docs/next/scatter_plot_component.html"><span>Scatter Plot</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#structure">Structure</a></li><li><a href="#examples">Examples</a><ul class="toc-headings"><li><a href="#pivot-table">Pivot table</a></li><li><a href="#flat-table">Flat table</a></li></ul></li><li><a href="#sorting-in-pivot-tables">Sorting in pivot tables</a><ul class="toc-headings"><li><a href="#example-sorting-by-measure">Example: Sorting by measure</a></li></ul></li><li><a href="#grouping">Grouping</a></li><li><a href="#totals">Totals</a></li><li><a href="#maximum-height">Maximum height</a></li><li><a href="#column-width-resizing">Column width resizing</a><ul class="toc-headings"><li><a href="#auto-resizing">Auto resizing</a></li><li><a href="#manual-resizing">Manual resizing</a></li><li><a href="#priorities-of-column-width-definitions">Priorities of column width definitions</a></li><li><a href="#combining-auto-resizing-and-manual-resizing">Combining auto resizing and manual resizing</a></li><li><a href="#resizing-visible-columns-to-fill-up-the-container">Resizing visible columns to fill up the container</a></li><li><a href="#resizing-a-column-to-a-custom-width">Resizing a column to a custom width</a></li><li><a href="#resizing-all-measure-columns-at-once-to-a-custom-width">Resizing all measure columns at once to a custom width</a></li><li><a href="#resizing-all-columns-of-a-specific-measure-at-once-to-a-custom-width">Resizing all columns of a specific measure at once to a custom width</a></li><li><a href="#resizing-a-column-to-fit-its-content">Resizing a column to fit its content</a></li><li><a href="#resizing-all-measure-columns-at-once-to-fit-their-content">Resizing all measure columns at once to fit their content</a></li><li><a href="#resizing-all-columns-of-a-specific-measure-at-once-to-fit-their-content">Resizing all columns of a specific measure at once to fit their content</a></li><li><a href="#switching-to-the-default-resizing">Switching to the default resizing</a></li></ul></li><li><a href="#configuration-menu">Configuration menu</a></li><li><a href="#properties">Properties</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/platform-trial/" id="developer-footer-platform-trial" class="nav-footer-link">Platform trial</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://stackoverflow.com/questions/tagged/gooddata" id="developer-footer-stackoverflow" class="nav-footer-link nav-footer-logo nav-footer-logo-stackoverflow" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2020 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
