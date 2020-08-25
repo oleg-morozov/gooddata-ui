@@ -15,9 +15,9 @@
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="build-an-app-from-scratch"></a><a href="#build-an-app-from-scratch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build an App from Scratch</h2>
 <ul>
-<li>Using Angular 1.x - see <a href="/gooddata-ui/docs/7.2.0/ht_use_react_component_in_angular_1.x.html">How to Use React Components in Angular 1.x</a>.</li>
-<li>Using Angular 2+ - see <a href="/gooddata-ui/docs/7.2.0/ht_use_react_component_in_angular_2.x.html">How to Use React Components in Angular 2+</a>.</li>
-<li>Using create-react-app - see <a href="/gooddata-ui/docs/7.2.0/ht_create_your_first_visualization.html">How to Create Your First Visualization with GoodData UI SDK</a>.</li>
+<li>Using Angular 1.x - see <a href="ht_use_react_components_in_angular_1.x.md">How to Use React Components in Angular 1.x</a>.</li>
+<li>Using Angular 2+ - see <a href="ht_use_react_components_in_angular_2.x.md">How to Use React Components in Angular 2+</a>.</li>
+<li>Using create-react-app - see <a href="ht_create_your_first_visualization.md">How to Create Your First Visualization with GoodData UI SDK</a>.</li>
 <li>Using custom React application:
 <ul>
 <li>Add the <code>@gooddata/react-components</code> package to your existing project:
@@ -32,7 +32,7 @@ $ npm install @gooddata/react-components
 <h3><a class="anchor" aria-hidden="true" id="authenticate-your-app"></a><a href="#authenticate-your-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authenticate Your App</h3>
 <p>The following ways to authenticate your app are supported:</p>
 <ul>
-<li>If you're using <code>create-react-app</code>, see <a href="/gooddata-ui/docs/7.2.0/ht_create_your_first_visualization.html">How to Create Your First Visualization with GoodData UI SDK</a>.</li>
+<li>If you're using <code>create-react-app</code>, see <a href="ht_create_your_first_visualization.md">How to Create Your First Visualization with GoodData UI SDK</a>.</li>
 <li>If you are using SSO, ... <strong>TODO</strong></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="embed-an-existing-visualization"></a><a href="#embed-an-existing-visualization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embed an Existing Visualization</h3>
@@ -46,7 +46,7 @@ $ npm install @gooddata/react-components
 https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visualizationobjects
 </code></pre>
 //TODO what do next? where is identifier?</li>
-<li>Via <a href="/gooddata-ui/docs/7.2.0/gdc_catalog_export.html">gdc-catalog-export</a> tool</li>
+<li>Via <a href="gdc-catalog-export.md">gdc-catalog-export</a> tool</li>
 </ul></li>
 <li><p>Import the <code>Visualization</code> component from the <code>@gooddata/react-components</code> package into your app:</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { Visualization } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/react-components'</span>;
@@ -99,7 +99,7 @@ https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visual
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </span></code></pre>
 <h3><a class="anchor" aria-hidden="true" id="customize-tooltips-and-fonts"></a><a href="#customize-tooltips-and-fonts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Customize Tooltips and Fonts</h3>
-<p>To customize tooltips and fonts, <a href="/gooddata-ui/docs/7.2.0/data_layer.html">implement a custom visualization</a>.</p>
+<p>To customize tooltips and fonts, <a href="data_layer.md">implement a custom visualization</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="create-a-visualization-programmatically-on-the-fly"></a><a href="#create-a-visualization-programmatically-on-the-fly" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Visualization Programmatically on the Fly</h2>
 <p>This section explains how to create a bar chart that renders <code># of Activities</code> sliced by <code>Activity Type</code>.
 You can choose any <a href="react_components.md">supported visualization type</a>, ie: <code>BarChart</code>, <code>ColumnChart</code>, <code>LineChart</code>, <code>PieChart</code>, <code>Table</code> etc.</p>

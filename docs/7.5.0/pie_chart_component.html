@@ -132,15 +132,15 @@
 </thead>
 <tbody>
 <tr><td style="text-align:left">projectId</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">The project ID</td></tr>
-<tr><td style="text-align:left">measures</td><td style="text-align:left">true</td><td style="text-align:left"><a href="/gooddata-ui/docs/7.5.0/afm.html#measure">Measure[]</a></td><td style="text-align:left">An array of measure definitions</td></tr>
-<tr><td style="text-align:left">viewBy</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/7.5.0/afm.html#attribute">Attribute</a></td><td style="text-align:left">An attribute definition</td></tr>
-<tr><td style="text-align:left">filters</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/7.5.0/filter_visual_components.html">Filter[]</a></td><td style="text-align:left">An array of filter definitions</td></tr>
-<tr><td style="text-align:left">config</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/7.5.0/chart_config.html">ChartConfig</a></td><td style="text-align:left">The chart configuration object</td></tr>
+<tr><td style="text-align:left">measures</td><td style="text-align:left">true</td><td style="text-align:left"><a href="afm.md#measure">Measure[]</a></td><td style="text-align:left">An array of measure definitions</td></tr>
+<tr><td style="text-align:left">viewBy</td><td style="text-align:left">false</td><td style="text-align:left"><a href="afm.md#attribute">Attribute</a></td><td style="text-align:left">An attribute definition</td></tr>
+<tr><td style="text-align:left">filters</td><td style="text-align:left">false</td><td style="text-align:left"><a href="filter_visual_components.md">Filter[]</a></td><td style="text-align:left">An array of filter definitions</td></tr>
+<tr><td style="text-align:left">config</td><td style="text-align:left">false</td><td style="text-align:left"><a href="chart_config.md">ChartConfig</a></td><td style="text-align:left">The chart configuration object</td></tr>
 <tr><td style="text-align:left">locale</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">The localization of the chart. Defaults to <code>en-US</code>. For other languages, see the <a href="https://github.com/gooddata/gooddata-react-components/tree/master/src/translations">full list of available localizations</a>.</td></tr>
-<tr><td style="text-align:left">drillableItems</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/7.5.0/drillable_item.html">DrillableItem[]</a></td><td style="text-align:left">An array of points and attribute values to be drillable.</td></tr>
+<tr><td style="text-align:left">drillableItems</td><td style="text-align:left">false</td><td style="text-align:left"><a href="drillable_item.md">DrillableItem[]</a></td><td style="text-align:left">An array of points and attribute values to be drillable.</td></tr>
 <tr><td style="text-align:left">sdk</td><td style="text-align:left">false</td><td style="text-align:left">SDK</td><td style="text-align:left">A configuration object where you can define a custom domain and other API options</td></tr>
-<tr><td style="text-align:left">ErrorComponent</td><td style="text-align:left">false</td><td style="text-align:left">Component</td><td style="text-align:left">A component to be rendered if this component is in error state. See <a href="/gooddata-ui/docs/7.5.0/error_component.html">ErrorComponent</a>.</td></tr>
-<tr><td style="text-align:left">LoadingComponent</td><td style="text-align:left">false</td><td style="text-align:left">Component</td><td style="text-align:left">A component to be rendered if this component is in loading state. See <a href="/gooddata-ui/docs/7.5.0/loading_component.html">LoadingComponent</a>.</td></tr>
+<tr><td style="text-align:left">ErrorComponent</td><td style="text-align:left">false</td><td style="text-align:left">Component</td><td style="text-align:left">A component to be rendered if this component is in error state. See <a href="error_component.md">ErrorComponent</a>.</td></tr>
+<tr><td style="text-align:left">LoadingComponent</td><td style="text-align:left">false</td><td style="text-align:left">Component</td><td style="text-align:left">A component to be rendered if this component is in loading state. See <a href="loading_component.md">LoadingComponent</a>.</td></tr>
 <tr><td style="text-align:left">onError</td><td style="text-align:left">false</td><td style="text-align:left">Function</td><td style="text-align:left">A callback when the component updates its error state</td></tr>
 <tr><td style="text-align:left">onExportReady</td><td style="text-align:left">false</td><td style="text-align:left">Function</td><td style="text-align:left">A callback when the component is ready for exporting its data</td></tr>
 <tr><td style="text-align:left">onLoadingChanged</td><td style="text-align:left">false</td><td style="text-align:left">Function</td><td style="text-align:left">A callback when the component updates its loading state</td></tr>
@@ -153,7 +153,7 @@
 | height | false | number | Height of the component in pixels |
 | pushData | false | Function | A callback after AFM is resolved |
 -->
-<p>The following example shows the supported <code>config</code> structure with sample values. To see descriptions of individual options, see <a href="/gooddata-ui/docs/7.5.0/chart_config.html">ChartConfig section</a>.</p>
+<p>The following example shows the supported <code>config</code> structure with sample values. To see descriptions of individual options, see <a href="chart_config.md">ChartConfig section</a>.</p>
 <pre><code class="hljs css language-javascript">{
     <span class="hljs-attr">colors</span>: [<span class="hljs-string">'rgb(195, 49, 73)'</span>, <span class="hljs-string">'rgb(168, 194, 86)'</span>],
     <span class="hljs-attr">colorPalette</span>: [{
