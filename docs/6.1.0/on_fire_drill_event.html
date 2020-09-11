@@ -60,7 +60,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">OnFireDrillEvent</h1></header><article><div><span><p>The <code>onFiredDrillEvent</code> parameter allows you to catch drilling events from visualizations on non-embedded KPI dashboards and to respond to them using the function that you have chosen to use and implemented.</p>
-<p>When a user clicks a <a href="drillable_item.md">drillable item</a> in a visualization on a non-embedded KPI dashboard, a default drill event is generated. This event has a format of <code>{ drillContext, executionContext }</code> and is sent to the function that you have chosen.</p>
+<p>When a user clicks a <a href="/gooddata-ui/docs/6.1.0/drillable_item.html">drillable item</a> in a visualization on a non-embedded KPI dashboard, a default drill event is generated. This event has a format of <code>{ drillContext, executionContext }</code> and is sent to the function that you have chosen.</p>
 <ul>
 <li>If you want the default drilling event not to be generated, the function must return <code>false</code>. In this case, only what you have implemented in the function body is performed.</li>
 <li>When the function returns anything else but <code>false</code>, whatever you have implemented in the function body is performed, and then the default drilling event is also generated.</li>
