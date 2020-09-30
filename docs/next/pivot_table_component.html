@@ -68,11 +68,13 @@
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">'@gooddata/sdk-ui-pivot/styles/css/main.css'</span>;
 <span class="hljs-keyword">import</span> { PivotTable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/sdk-ui-pivot'</span>;
 
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PivotTable</span>
-    <span class="hljs-attr">measures</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">measures</span>&gt;</span>}
+&lt;PivotTable
+    measures={&lt;measures&gt;}
+    rows={&lt;rows&gt;}
+    columns={&lt;columns&gt;}
     …
 /&gt;
-</span></code></pre>
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h2>
 <h3><a class="anchor" aria-hidden="true" id="pivot-table"></a><a href="#pivot-table" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pivot table</h3>
 <p>The following code sample shows an arrangement for a typical pivot table:</p>
@@ -107,11 +109,16 @@
 <h3><a class="anchor" aria-hidden="true" id="example-sorting-by-measure"></a><a href="#example-sorting-by-measure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example: Sorting by measure</h3>
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">'@gooddata/sdk-ui-pivot/styles/css/main.css'</span>;
 <span class="hljs-keyword">import</span> { PivotTable } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/sdk-ui-pivot'</span>;
-<span class="hljs-keyword">import</span> { newMeasureSort } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { newMeasureSort, newAttributeLocator } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
 <span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> { monthDateIdentifierJanuary } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm/ext"</span>;
 
 <span class="hljs-keyword">const</span> sortBy = [
-    newMeasureSort(Ldm.$FranchiseFees, <span class="hljs-string">"desc"</span>, newAttributeLocator(Ldm.DateMonth.Short, monthDateIdentifierJanuary))
+    newMeasureSort(
+        Ldm.$FranchiseFees,
+        <span class="hljs-string">"desc"</span>,
+        [newAttributeLocator(Ldm.DateMonth.Short, monthDateIdentifierJanuary)]
+    )
 ];
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
@@ -168,7 +175,7 @@ of width items that specify which columns should be affected and what width to s
 <li><code>newWidthForSelectedColumns</code> sets the width for one or more columns specified by the locators.</li>
 </ul>
 <p>The factory functions are exported from the <code>@gooddata/sdk-ui-pivot</code> package.</p>
-<pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> config = { 
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> config = {
     <span class="hljs-attr">columnSizing</span>: {
        <span class="hljs-attr">columnWidths</span>: [
             newWidthForAttributeColumn(Ldm.Date, <span class="hljs-number">100</span>),
@@ -196,7 +203,7 @@ of width items that specify which columns should be affected and what width to s
 </code></pre>
 <p>A change of the column width calls the provided callback function with all the current column width definitions as a parameter.</p></li>
 <li><p>To set the same width for all measure columns, use the width item created by the <code>newWidthForAllMeasureColumns</code> function:</p>
-<pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> config = { 
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> config = {
   <span class="hljs-attr">columnSizing</span>: {
     <span class="hljs-attr">columnWidths</span>: [
         newWidthForAllMeasureColumns(<span class="hljs-number">200</span>)
