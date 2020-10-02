@@ -95,8 +95,10 @@
     newTotal(<span class="hljs-string">"avg"</span>, Ldm.$FranchiseFees, Ldm.LocationCity)
 ];
 
+<span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
+
 <span class="hljs-keyword">return</span> (
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">PivotTable</span>
             <span class="hljs-attr">measures</span>=<span class="hljs-string">{measures}</span>
             <span class="hljs-attr">columns</span>=<span class="hljs-string">{columns}</span>
@@ -127,8 +129,10 @@ first row attribute, and this is the default sorting for tables.</p>
     newTotal(<span class="hljs-string">"sum"</span>, Ldm.$FranchiseFees, Ldm.MenuCategory)
 ];
 
+<span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
+
 <span class="hljs-keyword">return</span> (
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">PivotTable</span>
             <span class="hljs-attr">measures</span>=<span class="hljs-string">{measures}</span>
             <span class="hljs-attr">rows</span>=<span class="hljs-string">{rows}</span>

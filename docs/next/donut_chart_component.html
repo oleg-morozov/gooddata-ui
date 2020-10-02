@@ -75,10 +75,15 @@
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">'@gooddata/sdk-ui-charts/styles/css/main.css'</span>;
 <span class="hljs-keyword">import</span> { DonutChart } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/sdk-ui-charts'</span>;
 
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
+<span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">DonutChart</span>
-        <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
-        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.$FranchiseFeesAdRoyalty,</span> <span class="hljs-attr">Ldm.</span>$<span class="hljs-attr">FranchiseFeesInitialFranchiseFee</span>, <span class="hljs-attr">Ldm.</span>$<span class="hljs-attr">FranchiseFeesOngoingRoyalty</span>]}
+        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[</span>
+            <span class="hljs-attr">Ldm.</span>$<span class="hljs-attr">FranchiseFeesAdRoyalty</span>,
+            <span class="hljs-attr">Ldm.</span>$<span class="hljs-attr">FranchiseFeesInitialFranchiseFee</span>,
+            <span class="hljs-attr">Ldm.</span>$<span class="hljs-attr">FranchiseFeesOngoingRoyalty</span>
+        ]}
     /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
 </code></pre>

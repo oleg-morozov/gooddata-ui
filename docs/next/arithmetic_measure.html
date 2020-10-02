@@ -111,8 +111,8 @@ the local identifier for you.</p>
     newMeasure(<span class="hljs-string">'boughtProductsIdentifier'</span>, m =&gt; m.alias(<span class="hljs-string">'Bought products from supplier'</span>)),
     newMeasure(<span class="hljs-string">'soldProductsLocalIdentifier'</span>, m =&gt; m.alias(<span class="hljs-string">'Sold products to customers'</span>)),
     newArithmeticMeasure(
-        [<span class="hljs-string">'boughtProductsLocalIdentifier'</span>, <span class="hljs-string">'soldProductsLocalIdentifier'</span>], 
-        <span class="hljs-string">'difference'</span>, 
+        [<span class="hljs-string">'boughtProductsLocalIdentifier'</span>, <span class="hljs-string">'soldProductsLocalIdentifier'</span>],
+        <span class="hljs-string">'difference'</span>,
         m =&gt; m.alias(<span class="hljs-string">'Products remaining in warehouse'</span>)
     )
 ];
@@ -140,7 +140,6 @@ demonstrates passing measures by value to the different measure factory function
 ];
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PivotTable</span>
-    <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
     <span class="hljs-attr">measures</span>=<span class="hljs-string">{measures}</span>
 /&gt;</span></span>
 </code></pre>

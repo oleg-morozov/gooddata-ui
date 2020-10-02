@@ -99,10 +99,10 @@
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="comparing-to-the-previous-period-pp"></a><a href="#comparing-to-the-previous-period-pp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comparing to the previous period (PP)</h2>
 <p><strong>Time shift</strong>: a specified number of periods</p>
-<p><strong>Period</strong>: defined by global <a href="filter_visual_components.html#date-filter">date filters</a> referenced by the date dataset URI or identifier in the derived measure definition</p>
+<p><strong>Period</strong>: defined by global <a href="/gooddata-ui/docs/next/filter_visual_components.html#date-filter">date filters</a> referenced by the date dataset URI or identifier in the derived measure definition</p>
 <ul>
-<li>For an <a href="filter_visual_components.html#absolute-date-filter">absolute date filter</a>, the period is N days.</li>
-<li>For a <a href="filter_visual_components.html#relative-date-filter">relative date filter</a>, the period can be N days, weeks, months, quarters, or years depending on the selected granularity.</li>
+<li>For an <a href="/gooddata-ui/docs/next/filter_visual_components.html#absolute-date-filter">absolute date filter</a>, the period is N days.</li>
+<li>For a <a href="/gooddata-ui/docs/next/filter_visual_components.html#relative-date-filter">relative date filter</a>, the period can be N days, weeks, months, quarters, or years depending on the selected granularity.</li>
 </ul>
 <p>If no global date filter is defined, the derived measure returns the same data as the master measure.</p>
 <p>To add a PP derived measure to a visualization, use the following <code>newPreviousPeriodMeasure</code> factory function:</p>
@@ -126,7 +126,7 @@
 <span class="hljs-keyword">const</span> masterMeasure = newMeasure(<span class="hljs-string">'measureIdentifier'</span>, m =&gt; m.alias(<span class="hljs-string">"Master Measure"</span>));
 <span class="hljs-comment">// derived - previous 7 days measure</span>
 <span class="hljs-keyword">const</span> previousPeriod = newPreviousPeriodMeasure(
-                            masterMeasure, 
+                            masterMeasure,
                             { <span class="hljs-attr">dataSet</span>: <span class="hljs-string">'dateDatasetIdentifier'</span>, <span class="hljs-attr">periodsAgo</span>: <span class="hljs-number">1</span>},
                             m =&gt; m.alias(<span class="hljs-string">"Previous Period Measure"</span>)
                         );
@@ -142,11 +142,11 @@
 /&gt;</span></span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="comparison-to-the-pp-and-absolute-date-filters"></a><a href="#comparison-to-the-pp-and-absolute-date-filters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comparison to the PP and absolute date filters</h3>
-<p>Be careful when combining comparison to the PP with an <a href="filter_visual_components.html#absolute-date-filter">absolute date filter</a>.
+<p>Be careful when combining comparison to the PP with an <a href="/gooddata-ui/docs/next/filter_visual_components.html#absolute-date-filter">absolute date filter</a>.
 For example, when filtering from March 1 to March 31, the previous period is the previous 31 days and <strong>not</strong> the previous month.
-For comparing over a period other than a day, use a <a href="filter_visual_components.html#relative-date-filter">relative date filter</a> with the required granularity (month, quarter).</p>
+For comparing over a period other than a day, use a <a href="/gooddata-ui/docs/next/filter_visual_components.html#relative-date-filter">relative date filter</a> with the required granularity (month, quarter).</p>
 <h2><a class="anchor" aria-hidden="true" id="time-over-time-comparison-and-week-date-filters"></a><a href="#time-over-time-comparison-and-week-date-filters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Time over time comparison and week date filters</h2>
-<p>If you use <a href="filter_visual_components.md#relative-date-filter">date filters by <em>weeks</em></a> and compare the data to the previous period or the same period of the last year in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:</p>
+<p>If you use <a href="/gooddata-ui/docs/next/filter_visual_components.html#relative-date-filter">date filters by <em>weeks</em></a> and compare the data to the previous period or the same period of the last year in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:</p>
 <ol>
 <li><p>Switch the version of the <a href="https://help.gooddata.com/display/doc/XAE+-+Extensible+Analytics+Engine">Extensible Analytics Engine</a> to 3.</p>
 <p>To do so, set the <code>xae_version</code> platform setting to 3 (see <a href="https://help.gooddata.com/display/doc/Configure+Various+Features+via+Platform+Settings">Configure Various Features via Platform Settings</a>).</p></li>

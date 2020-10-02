@@ -76,9 +76,10 @@
 <span class="hljs-keyword">import</span> { ColumnChart } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/sdk-ui-charts'</span>;
 <span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
 
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
+<span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ColumnChart</span>
-        <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
         <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.$TotalSales]}</span>
         <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{Ldm.DateMonth.Short}</span>
     /&gt;</span>

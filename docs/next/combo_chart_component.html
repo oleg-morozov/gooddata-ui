@@ -79,9 +79,10 @@
 <span class="hljs-keyword">import</span> { ComboChart } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/sdk-ui-charts'</span>;
 <span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
 
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
+<span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ComboChart</span>
-        <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
         <span class="hljs-attr">primaryMeasures</span>=<span class="hljs-string">{Ldm.$FranchiseFeesInitialFranchiseFee}</span>
         <span class="hljs-attr">secondaryMeasures</span>=<span class="hljs-string">{Ldm.$FranchiseFeesAdRoyalty}</span>
         <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{Ldm.LocationResort}</span>

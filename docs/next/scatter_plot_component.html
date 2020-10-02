@@ -79,7 +79,9 @@ Scatter plots are useful for analyzing trends between two measures or for tracki
 <span class="hljs-keyword">import</span> { ScatterPlot } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/sdk-ui-charts'</span>;
 <span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
 
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
+<span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ScatterPlot</span>
         <span class="hljs-attr">xAxisMeasure</span>=<span class="hljs-string">{Ldm.$FranchiseFees}</span>
         <span class="hljs-attr">yAxisMeasure</span>=<span class="hljs-string">{Ldm.$FranchisedSales}</span>
