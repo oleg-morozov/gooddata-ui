@@ -21,7 +21,7 @@ Importing GoodData DataLayer dependencies
 and GoodData Java Script SDK
 (https://github.com/gooddata/gooddata-js)
 */</span>
-<span class="hljs-keyword">import</span> {factory <span class="hljs-keyword">as</span> SdkFactory, DataLayer} <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/gooddata-js'</span>;
+<span class="hljs-keyword">import</span> {factory <span class="hljs-keyword">as</span> SdkFactory, DataLayer} <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/gooddata-js"</span>;
 <span class="hljs-keyword">const</span> { DataTable, ExecuteAfmAdapter } = DataLayer;
 <span class="hljs-keyword">const</span> sdk = SdkFactory();
 
@@ -31,11 +31,11 @@ Defining AFMs and (optionally) resultSpec
 <span class="hljs-keyword">const</span> afm = {
     <span class="hljs-attr">measures</span>: [
         {
-            <span class="hljs-attr">localIdentifier</span>: <span class="hljs-string">'measure1'</span>, <span class="hljs-comment">// An identifier which will be referenced in the execution results</span>
+            <span class="hljs-attr">localIdentifier</span>: <span class="hljs-string">"measure1"</span>, <span class="hljs-comment">// An identifier which will be referenced in the execution results</span>
             <span class="hljs-attr">definition</span>: {
                 <span class="hljs-attr">measure</span>: {
                     <span class="hljs-attr">item</span>: {
-                        <span class="hljs-attr">identifier</span>: <span class="hljs-string">'&lt;measure-identifier&gt;'</span>
+                        <span class="hljs-attr">identifier</span>: <span class="hljs-string">"&lt;measure-identifier&gt;"</span>
                     }
                 }
             }
@@ -46,7 +46,7 @@ Defining AFMs and (optionally) resultSpec
 <span class="hljs-keyword">const</span> resultSpec = {
     <span class="hljs-attr">dimensions</span>: [
         {
-            <span class="hljs-attr">itemIdentifiers</span>: [<span class="hljs-string">'measureGroup'</span>]
+            <span class="hljs-attr">itemIdentifiers</span>: [<span class="hljs-string">"measureGroup"</span>]
         }
     ]
 };
@@ -55,7 +55,7 @@ Defining AFMs and (optionally) resultSpec
 Initializing the Adapter object
 The Adapter converts the AFMs for the backend to process.
 */</span>
-<span class="hljs-keyword">const</span> adapter = <span class="hljs-keyword">new</span> ExecuteAfmAdapter(sdk, <span class="hljs-string">'&lt;project-id&gt;'</span>);
+<span class="hljs-keyword">const</span> adapter = <span class="hljs-keyword">new</span> ExecuteAfmAdapter(sdk, <span class="hljs-string">"&lt;project-id&gt;"</span>);
 
 <span class="hljs-comment">/*
 Initializing the Data Table object
