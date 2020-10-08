@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Get Identifiers from the Platform · GoodData.UI</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="`gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData project."/><meta name="docsearch:version" content="7.8.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Get Identifiers from the Platform · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="`gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData project."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.jpg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.jpg"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Export Catalog · GoodData.UI</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="GoodData.UI visual components render data stored in your GoodData platform projects. Your application specifies what"/><meta name="docsearch:version" content="8.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Export Catalog · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="GoodData.UI visual components render data stored in your GoodData platform projects. Your application specifies what"/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.jpg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.jpg"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
               gtag('config', 'GTM-5G49LK');
-            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>7.8.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://developer.gooddata.com/data-integration" target="_self">Data Integration</a></li><li class=""><a href="https://developer.gooddata.com/api-and-sdks" target="_self">API &amp; SDKs</a></li><li class=""><a href="https://gooddata-examples.herokuapp.com/" target="_blank">Examples</a></li><li class=""><a href="https://github.com/gooddata/gooddata-react-components/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Development Tips</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/live_examples.html">Live Examples</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/platform_intro.html">Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_your_first_visualization_toolkit.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_your_first_visualization.html">Create Your First Application from Scratch</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/visualization_component.html">Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/afm_components.html">AFM Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/date_filter_component.html">DateFilter Component</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/measure_value_filter_component.html">Measure Value Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_fire_drill_event.html">OnFireDrillEvent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_new_visualization.html">Create Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/afm.html">Set Up an AFM Query</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/result_specification.html">Specify Result Structure</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/execute_component.html">Execute API Call</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/execution_rest_api_and_result.html">Execution Response and Execution Result</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/time_over_time_comparison.html">Time Over Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/gdc_catalog_export.html">Get Identifiers from the Platform</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/model_helpers.html">Model Helpers</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/cors.html">Deal with Cross-Origin Issues</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/data_layer.html">Access Low Level API</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_custom_attribute_filter.html">Create Custom Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/clean_up_your_code.html">Clean Up Your Code</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_use_react_components_with_vanilla_js.html">Use Vanilla JavaScript</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_use_react_component_in_angular_1.x.html">Use Angular 1.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_use_react_component_in_angular_2.x.html">Use Angular 2+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_predicates.html">Create Predicates</a></li></ul></div></div></section></div><script>
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://developer.gooddata.com/data-integration" target="_self">Data Integration</a></li><li class=""><a href="https://developer.gooddata.com/api-and-sdks" target="_self">API &amp; SDKs</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Examples</a></li><li class=""><a href="https://github.com/gooddata/gooddata-react-components/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/live_examples.html">Live Examples</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/framework_overview.html">Architecture Overview</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/migration_guide_8.html">Migration from Version 7.x</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_your_first_visualization_toolkit.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_your_first_visualization.html">Create Your First Application from Scratch</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/analytical_backend_integration.html">Connecting to an Analytical Backend</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/gdc_catalog_export.html">Export Catalog</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/model_helpers.html">Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/afm.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/result_specification.html">Specify the Result Structure</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/execute_component.html">Execute an API Call</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/execution_rest_api_and_result.html">Execution Response and Execution Result</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/cors.html">Deal with Cross-Origin Issues</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_predicates.html">Create Predicates</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -59,157 +59,192 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Get Identifiers from the Platform</h1></header><article><div><span><p><code>gdc-catalog-export</code> is a tool for exporting a list of catalog items and date datasets from a GoodData project.</p>
-<p>Using this list, you can create AFMs with human-readable object names instead of using URIs or identifiers. For example, use <code>gdc-catalog-export</code> when you are working with <a href="/gooddata-ui/docs/data_layer.html">DataLayer</a>.</p>
-<p><code>gdc-catalog-export</code> exports only data from a project (production data).</p>
-<p>If you <a href="https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project">uploaded data to your project from a file</a>, the data from the file is added as a separate dataset (non-production data), and <code>gdc-catalog-export</code> cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.</p>
-<h2><a class="anchor" aria-hidden="true" id="installing-gdc-catalog-export"></a><a href="#installing-gdc-catalog-export" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing gdc-catalog-export</h2>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Export Catalog</h1></header><article><div><span><p>GoodData.UI visual components render data stored in your GoodData platform projects. Your application specifies what
+data to render by referencing the Logical Data Model (LDM) objects: attributes, display forms, facts, and measures.</p>
+<p>To simplify this task, GoodData.UI offers the <code>@gooddata/catalog-export</code> tool. <code>@gooddata/catalog-export</code> exports a
+list of catalog items and date datasets from a GoodData project into JavaScript or TypeScript code. The generated code
+contains exported constant-per-LDM-object.</p>
+<p>Using this generated code, you can create charts and execution definitions in a very efficient and natural way.</p>
+<h2><a class="anchor" aria-hidden="true" id="installing-gooddatacatalog-export"></a><a href="#installing-gooddatacatalog-export" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing @gooddata/catalog-export</h2>
+<p>We recommend that you include <code>@gooddata/catalog-export</code> as a devDependency of your application and define an NPM script <code>refresh-ldm</code> to
+run the program.</p>
 <p>To install the stable version, run one of the following commands <strong>depending on your package manager</strong>:</p>
 <p><strong>yarn</strong></p>
-<pre><code class="hljs css language-bash">yarn global add gdc-catalog-export
+<pre><code class="hljs css language-bash">yarn add @gooddata/catalog-export --dev
 </code></pre>
 <p><strong>npm</strong></p>
-<pre><code class="hljs css language-bash">$ npm install -g gdc-catalog-export
+<pre><code class="hljs css language-bash">$ npm install @gooddata/catalog-export --save-dev
 </code></pre>
-<p>The <code>gdc-catalog-export</code> source code is written in JavaScript, compatible with ES7 version. You do not need any bundler such as webpack to build these files. Babel transpiler is enough.</p>
-<h2><a class="anchor" aria-hidden="true" id="using-gdc-catalog-export"></a><a href="#using-gdc-catalog-export" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using gdc-catalog-export</h2>
-<p>You can use <code>gdc-catalog-export</code>:</p>
-<ul>
-<li>In the interactive mode.</li>
-<li>By specifying a config file.</li>
-<li>By running it with command line options.</li>
-</ul>
-<p>The tool respects following hierarchy:</p>
-<h3><a class="anchor" aria-hidden="true" id="interactive-mode"></a><a href="#interactive-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interactive mode</h3>
-<p>This is the default mode. When you run <code>gdc-catalog-export</code>, it automatically runs in the interactive mode:</p>
-<pre><code class="hljs css language-bash">$ gdc-catalog-export
-</code></pre>
-<p>You are prompted to enter input information to export the catalog.</p>
+<h2><a class="anchor" aria-hidden="true" id="using-gooddatacatalog-export"></a><a href="#using-gooddatacatalog-export" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using @gooddata/catalog-export</h2>
+<p><code>@gooddata/catalog-export</code> is a command-line program that loads metadata from a workspace and transforms it into TypeScript, JavaScript, or a JSON representation. The program can run in interactive, silent, or hybrid modes.</p>
+<p><strong>NOTE</strong>: The JSON representation is deprecated. We will remove it in a future major version.</p>
+<p>This is how it works:</p>
 <ol>
-<li><p>Enter your username and password.</p></li>
-<li><p>Choose the project from which you want to export the catalog data.</p></li>
-<li><p>Enter the file name to which you want to export the data (the default file name is <code>catalog.json</code>).</p>
-<p>If the file already exists, you are asked whether you want to overwrite it.</p>
-<p>If you choose to overwrite the file, the tool overwrites it with new data. If you choose otherwise, you are asked to enter a different name for the file.</p></li>
-</ol>
-<p>After the data is successfully fetched, it is written to the specified file. The path to the file is displayed.</p>
-<h3><a class="anchor" aria-hidden="true" id="configuration-file"></a><a href="#configuration-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration file</h3>
-<p>To avoid manually entering information needed to run <code>gdc-catalog-export</code>, you can create a config file (the default name is <code>.gdcatalogrc</code>) in your project directory.</p>
-<p>You do not have to provide all the information in the config file. If any information is missing, the interactive interface will ask you to enter it, or you can provide it as parameters when invoking the tool.</p>
-<p>The structure of the <code>.gdcatalogrc</code> config file is as follows:</p>
-<pre><code class="hljs css language-javascript">{
-    <span class="hljs-string">"hostname"</span>: <span class="hljs-string">"https://secure.gooddata.com"</span>,
-    <span class="hljs-string">"username"</span>: <span class="hljs-string">"john.doe@example.com"</span>,
-    <span class="hljs-string">"password"</span>: <span class="hljs-string">"secret"</span>,
-    <span class="hljs-string">"projectId"</span>: <span class="hljs-string">"yourProjectId"</span>,
-    <span class="hljs-string">"output"</span>: <span class="hljs-string">"outputFile.json"</span>
+<li><p>The program searches the current directory for the <code>.gdcatalogrc</code> config file. If found, the program reads input parameters from this file.</p>
+<p>The configuration file must be in the JSON format. It can contain any or all parameters that you would normally provide on the command line:</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"hostname"</span>: <span class="hljs-string">"your.gooddata.hostname.com"</span>,
+    <span class="hljs-attr">"projectId"</span>: <span class="hljs-string">"your_gooddata_workspaceid"</span>,
+    <span class="hljs-attr">"username"</span>: <span class="hljs-string">"email"</span>,
+    <span class="hljs-attr">"password"</span>: <span class="hljs-string">"password"</span>,
+    <span class="hljs-attr">"output"</span>: <span class="hljs-string">"desired_file_name.ts|js|json"</span>
 }
 </code></pre>
-<ul>
-<li><strong>hostname</strong> is the server from which you want to obtain the data. The default is <code>https://secure.gooddata.com</code>.</li>
-<li><strong>username</strong> is your GoodData login username.</li>
-<li><strong>password</strong> is your GoodData login password.</li>
-</ul>
-<p><strong>Important!</strong>  We do not recommend that you store the password in the config file. A more secure option is to provide it through the interactive interface or by using the <code>--password</code> parameter when running the command.</p>
-<ul>
-<li><strong>projectId</strong> is the ID of the project from which you want to export the data.</li>
-<li><strong>output</strong> is the name/path for the output file.</li>
-</ul>
-<p>To provide a custom config file, run the tool with the <code>--config</code> parameter:</p>
-<pre><code class="hljs css language-bash">$ gdc-catalog-export--config/path/to/customConfig
-</code></pre>
-<h3><a class="anchor" aria-hidden="true" id="command-line-parameters"></a><a href="#command-line-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command line parameters</h3>
-<p>You can use command line parameters to set up the configuration that you need to obtain data.</p>
-<pre><code class="hljs css language-bash">$ gdc-catalog-export --project-id&lt;project-id&gt; --username &lt;your-email&gt; --password &lt;your-password&gt; --output &lt;file-name-path&gt; --hostname&lt;host-url&gt; --config &lt;/path/to/customConfig&gt;
-</code></pre>
-<p>Any parameter provided as a command line parameter has the highest priority. If you also use a config file to set up a configuration, the config file parameters are overridden and the command line parameters are used.</p>
-<p>To see all the available parameters, run the following command:</p>
-<pre><code class="hljs css language-bash">$ gdc-catalog-export -h
-</code></pre>
-<p>The command returns the list of the available parameters:</p>
-<pre><code class="hljs css language-bash">Usage: gdc-catalog-export [options]
-
-  Options:
-
-    -h, --<span class="hljs-built_in">help</span>          output usage information
-    -V, --version       output the version number
-    --project-id &lt;id&gt;   Project id <span class="hljs-keyword">for</span> <span class="hljs-built_in">which</span> you want to <span class="hljs-built_in">export</span> the catalog.
-    --username &lt;email&gt;  Your username that you use to <span class="hljs-built_in">log</span> <span class="hljs-keyword">in</span> to GoodData platform.
-    --password &lt;value&gt;  Your password that you use to <span class="hljs-built_in">log</span> <span class="hljs-keyword">in</span> to GoodData platform.
-    --output &lt;value&gt;    Output file (defaults to catalog.json). The output file will be created <span class="hljs-keyword">in</span> current working directory
-    --hostname &lt;url&gt;    Instance of GoodData platform. The default is https://secure.gooddata.com
-    --config &lt;path&gt;     Custom config file (default .gdcatalogrc)
-</code></pre>
+<p><strong>NOTE:</strong> TypeScript, JavaScript or JSON output files are generated based on the filename extension specified in the output parameter.</p></li>
+<li><p>The program reads input parameters from the command line. To learn more about the available parameters, run the following command:</p>
+<p><code>npx @gooddata/catalog-export --help</code></p>
+<p>Parameters provided via the command line take precedence over the corresponding parameters in the config file.</p></li>
+<li><p>If all required parameters are entered, the program runs and exports the metadata from the workspace. If any parameter is missing, the program will prompt you to enter it.</p>
+<p><strong>IMPORTANT!</strong> The program does not accept passwords via the command line. You can either put the password into <code>.gdcatalogrc</code> or enter it interactively. Do NOT save <code>.gdcatalogrc</code> in a version control system.</p></li>
+</ol>
 <h3><a class="anchor" aria-hidden="true" id="subsequent-catalog-exports"></a><a href="#subsequent-catalog-exports" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subsequent catalog exports</h3>
+<h4><a class="anchor" aria-hidden="true" id="typescript-and-javascript-representations"></a><a href="#typescript-and-javascript-representations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TypeScript and JavaScript representations</h4>
+<p>The catalog export will overwrite the generated files. If you need to modify the generated constants or add new LDM objects, do so through a layer of indirection: in a different file adjacent to the generated code.</p>
+<h4><a class="anchor" aria-hidden="true" id="json-representation"></a><a href="#json-representation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON representation</h4>
 <p>A catalog export maintains keys used in an existing catalog export JSON file. You can rename keys inside the following properties:</p>
 <ul>
-<li>visualizations</li>
-<li>measures</li>
-<li>attributes</li>
+<li>Visualizations</li>
+<li>Measures</li>
+<li>Attributes</li>
 <li>dateDataSets</li>
 <li>displayForms</li>
 </ul>
-<p>At the next run, <code>gdc-catalog-export</code> tries to resolve the new items from the server against the existing items, and do the following:</p>
+<p>At the next run, <code>@gooddata/catalog-export</code> tries to resolve the new items from the server against the existing items, and does the following:</p>
 <ul>
-<li>Preserve the existing keys by matching their identifier attributes</li>
-<li>Remove the keys that do not exist on the server</li>
-<li>Add the new keys from the server equal to their title property</li>
+<li>Preserves the existing keys by matching their identifier attributes</li>
+<li>Removes the keys that do not exist on the server</li>
+<li>Adds the new keys from the server equal to their title property</li>
 </ul>
 <p>In addition, the existing catalog file is renamed to <code>catalogue.json.bak</code>, and the last backup gets rewritten.</p>
-<h2><a class="anchor" aria-hidden="true" id="cataloghelper-utility"></a><a href="#cataloghelper-utility" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CatalogHelper utility</h2>
-<p>To access all the values in <code>catalog.json</code> easily, use the <code>CatalogHelper</code> utility.</p>
-<p>The utility is located in the <code>@gooddata/react-components</code> package.</p>
-<h3><a class="anchor" aria-hidden="true" id="using-the-cataloghelper-utility"></a><a href="#using-the-cataloghelper-utility" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the CatalogHelper utility</h3>
-<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { CatalogHelper } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/react-components'</span>;
-<span class="hljs-keyword">import</span> catalogJson <span class="hljs-keyword">from</span> <span class="hljs-string">'./catalog.json'</span>;
-
-<span class="hljs-keyword">const</span> C = <span class="hljs-keyword">new</span> CatalogHelper(catalogJson);
-<span class="hljs-keyword">const</span> revenueId = C.measure(<span class="hljs-string">'Revenue'</span>);
+<h3><a class="anchor" aria-hidden="true" id="recommendations"></a><a href="#recommendations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recommendations</h3>
+<ul>
+<li><p>Include <code>@gooddata/catalog-export</code> as a devDependency of your application and define an NPM script <code>refresh-ldm</code> to run the program.</p></li>
+<li><p>Do not import the constants directly. Instead, wrap the constants into a namespace as follows:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Ldm <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm/generatedFile"</span>;
+<span class="hljs-keyword">export</span> { Ldm };
+</code></pre></li>
+<li><p>Never modify the generated files.</p></li>
+<li><p>If you need to modify the generated constants or add new LDM objects, do so through a layer of indirection: in a different file adjacent to the generated code. For examples, look at our reference-workspace LDM and package.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="limitations"></a><a href="#limitations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Limitations</h3>
+<p><code>@gooddata/catalog-export</code> exports only data from a project (production data).</p>
+<p>If you <a href="https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project">uploaded data to your project from a file</a>, the data from the file is added as a separate dataset (non-production data), and <code>@gooddata/catalog-export</code> cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.</p>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<p>Attributes with multiple display forms (labels) are generated into a constant such as this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> City = {
+    <span class="hljs-comment">/**
+     * Display Form Title: city
+     * Display Form ID: label.uscities.city
+     */</span>
+    <span class="hljs-attr">Default</span>: newAttribute(<span class="hljs-string">"label.uscities.city"</span>),
+    <span class="hljs-comment">/**
+     * Display Form Title: location
+     * Display Form ID: label.uscities.city.location
+     */</span> Location: newAttribute(<span class="hljs-string">"label.uscities.city.location"</span>),
+};
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="api-reference"></a><a href="#api-reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API reference</h3>
-<p>The following definitions are written in TypeScript.</p>
-<p>The method parameters are written in the format: <code>&lt;parameter_name&gt;: &lt;parameter_type&gt;</code></p>
-<p>The optional parameters are marked with a question mark.</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CatalogHelper</span> </span>{
-  <span class="hljs-comment">// properties for accessing the original structure of supplied JSON file</span>
-  <span class="hljs-attr">measures</span>: {};
-  visualizations: {};
-  attributes: {};
-  dateDataSets: {};
-
-  <span class="hljs-comment">// supply exported json file as a js object</span>
-  <span class="hljs-keyword">constructor</span>(catalog: ICatalog);
-
-  // measure id and measure tag by its name
-  measure(name: string): string;
-  measureTags(name: string): string;
-
-  // visualization id and tag by its name
-  visualization(name: string): string;
-  visualizationTags(name: string): string;
-
-  // attribute id and tag by its name
-  attribute(attributeName: string): string;
-  attributeTags(attributeName: string): string;
-
-  // attribute's display form; When displayFormName not specified, default display form returned
-  attributeDisplayForm(attributeName: string, displayFormName?: string): string;
-  attributeDisplayFormTags(attributeName: string, displayFormName?: string): string;
-
-  // date data <span class="hljs-keyword">set</span> id and tag by its name
-  dateDataSet(dataSetName: string): string;
-  dateDataSetTags(dataSetName: string): string;
-
-  // data data <span class="hljs-keyword">set</span>'s attribute id and name (both names needed)
-  dateDataSetAttribute(dataSetName: string, attrName: string): string;
-  dateDataSetAttributeTags(dataSetName: string, attrName: string): string;
-
-  // data data <span class="hljs-keyword">set</span>'s attribute's default display form; or specific display form when displayFormName is <span class="hljs-keyword">set</span>
-  dateDataSetDisplayForm(dataSetName: string, attributeName: string, displayFormName?: string): string;
-  dateDataSetDisplayFormTags(dataSetName: string, attributeName: string, displayFormName?: string): string;
-}
+<p>Attributes with a single display form (label) are generated into a constant such as this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">/**
+ * Attribute Title: Location Resort
+ * Display Form ID: attr.restaurantlocation.locationresort
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> LocationResort = newAttribute(<span class="hljs-string">"label.restaurantlocation.locationresort"</span>);
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/arithmetic_measure.html"><span class="arrow-prev">← </span><span>Arithmetic Measure</span></a><a class="docs-next button" href="/gooddata-ui/docs/model_helpers.html"><span>Execution Model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installing-gdc-catalog-export">Installing gdc-catalog-export</a></li><li><a href="#using-gdc-catalog-export">Using gdc-catalog-export</a><ul class="toc-headings"><li><a href="#interactive-mode">Interactive mode</a></li><li><a href="#configuration-file">Configuration file</a></li><li><a href="#command-line-parameters">Command line parameters</a></li><li><a href="#subsequent-catalog-exports">Subsequent catalog exports</a></li></ul></li><li><a href="#cataloghelper-utility">CatalogHelper utility</a><ul class="toc-headings"><li><a href="#using-the-cataloghelper-utility">Using the CatalogHelper utility</a></li><li><a href="#api-reference">API reference</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/platform-trial/" id="developer-footer-platform-trial" class="nav-footer-link">Platform trial</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://stackoverflow.com/questions/tagged/gooddata" id="developer-footer-stackoverflow" class="nav-footer-link nav-footer-logo nav-footer-logo-stackoverflow" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2020 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+<p>MAQL metrics are generated into a constant such as this:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">/**
+ * Metric Title: $ Total Sales
+ * Metric ID: aa7ulGyKhIE5
+ * Metric Type: MAQL Metric
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> $TotalSales = newMeasure(<span class="hljs-string">"aa7ulGyKhIE5"</span>);
+<span class="hljs-comment">/**
+ * Metric Title: $ Franchise Fees
+ * Metric ID: aaEGaXAEgB7U
+ * Metric Type: MAQL Metric
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> $FranchiseFees = newMeasure(<span class="hljs-string">"aaEGaXAEgB7U"</span>);
+<span class="hljs-comment">/**
+ * Metric Title: $ Franchise Fees (Ad Royalty)
+ * Metric ID: aabHeqImaK0d
+ * Metric Type: MAQL Metric
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> $FranchiseFeesAdRoyalty = newMeasure(<span class="hljs-string">"aabHeqImaK0d"</span>);
+<span class="hljs-comment">/**
+ * Metric Title: $ Franchise Fees (Ongoing Royalty)
+ * Metric ID: aaWGcgnsfxIg
+ * Metric Type: MAQL Metric
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> $FranchiseFeesOngoingRoyalty = newMeasure(<span class="hljs-string">"aaWGcgnsfxIg"</span>);
+</code></pre>
+<p>For facts, <code>@gooddata/catalog-export</code> generates an object with keys for each supported aggregation:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">/**
+ * Fact Title: Cost
+ * Fact ID: fact.restaurantcostsfact.cost
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> Cost = {
+    <span class="hljs-comment">/**
+     * Fact Title: Cost
+     * Fact ID: fact.restaurantcostsfact.cost
+     * Fact Aggregation: sum
+     */</span>
+    <span class="hljs-attr">Sum</span>: newMeasure(<span class="hljs-string">"fact.restaurantcostsfact.cost"</span>, (m) =&gt; m.aggregation(<span class="hljs-string">"sum"</span>)),
+    <span class="hljs-comment">/**
+     * Fact Title: Cost
+     * Fact ID: fact.restaurantcostsfact.cost
+     * Fact Aggregation: count
+     */</span> Count: newMeasure(<span class="hljs-string">"fact.restaurantcostsfact.cost"</span>, (m) =&gt; m.aggregation(<span class="hljs-string">"count"</span>)),
+    <span class="hljs-comment">/**
+     * Fact Title: Cost
+     * Fact ID: fact.restaurantcostsfact.cost
+     * Fact Aggregation: avg
+     */</span> Avg: newMeasure(<span class="hljs-string">"fact.restaurantcostsfact.cost"</span>, (m) =&gt; m.aggregation(<span class="hljs-string">"avg"</span>)),
+    <span class="hljs-comment">/**
+     * Fact Title: Cost
+     * Fact ID: fact.restaurantcostsfact.cost
+     * Fact Aggregation: min
+     */</span> Min: newMeasure(<span class="hljs-string">"fact.restaurantcostsfact.cost"</span>, (m) =&gt; m.aggregation(<span class="hljs-string">"min"</span>)),
+    <span class="hljs-comment">/**
+     * Fact Title: Cost
+     * Fact ID: fact.restaurantcostsfact.cost
+     * Fact Aggregation: max
+     */</span> Max: newMeasure(<span class="hljs-string">"fact.restaurantcostsfact.cost"</span>, (m) =&gt; m.aggregation(<span class="hljs-string">"max"</span>)),
+    <span class="hljs-comment">/**
+     * Fact Title: Cost
+     * Fact ID: fact.restaurantcostsfact.cost
+     * Fact Aggregation: median
+     */</span> Median: newMeasure(<span class="hljs-string">"fact.restaurantcostsfact.cost"</span>, (m) =&gt; m.aggregation(<span class="hljs-string">"median"</span>)),
+    <span class="hljs-comment">/**
+     * Fact Title: Cost
+     * Fact ID: fact.restaurantcostsfact.cost
+     * Fact Aggregation: runsum
+     */</span> Runsum: newMeasure(<span class="hljs-string">"fact.restaurantcostsfact.cost"</span>, (m) =&gt; m.aggregation(<span class="hljs-string">"runsum"</span>)),
+};
+</code></pre>
+<p>For date datasets, <code>@gooddata/catalog-export</code> includes one constant per attribute. The date dimension name is the prefix of the constant name. Attributes with multiple display forms are generated as follows:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> TimelineMonth = {
+    <span class="hljs-comment">/**
+     * Display Form Title: Short (Jan) (Timeline)
+     * Display Form ID: timeline.abm81lMifn6q
+     */</span>
+    <span class="hljs-attr">Short</span>: newAttribute(<span class="hljs-string">"timeline.abm81lMifn6q"</span>),
+    <span class="hljs-comment">/**
+     * Display Form Title: Long (January) (Timeline)
+     * Display Form ID: timeline.abs81lMifn6q
+     */</span> Long: newAttribute(<span class="hljs-string">"timeline.abs81lMifn6q"</span>),
+    <span class="hljs-comment">/**
+     * Display Form Title: Number (M1) (Timeline)
+     * Display Form ID: timeline.abq81lMifn6q
+     */</span> <span class="hljs-built_in">Number</span>: newAttribute(<span class="hljs-string">"timeline.abq81lMifn6q"</span>),
+    <span class="hljs-comment">/**
+     * Display Form Title: M/Q (M1/Q1) (Timeline)
+     * Display Form ID: timeline.abo81lMifn6q
+     */</span> MQ: newAttribute(<span class="hljs-string">"timeline.abo81lMifn6q"</span>),
+};
+</code></pre>
+<p>Date dataset attributes that do not have multiple display forms are generated as follows:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> TimelineQuarterYear = newAttribute(<span class="hljs-string">"timeline.aci81lMifn6q"</span>);
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/analytical_backend_integration.html"><span class="arrow-prev">← </span><span>Connecting to an Analytical Backend</span></a><a class="docs-next button" href="/gooddata-ui/docs/model_helpers.html"><span>Execution Model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installing-gooddatacatalog-export">Installing @gooddata/catalog-export</a></li><li><a href="#using-gooddatacatalog-export">Using @gooddata/catalog-export</a><ul class="toc-headings"><li><a href="#subsequent-catalog-exports">Subsequent catalog exports</a></li><li><a href="#recommendations">Recommendations</a></li><li><a href="#limitations">Limitations</a></li><li><a href="#example">Example</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/platform-trial/" id="developer-footer-platform-trial" class="nav-footer-link">Platform trial</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://stackoverflow.com/questions/tagged/gooddata" id="developer-footer-stackoverflow" class="nav-footer-link nav-footer-logo nav-footer-logo-stackoverflow" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2020 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
@@ -226,6 +261,6 @@
                 apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
                 indexName: 'gooddata',
                 inputSelector: '#search_input_react',
-                algoliaOptions: {"facetFilters":["version:7.8.0"]}
+                algoliaOptions: {"facetFilters":["version:8.0.0"]}
               });
             </script></body></html>
