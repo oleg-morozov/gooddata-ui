@@ -73,7 +73,7 @@
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
-    <span class="hljs-attr">identifier</span>=<span class="hljs-string">"&lt;visualization-identifier&gt;"</span>
+    <span class="hljs-attr">insight</span>=<span class="hljs-string">"&lt;visualization-identifier&gt;"</span>
     <span class="hljs-attr">onExportReady</span>=<span class="hljs-string">{(getExportedData)</span> =&gt;</span> { /* hold onto function and call to do export as needed */ }}
 /&gt;
 </span></code></pre>
@@ -109,7 +109,7 @@
         <span class="hljs-keyword">return</span> (
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">367</span> }}&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
-                    <span class="hljs-attr">identifier</span>=<span class="hljs-string">"&lt;visualization-identifier&gt;"</span>
+                    <span class="hljs-attr">insight</span>=<span class="hljs-string">"&lt;visualization-identifier&gt;"</span>
                     <span class="hljs-attr">onExportReady</span>=<span class="hljs-string">{this.onExportReady}</span>
                 /&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"button button-secondary"</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.doExport}</span>&gt;</span>Export<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
