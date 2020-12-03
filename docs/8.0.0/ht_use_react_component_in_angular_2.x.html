@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Use Angular 9+ · GoodData.UI</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="To be able to use the visual components in your Angular 9+ environment, wrap each component into an Angular component, and then render the React component using `ReactDom.render` inside."/><meta name="docsearch:version" content="8.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Use Angular 9+ · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="To be able to use the visual components in your Angular 9+ environment, wrap each component into an Angular component, and then render the React component using `ReactDom.render` inside."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://developer.gooddata.com/data-integration" target="_self">Data Integration</a></li><li class=""><a href="https://developer.gooddata.com/api-and-sdks" target="_self">API &amp; SDKs</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Development Tips</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/supported_versions.html">Supported Versions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/framework_overview.html">Architecture Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/ht_create_your_first_visualization_toolkit.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/ht_create_your_first_visualization.html">Create Your First Application from Scratch</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/analytical_backend_integration.html">Connecting to an Analytical Backend</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/gdc_catalog_export.html">Export Catalog</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/model_helpers.html">Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/afm.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/result_specification.html">Specify the Result Structure</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/execute_component.html">Execute an API Call</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/execution_rest_api_and_result.html">Execution Response and Execution Result</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/cors.html">Deal with Cross-Origin Issues</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/8.0.0/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/ht_create_predicates.html">Create Header Predicates</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.0.0/live_examples.html">Live Examples</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Use Angular 9+</h1></header><article><div><span><p>To be able to use the visual components in your Angular 9+ environment, wrap each component into an Angular component, and then render the React component using <code>ReactDom.render</code> inside.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-1-install-dependencies"></a><a href="#step-1-install-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 1. Install dependencies.</h2>
+<!--
+    For GDC developer:
+    - Install ng cli using `npm install -g @angular/cli` or `yarn global add @angular/cli` and create angular app with `ng new my-sba-app`.
+    - Add proxy.conf.json:
+        ```
+        {
+          "/gdc": {
+            "changeOrigin": true,
+            "cookieDomainRewrite": "localhost",
+            "secure": false,
+            "target": "https://secure.gooddata.com/",
+            "headers": {
+              "host": "developer.na.gooddata.com",
+              "origin": null
+            }
+          },
+          "/account.html": {
+            "changeOrigin": true,
+            "secure": false,
+            "target": "https://secure.gooddata.com/"
+          },
+          "/packages": {
+            "changeOrigin": true,
+            "secure": false,
+            "target": "https://secure.gooddata.com/"
+          }
+        }
+        ```
+    - generate SSL cert: openssl req -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 -out domain.crt
+    - run devserver: ng serve --proxy-config proxy.conf.json --ssl true --ssl-key domain.key --ssl-cert domain.crt
+    - open https://localhost:4200/account.html
+    - add KpiComponent to app.module.ts section NgModule.declarations
+ -->
+<p>Install the latest dependencies using either <code>npm</code> or <code>yarn</code>. Your application must be able to render React components from <code>@gooddata/sdk-ui-all</code> using a unique ID (<code>uuid</code>), and you also must be able to issue an <code>invariant</code> exception if the DOM node is not available.</p>
+<pre><code class="hljs css language-bash">npm install --save uuid invariant react@^16.8.0 react-dom@^16.8.0 @gooddata/sdk-ui-all @gooddata/sdk-backend-bear
+npm install --save-dev @types/react @types/react-dom
+</code></pre>
+<p>or</p>
+<pre><code class="hljs css language-bash">yarn add uuid invariant react@^16.8.0 react-dom@^16.8.0 @gooddata/sdk-ui-all @gooddata/sdk-backend-bear
+yarn add --dev @types/react @types/react-dom
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="step-2-update-the-global-configuration"></a><a href="#step-2-update-the-global-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 2. Update the global configuration</h2>
+<p>Update your configuration to be able to use GoodData.UI in Angular:</p>
+<ol>
+<li>Add <code>(window as any).global = window;</code> to <code>polyfills.ts</code> due to missing <code>global</code>.</li>
+<li>Add <code>&quot;skipLibCheck&quot;: true</code> to your <code>tsconfig.json</code> to avoid misleading errors during compilation.</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="step-3-declare-the-angular-wrapper-component"></a><a href="#step-3-declare-the-angular-wrapper-component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3. Declare the Angular wrapper component.</h2>
+<p>The Angular wrapper component renders a React component and re-renders it on a property change.</p>
+<p>The component wrapper must be able to render React components imported from <code>@gooddata/sdk-ui-all</code>.
+You can import any supported components from the package, and then either put them together using multiple <code>React.createElement</code> functions, or make an abstract wrapper component that accepts a React component reference as a parameter.</p>
+<p>The following examples are using a single KPI component:</p>
+<p><strong>kpi.component.ts</strong>:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">"react-dom"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> uuid <span class="hljs-keyword">from</span> <span class="hljs-string">"uuid"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> invariant <span class="hljs-keyword">from</span> <span class="hljs-string">"invariant"</span>;
+
+<span class="hljs-keyword">import</span> {
+  Component,
+  Input,
+  OnInit,
+  OnDestroy,
+  OnChanges,
+  AfterViewInit,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">"@angular/core"</span>;
+<span class="hljs-keyword">import</span> { Kpi, IKpiProps, newMeasure } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-all"</span>;
+<span class="hljs-keyword">import</span> bearFactory, {
+  ContextDeferredAuthProvider,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-backend-bear"</span>;
+
+<span class="hljs-comment">// Just for illustration, you would probably create this once in your app and import here</span>
+<span class="hljs-keyword">const</span> backend = bearFactory().withAuthentication(
+  <span class="hljs-keyword">new</span> ContextDeferredAuthProvider()
+);
+
+@Component({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">"app-kpi"</span>,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;span [id]="rootDomID"&gt;&lt;/span&gt;'</span>,
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KpiComponent</span>
+  <span class="hljs-title">implements</span> <span class="hljs-title">OnInit</span>, <span class="hljs-title">OnDestroy</span>, <span class="hljs-title">OnChanges</span>, <span class="hljs-title">AfterViewInit</span> </span>{
+  @Input() measureId: string;
+  @Input() format: string;
+  @Input() workspace: string;
+  @Input() filters: any[];
+  @Input() onLoadingChanged?: any;
+  @Input() onError?: any;
+
+  public rootDomID: string;
+
+  protected getRootDomNode() {
+    <span class="hljs-keyword">const</span> node = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-keyword">this</span>.rootDomID);
+    invariant(node, <span class="hljs-string">`Node '<span class="hljs-subst">${<span class="hljs-keyword">this</span>.rootDomID}</span>' not found!`</span>);
+    <span class="hljs-keyword">return</span> node;
+  }
+
+  protected getProps(): IKpiProps {
+    <span class="hljs-keyword">const</span> {
+      workspace,
+      measureId,
+      filters,
+      format,
+      onLoadingChanged,
+      onError,
+    } = <span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">return</span> {
+      workspace,
+      <span class="hljs-attr">measure</span>: newMeasure(measureId, (m) =&gt; m.format(format)),
+      filters,
+      onLoadingChanged,
+      onError,
+      backend,
+    };
+  }
+
+  private isMounted(): boolean {
+    <span class="hljs-keyword">return</span> !!<span class="hljs-keyword">this</span>.rootDomID;
+  }
+
+  protected render() {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isMounted()) {
+      ReactDOM.render(
+        React.createElement(Kpi, <span class="hljs-keyword">this</span>.getProps()),
+        <span class="hljs-keyword">this</span>.getRootDomNode()
+      );
+    }
+  }
+
+  ngOnInit() {
+    <span class="hljs-keyword">this</span>.rootDomID = uuid.v1();
+  }
+
+  ngOnChanges() {
+    <span class="hljs-keyword">this</span>.render();
+  }
+
+  ngAfterViewInit() {
+    <span class="hljs-keyword">this</span>.render();
+  }
+
+  ngOnDestroy() {
+    <span class="hljs-comment">// Uncomment if Angular issue that ngOnDestroy is called AFTER DOM node removal is resolved</span>
+    <span class="hljs-comment">// ReactDOM.unmountComponentAtNode(this.getRootDomNode())</span>
+  }
+}
+</code></pre>
+<p>If you want to render some charts, do the following:</p>
+<ol>
+<li><p>Use a root dom node with the size defined:</p>
+<p><strong>columnchart.component.ts</strong>:</p>
+<pre><code class="hljs css language-javascript">...
+
+import { ColumnChart } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-all"</span>;
+
+...
+
+@Component({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">"app-column-chart"</span>,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div style="height: 300px" [id]="rootDomID"&gt;&lt;/div&gt;'</span>
+})
+
+...
+}
+</code></pre></li>
+<li><p>Import the <code>main.css</code> file from <code>@gooddata/react-components</code> to your global styles:</p>
+<p><strong>styles.css</strong>:</p>
+<pre><code class="hljs css language-css"><span class="hljs-keyword">@import</span> <span class="hljs-string">"@gooddata/sdk-ui-charts/styles/css/main.css"</span>;
+</code></pre>
+<p>or</p>
+<p><strong>angular.json</strong>:</p>
+<pre><code class="hljs css language-json">{
+  ...
+  "architect": {
+      "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+
+            "styles": [
+              "src/styles.css",
+              "node_modules/@gooddata/sdk-ui-charts/styles/css/main.css"
+            ],
+            "scripts": []
+          },
+          ...
+      }
+  ...
+}
+
+</code></pre></li>
+</ol>
+<p><strong>NOTE:</strong> If you are using the Pivot Table component, import the <code>pivotTable.css</code> file into your global styles from <code>@gooddata/sdk-ui-pivot/styles/css/main.css</code>. For more details about importing global styles in an Angular app, see the <a href="https://angular.io/guide/workspace-config#styles-and-scripts-configuration">Angular documentation</a>.</p>
+<p><strong>Important!</strong> When this article was last updated, there was an <a href="https://github.com/angular/angular/issues/14252">outstanding issue in Angular</a>. <code>ngOnDestroy</code> is called <strong>after</strong> a DOM node has already been removed. Not calling <code>ReactDOM.unmountComponentAtNode(this.getRootDomNode())</code> results in memory leaks.</p>
+<p>Verify whether the issue is present in your version of Angular. If not, uncomment the commented-out line in <code>ngOnDestroy</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-4-use-the-component"></a><a href="#step-4-use-the-component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 4. Use the component.</h2>
+<p>You are now ready to use the GoodData React components in your Angular app.</p>
+<p>You can use wrapped components across your app, pass the component props to it, and even update them using data-binding.</p>
+<pre><code class="hljs css language-javascript">&lt;app-kpi workspace="xms7ga4tf3g3nzucd8380o2bev8oeknp" measureId="aaEGaXAEgB7U"&gt;&lt;/app-kpi&gt;
+</code></pre>
+<p>If you want to handle the loading and error content yourself and you do not want to use the default LoadingComponent and ErrorComponent, pass a null explicitly:</p>
+<ul>
+<li><code>LoadingComponent={null}</code></li>
+<li><code>ErrorComponent={null}</code></li>
+</ul>
+<p>For more information about including React components in Angular, see <a href="https://www.packtpub.com/books/content/integrating-angular-2-react">https://www.packtpub.com/books/content/integrating-angular-2-react</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/8.0.0/ht_render_visualization_from_different_domain.html"><span class="arrow-prev">← </span><span>Access Multiple Domains and Projects</span></a><a class="docs-next button" href="/gooddata-ui/docs/8.0.0/ht_create_predicates.html"><span>Create Header Predicates</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#step-1-install-dependencies">Step 1. Install dependencies.</a></li><li><a href="#step-2-update-the-global-configuration">Step 2. Update the global configuration</a></li><li><a href="#step-3-declare-the-angular-wrapper-component">Step 3. Declare the Angular wrapper component.</a></li><li><a href="#step-4-use-the-component">Step 4. Use the component.</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2020 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.0.0"]}
+              });
+            </script></body></html>

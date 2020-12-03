@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Theme Provider · GoodData.UI</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The **Theme Provider component** allows you to customize the visual style of your dashboards by applying a theme."/><meta name="docsearch:version" content="8.1.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Theme Provider · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="The **Theme Provider component** allows you to customize the visual style of your dashboards by applying a theme."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.1.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://developer.gooddata.com/data-integration" target="_self">Data Integration</a></li><li class=""><a href="https://developer.gooddata.com/api-and-sdks" target="_self">API &amp; SDKs</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Visual Components</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/supported_versions.html">Supported Versions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/framework_overview.html">Architecture Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_your_first_visualization_toolkit.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_your_first_visualization.html">Create Your First Application from Scratch</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/analytical_backend_integration.html">Connecting to an Analytical Backend</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/gdc_catalog_export.html">Export Catalog</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/model_helpers.html">Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/afm.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/result_specification.html">Specify the Result Structure</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/execution_rest_api_and_result.html">Execution Response and Execution Result</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/cors.html">Deal with Cross-Origin Issues</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_predicates.html">Create Header Predicates</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Theme Provider</h1></header><article><div><span><p>The <strong>Theme Provider component</strong> allows you to customize the visual style of your dashboards by applying a theme.</p>
+<p>To be able to use the Theme Provider component, set up the <code>backend</code> and <code>workspace</code> properties in your application (see <a href="/gooddata-ui/docs/analytical_backend_integration.html#initial-setup">Connecting to an Analytical Backend</a>).</p>
+<p><strong>NOTE:</strong> Always use the Theme Provider component in the root of your application. A theme is applied globally to everything on a page. When you wrap one visual component with a <code>ThemeProvider</code>, everything else will also be themed despite not being wrapped with the <code>ThemeProvider</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-the-theme-provider-component-with-backend-and-workspace-providers"></a><a href="#using-the-theme-provider-component-with-backend-and-workspace-providers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the Theme Provider component with backend and workspace providers</h3>
+<p>When using the Theme Provider component with backend and workspace providers, you do not need to specify any additional props for Theme Provider.</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { BackendProvider, WorkspaceProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui"</span>;
+<span class="hljs-keyword">import</span> { ThemeProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-theme-provider"</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BackendProvider</span> <span class="hljs-attr">backend</span>=<span class="hljs-string">{backend}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">WorkspaceProvider</span> <span class="hljs-attr">workspace</span>=<span class="hljs-string">"your-project-id"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ThemeProvider</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Application</span> {<span class="hljs-attr">...</span>}&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ThemeProvider</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">WorkspaceProvider</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">BackendProvider</span>&gt;</span>
+</span></code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-the-theme-provider-component-without-backend-and-workspace-providers"></a><a href="#using-the-theme-provider-component-without-backend-and-workspace-providers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the Theme Provider component without backend and workspace providers</h3>
+<p>When using the Theme Provider component without backend and workspace providers, you have to pass the <code>backend</code> and <code>workspace</code> props to Theme Provider.</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { ThemeProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-theme-provider"</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ThemeProvider</span> <span class="hljs-attr">backend</span>=<span class="hljs-string">{backend}</span> <span class="hljs-attr">workspace</span>=<span class="hljs-string">"your-project-id"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Application</span> {<span class="hljs-attr">...</span>}&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ThemeProvider</span>&gt;</span>
+</span></code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-the-theme-provider-component-with-a-custom-theme"></a><a href="#using-the-theme-provider-component-with-a-custom-theme" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the Theme Provider component with a custom theme</h3>
+<p>You can create properties of a custom theme, and pass the theme to the <code>ThemeProvider</code> that you added to your application (for all available properties, see <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-backend-spi/src/workspace/styling/theme.ts#L178">the declaration of ITheme</a>).</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { ThemeProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-theme-provider"</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ThemeProvider</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">{customTheme}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Application</span> {<span class="hljs-attr">...</span>}/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ThemeProvider</span>&gt;</span></span>
+
+</code></pre>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { ITheme } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-backend-spi"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> customTheme: ITheme = {
+  <span class="hljs-attr">button</span>: {
+    <span class="hljs-attr">borderRadius</span>: <span class="hljs-string">"15"</span>,
+    <span class="hljs-attr">dropShadow</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">textCapitalization</span>: <span class="hljs-literal">true</span>,
+  },
+  <span class="hljs-attr">modal</span>: {
+    <span class="hljs-attr">borderColor</span>: <span class="hljs-string">"#1b4096"</span>,
+    <span class="hljs-attr">borderRadius</span>: <span class="hljs-string">"5"</span>,
+    <span class="hljs-attr">borderWidth</span>: <span class="hljs-string">"2"</span>,
+    <span class="hljs-attr">dropShadow</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">outsideBackgroundColor</span>: <span class="hljs-string">"#e8cda2"</span>,
+    <span class="hljs-attr">title</span>: {
+      <span class="hljs-attr">color</span>: <span class="hljs-string">"#1b4096"</span>,
+      <span class="hljs-attr">lineColor</span>: <span class="hljs-string">"#000"</span>,
+    },
+  },
+  <span class="hljs-attr">palette</span>: {
+    <span class="hljs-attr">error</span>: {
+      <span class="hljs-attr">base</span>: <span class="hljs-string">"#ff2e5f"</span>,
+    },
+    <span class="hljs-attr">primary</span>: {
+      <span class="hljs-attr">base</span>: <span class="hljs-string">"#eba12a"</span>,
+    },
+    <span class="hljs-attr">success</span>: {
+      <span class="hljs-attr">base</span>: <span class="hljs-string">"#13ed4d"</span>,
+    },
+    <span class="hljs-attr">warning</span>: {
+      <span class="hljs-attr">base</span>: <span class="hljs-string">"#ddff19"</span>,
+    },
+  },
+  <span class="hljs-attr">tooltip</span>: {
+    <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">"#101050"</span>,
+    <span class="hljs-attr">color</span>: <span class="hljs-string">"#fff"</span>,
+  },
+  <span class="hljs-attr">typography</span>: {
+    <span class="hljs-attr">font</span>:
+      <span class="hljs-string">"url(https://cdn.jsdelivr.net/npm/roboto-font@0.1.0/fonts/Roboto/roboto-regular-webfont.ttf)"</span>,
+    <span class="hljs-attr">fontBold</span>:
+      <span class="hljs-string">"url(https://cdn.jsdelivr.net/npm/roboto-font@0.1.0/fonts/Roboto/roboto-bold-webfont.ttf)"</span>,
+  },
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { ThemeProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-theme-provider"</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ThemeProvider</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">BubbleHoverTrigger</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+        <span class="hljs-attr">tagName</span>=<span class="hljs-string">"span"</span>
+        <span class="hljs-attr">value</span>=<span class="hljs-string">"Hover over this link..."</span>
+        <span class="hljs-attr">className</span>=<span class="hljs-string">"gd-button-link"</span>
+      /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Bubble</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"bubble-primary"</span>&gt;</span>
+        This is bubble content.
+        <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Click here!"</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"gd-button-positive"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Bubble</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">BubbleHoverTrigger</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ThemeProvider</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/start_with_visual_components.html"><span class="arrow-prev">← </span><span>Start with Visual Components</span></a><a class="docs-next button" href="/gooddata-ui/docs/area_chart_component.html"><span>Area Chart</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2020 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.1.0"]}
+              });
+            </script></body></html>
