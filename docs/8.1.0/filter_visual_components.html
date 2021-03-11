@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Filter Visual Components · GoodData.UI</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This article provides examples of filtering visual components by attribute, date, and measure values."/><meta name="docsearch:version" content="8.1.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Filter Visual Components · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="This article provides examples of filtering visual components by attribute, date, and measure values."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.1.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://developer.gooddata.com/data-integration" target="_self">Data Integration</a></li><li class=""><a href="https://developer.gooddata.com/api-and-sdks" target="_self">API &amp; SDKs</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Development Tips</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/supported_versions.html">Supported Versions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/framework_overview.html">Architecture Overview</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/ht_create_your_first_visualization_toolkit.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/ht_create_your_first_visualization.html">Create Your First Application from Scratch</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/analytical_backend_integration.html">Connecting to an Analytical Backend</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/gdc_catalog_export.html">Export Catalog</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/model_helpers.html">Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/afm.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/result_specification.html">Specify the Result Structure</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/execution_rest_api_and_result.html">Execution Response and Execution Result</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/cors.html">Deal with Cross-Origin Issues</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/table_totals.html">Specify Table Totals</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/8.1.0/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/ht_create_predicates.html">Create Header Predicates</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.1.0/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Filter Visual Components</h1></header><article><div><span><p>This article provides examples of filtering visual components by attribute, date, and measure values.</p>
+<p>All visualization components can be filtered using the <code>filters</code> prop. The <code>filters</code> prop is an array of attribute
+filters and date filters. You can make the filters dynamic with the <a href="/gooddata-ui/docs/8.1.0/attribute_filter_component.html"><code>AttributeFilter</code></a>,
+<a href="/gooddata-ui/docs/8.1.0/create_custom_attribute_filter.html"><code>AttributeElements</code></a>,
+<a href="/gooddata-ui/docs/8.1.0/date_filter_component.html"><code>DateFilter</code></a>,
+<a href="/gooddata-ui/docs/8.1.0/measure_value_filter_component.html"><code>MeasureValueFilterDropdown</code></a>, and
+<a href="/gooddata-ui/docs/8.1.0/ranking_filter_component.html"><code>RankingFilterDropdown</code></a> components.</p>
+<p>Both global filters and filters set on measures are always interpreted as an intersection of all individual
+filters (<code>f1 AND f2 AND f3...)</code>.</p>
+<p>You can conveniently create all the filters described here using the factory functions exported by the <code>@gooddata/sdk-model</code> package.</p>
+<h2><a class="anchor" aria-hidden="true" id="attribute-filter"></a><a href="#attribute-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attribute filter</h2>
+<p>All filters are defined using the <code>displayForm</code> identifiers. Attribute filters (both <code>positiveAttributeFilter</code> and <code>negativeAttributeFilter</code>) can be defined to match attribute elements by their value (this is the default) or by their URI - essentially a primary key.</p>
+<p>When using text filters, remember to escape special characters <code>&quot;</code> and <code>\</code>. If you want to filter out this exact string: <code>Foo\&quot;</code>, enter it as <code>'Foo\\&quot;'</code> or <code>&quot;Foo\\\&quot;&quot;</code>, which will result in <code>&quot;Foo\\\&quot;&quot;</code>.
+The browser will send <code>&quot;Foo\\\&quot;&quot;</code> to the server where <code>&quot;Foo\\\&quot;&quot;</code> will be queried as <code>Foo\&quot;</code>.</p>
+<p><strong>NOTE:</strong> Single quotes and double quotes behave differently while escaping characters.</p>
+<h3><a class="anchor" aria-hidden="true" id="positive-attribute-filter"></a><a href="#positive-attribute-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Positive attribute filter</h3>
+<p>A <strong>positive attribute filter</strong> lists only those items whose attribute elements match the <code>inElements</code> array.
+Use the <code>newPositiveAttributeFilter</code> factory function to create a new positive attribute filter:</p>
+<pre><code class="hljs css language-javascript">newPositiveAttributeFilter(displayFormId, inElements)
+</code></pre>
+<p>where:</p>
+<ul>
+<li><p><code>displayFormId</code> is the identifier of the display form to filter by. You can specify the identifier explictly as a string
+or pass an instance of <code>IAttribute</code> generated by <a href="/gooddata-ui/docs/8.1.0/gdc_catalog_export.html">catalog-export</a>.</p></li>
+<li><p><code>inElements</code> is either an array of attribute element values to filter by or an object such as <code>{uris: [&lt;uri-1&gt;, &lt;uri-2&gt;, ...]}</code>
+containing the URI of the attribute element URIs.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="negative-attribute-filter"></a><a href="#negative-attribute-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Negative attribute filter</h3>
+<p>A <strong>negative attribute filter</strong> lists only those items whose attribute elements are <em>not</em> included in the <code>notInElements</code> array.
+Use the <code>newNegativeAttributeFilter</code> factory function to create a new negative attribute filter:</p>
+<pre><code class="hljs css language-javascript">newNegativeAttributeFilter(displayFormId, notInElements)
+</code></pre>
+<p>where:</p>
+<ul>
+<li><p><code>displayFormId</code> is the identifier of the display form to filter by. You can specify the identifier explicitly as a string
+or pass an instance of <code>IAttribute</code> generated by <a href="/gooddata-ui/docs/8.1.0/gdc_catalog_export.html">catalog-export</a>.</p></li>
+<li><p><code>notInElements</code> is either an array of attribute element values to filter by or an object such as <code>{uris: [&lt;uri-1&gt;, &lt;uri-2&gt;, ...]}</code> containing the URI of the attribute element URIs.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="date-filter"></a><a href="#date-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Date filter</h2>
+<h3><a class="anchor" aria-hidden="true" id="absolute-date-filter"></a><a href="#absolute-date-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Absolute date filter</h3>
+<p>An <strong>absolute date filter</strong> shows data that falls within a defined time range. Use the <code>newAbsoluteDateFilter</code> factory
+functions to create a new absolute date filter:</p>
+<pre><code class="hljs css language-javascript">newAbsoluteDateFilter(dateDataSet, <span class="hljs-keyword">from</span>, to)
+</code></pre>
+<p>where:</p>
+<ul>
+<li><code>dateDataSet</code> is the identifier of date dataset to use for filtering.</li>
+<li><code>from</code> is the start date in the format <code>YYYY-MM-DD</code>.</li>
+<li><code>to</code> is the end date in the format <code>YYYY-MM-DD</code>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="relative-date-filter"></a><a href="#relative-date-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Relative date filter</h3>
+<p>A <strong>relative date filter</strong> shows data that falls within a time range defined relatively to the current date. Filter granularity (<code>granularity</code>) defines how a time range can be broken down to smaller time units (week, month, quarter, and so on).</p>
+<p><code>granularity</code> can be set to:</p>
+<table>
+<thead>
+<tr><th style="text-align:left">Value</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><code>&quot;GDC.time.date&quot;</code></td><td style="text-align:left">Days</td></tr>
+<tr><td style="text-align:left"><code>&quot;GDC.time.week&quot;</code></td><td style="text-align:left">Weeks starting on Monday</td></tr>
+<tr><td style="text-align:left"><code>&quot;GDC.time.week_us&quot;</code></td><td style="text-align:left">Weeks starting on Sunday</td></tr>
+<tr><td style="text-align:left"><code>&quot;GDC.time.month&quot;</code></td><td style="text-align:left">Months</td></tr>
+<tr><td style="text-align:left"><code>&quot;GDC.time.quarter&quot;</code></td><td style="text-align:left">Quarters of a year</td></tr>
+<tr><td style="text-align:left"><code>&quot;GDC.time.year&quot;</code></td><td style="text-align:left">Years</td></tr>
+</tbody>
+</table>
+<p>The <code>from</code> and <code>to</code> properties set the number of granularity units (for example, weeks) before or after the current date. That is, <code>from</code> and <code>to</code>  define the filter range.</p>
+<ul>
+<li><code>0</code> for the current day, week, month, quarter, or year (depending on the chosen granularity)</li>
+<li><code>-1</code> for the previous period</li>
+<li><code>-n</code> for the <em>n</em>th previous period</li>
+</ul>
+<p>Use the <code>newRelativeDateFilter</code> factory functions to create a new relative attribute filter:</p>
+<pre><code class="hljs css language-javascript">newRelativeDateFilter(dateDataSet, granularity, <span class="hljs-keyword">from</span>, to);
+</code></pre>
+<p>where:</p>
+<ul>
+<li><code>dateDataSet</code> is the identifier of date data set to use for filtering.</li>
+<li><code>granularity</code> is one of the supported values.</li>
+<li><code>from</code> is the relative start time.</li>
+<li><code>to</code> is the relative end time.</li>
+</ul>
+<p><strong>NOTE:</strong> If you use date filters by <em>weeks</em> and compare the data to the <a href="/gooddata-ui/docs/8.1.0/time_over_time_comparison.html">previous period or the same period of the last year</a> in those filters, you have to enable the GoodData platform to properly process such week filters. To do so, complete the following steps:</p>
+<ol>
+<li><p>Switch the version of the <a href="https://help.gooddata.com/display/doc/XAE+-+Extensible+Analytics+Engine">Extensible Analytics Engine</a> to 3.</p>
+<p>To do so, set the <code>xae_version</code> platform setting to 3 (see <a href="https://help.gooddata.com/display/doc/Configure+Various+Features+via+Platform+Settings">Configure Various Features via Platform Settings</a>).</p></li>
+<li><p>Migrate the Date datasets in your project to the <code>urn:custom_v2:date</code> date dimension.</p>
+<p>To do so, see &quot;Migrate from a Legacy Date Dimension to urn:custom_v2:date&quot; in <a href="https://help.gooddata.com/display/doc/Custom+Calendars+-+Self+Service">Custom Calendars - Self Service</a>.</p></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="relative-filter-examples"></a><a href="#relative-filter-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Relative filter examples</h3>
+<p><strong>Last 7 days (yesterday and 6 days before):</strong></p>
+<pre><code class="hljs css language-javascript">newRelativeDateFilter(<span class="hljs-string">"&lt;date-dataset-identifier&gt;"</span>, <span class="hljs-string">"GDC.time.date"</span>, <span class="hljs-number">-7</span>, <span class="hljs-number">-1</span>);
+</code></pre>
+<p><strong>Last 12 months including the current month</strong></p>
+<pre><code class="hljs css language-javascript">newRelativeDateFilter(<span class="hljs-string">"&lt;date-dataset-identifier&gt;"</span>, <span class="hljs-string">"GDC.time.month"</span>, <span class="hljs-number">-11</span>, <span class="hljs-number">0</span>);
+</code></pre>
+<p><strong>Last quarter only</strong></p>
+<pre><code class="hljs css language-javascript">newRelativeDateFilter(<span class="hljs-string">"&lt;date-dataset-identifier&gt;"</span>, <span class="hljs-string">"GDC.time.quarter"</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="filter-by-a-measure-value"></a><a href="#filter-by-a-measure-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter by a measure value</h2>
+<p>You can filter a visualization by the value of a measure. You can filter only the measures that are present in the visualization, on the granularity defined by the attributes in the visualization.</p>
+<blockquote>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>The numbers rendered by a visualization are often rounded up/down. However, filters are applied to the original exact numbers (those before rounding), and that may lead to unexpected results. For example, the number <code>400.01</code> rounded to a whole number would be <code>400</code>, but it will still be included in the visualization with a filter that filters out the values smaller than or equal to <code>400</code>.</li>
+<li>A <a href="/gooddata-ui/docs/8.1.0/table_totals.html">rollup total</a> is not supported in visualizations with measure value filters. Such visualizations are not rendered, and the error message is shown instead.</li>
+</ul>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="filtering-by-comparing-a-measure-value-to-a-specific-value"></a><a href="#filtering-by-comparing-a-measure-value-to-a-specific-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filtering by comparing a measure value to a specific value</h3>
+<p>When you filter a measure by comparing its value to some predefined value, the filter shows only the data whose measure matches a comparison condition.</p>
+<p>You can create comparative measure value filters using the <code>newMeasureValueFilter</code> factory function:</p>
+<pre><code class="hljs css language-javascript">newMeasureValueFilter(measureOrLocalId, operator, value, treatNullValuesAs)
+</code></pre>
+<p>where:</p>
+<ul>
+<li><p><code>measureOrLocalId</code> is <code>localIdentifier</code> of the measure to filter. You can specify the localIdentifier explicitly or
+pass an instance of measure and the factory will extract the localIdentifier for you.</p></li>
+<li><p><code>operator</code> is one of the following:</p>
+<ul>
+<li><code>&quot;GREATER_THAN&quot;</code>: The measure value is greater than <code>value</code>.</li>
+<li><code>&quot;GREATER_THAN_OR_EQUAL_TO&quot;</code>: The measure value is greater than <code>value</code> or equal to <code>value</code>.</li>
+<li><code>&quot;LESS_THAN&quot;</code>: The measure value is less than <code>value</code>.</li>
+<li><code>&quot;LESS_THAN_OR_EQUAL_TO&quot;</code>: The measure value is less than <code>value</code> or equal to <code>value</code>.</li>
+<li><code>&quot;EQUAL_TO&quot;</code>: The measure value is equal to <code>value</code>.</li>
+<li><code>&quot;NOT_EQUAL_TO&quot;</code>: The measure value is not equal to <code>value</code>.</li>
+</ul></li>
+<li><p><code>value</code> is the measure value to filter against.</p></li>
+<li><p><code>treatNullValuesAs</code> is optional; by default, any filter condition filters out null values. If you want a filter
+condition to treat null values as a number and to include them in the filtering process, use this parameter.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="filtering-by-comparing-a-measure-value-to-a-value-range"></a><a href="#filtering-by-comparing-a-measure-value-to-a-value-range" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filtering by comparing a measure value to a value range</h3>
+<p>When you filter a measure by comparing its value against some predefined range of values, the filter shows only the data whose measure matches a range condition.</p>
+<p>You can create comparative measure value filters using the <code>newMeasureValueFilter</code> factory function:</p>
+<pre><code class="hljs css language-javascript">newMeasureValueFilter(measureOrLocalId, operator, <span class="hljs-keyword">from</span>, to, treatNullValuesAs)
+</code></pre>
+<p>where:</p>
+<ul>
+<li><p><code>measureOrLocalId</code> is <code>localIdentifier</code> of the measure to filter. You can specify <code>localIdentifier</code> explicitly or
+pass an instance of the measure, and the factory will extract <code>localIdentifier</code> for you.</p></li>
+<li><p><code>operator</code> is one of the following:</p>
+<ul>
+<li><code>&quot;BETWEEN&quot;</code>: The measure value is between the <code>from</code> and <code>to</code> values (including the boundaries).</li>
+<li><code>&quot;NOT_BETWEEN&quot;</code>: The measure value is not between the <code>from</code> and <code>to</code> values (excluding the boundaries).</li>
+</ul></li>
+<li><p><code>from</code> is the start boundary.</p></li>
+<li><p><code>to</code> is the end boundary.</p></li>
+<li><p><code>treatNullValuesAs</code> is optional; by default, any filter condition filters out null values. If you want a filter
+condition to treat null values as a number and to include them in the filtering process, use this parameter.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="filtering-by-a-percentage-measure"></a><a href="#filtering-by-a-percentage-measure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filtering by a percentage measure</h3>
+<p>You can use several methods to get measures to be rendered as a percentage. Depending on the method you used, measure value filters applied to such measures behave differently.</p>
+<h4><a class="anchor" aria-hidden="true" id="measures-shown-in-"></a><a href="#measures-shown-in-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measures shown in %</h4>
+<p>When a visualization is filtered by a measure that is shown in % (that is, the measure has <code>computeRatio=true</code>), the filter value is based on the range of the actual measure values and not on the percentage values rendered by the visualization.</p>
+<p>For example, if the visualization renders the values <code>100</code>, <code>200</code>, and <code>700</code> as <code>10%</code>, <code>20%</code>, and <code>70%</code>, the filter that filters out the first two values would use a comparison condition with the operator <code>GREATER_THAN</code> and the condition value <code>200</code>. The result would contain only the value <code>700</code> rendered as <code>100%</code> in the visualization.</p>
+<p>The reason is that the percentage values are always computed for the current execution result. By applying the measure value filter, the result changes and so the percentage values will change as well. That would result in the filter and the values displayed to have a different scale which would be confusing. For instance, accepting only values lower than 50% could still produce insights with values higher than 50%.</p>
+<h4><a class="anchor" aria-hidden="true" id="measures-in-charts-stacked-to-100"></a><a href="#measures-in-charts-stacked-to-100" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measures in charts stacked to 100%</h4>
+<p>When a visualization is filtered by a measure that is stacked to 100%, the filter value is based on the range of the actual measure values and not on the percentage values rendered by the visualization.</p>
+<p>The example and the reason behind this behavior are similar to those described above for the measures shown in %.</p>
+<h4><a class="anchor" aria-hidden="true" id="measures-formatted-in-"></a><a href="#measures-formatted-in-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measures formatted in %</h4>
+<p>When a visualization is filtered by a measure that is formatted in %, the filter value is based on the percentage values rendered by the visualization and not on the range of the actual measure values.</p>
+<p>For example, if the visualization renders the formatted values <code>100%</code>, <code>20%</code>, and <code>3%</code>, the filter that filters out only one value would use the operator <code>NOT_EQUAL_TO</code> and the filter values <code>1</code>, <code>0.2</code>, or <code>0.03</code>, respectively.</p>
+<p>This applies to the following types of measures:</p>
+<ul>
+<li>Measures that have the percentage format set by the <code>format</code> measure property</li>
+<li>Calculated measures with the percentage format set in the metadata catalog</li>
+<li>Arithmetic measures with the <code>change</code> operator that has the percentage property <code>format</code> set</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="ranking-filter"></a><a href="#ranking-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ranking filter</h2>
+<p>A ranking filter shows the data from a set of the highest or lowest ranked values of an attribute based on the ranking criteria that you establish. You can filter only the measures that are present in the visualization, on the granularity defined by the attributes in the visualization.</p>
+<blockquote>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>A <a href="/gooddata-ui/docs/8.1.0/table_totals.html">rollup total</a> and measures that are shown in % (that is, the measures with <code>computeRatio=true</code> property) are not supported in visualizations with ranking filters. Such visualizations are not rendered, and the error message is shown instead.</li>
+<li>Ranking filters do not affect visualization sorting. For example, when you filter to get top three highest values of a measure, the visualization keeps its sorting order, which may or may not have been applied to the filtered measure.</li>
+</ul>
+</blockquote>
+<p>When you apply a ranking filter to a measure, the filter shows only the data whose measure values match the condition. More records than requested can be returned if they share the same value.</p>
+<p>You can create ranking filters using one of the following <code>newRankingFilter</code> factory functions:</p>
+<pre><code class="hljs css language-javascript">newRankingFilter(measureOrLocalId, operator, value)
+</code></pre>
+<pre><code class="hljs css language-javascript">newRankingFilter(measureOrLocalId, attributesOrLocalIds, operator, value)
+</code></pre>
+<p>where:</p>
+<ul>
+<li><p><code>measureOrLocalId</code> is <code>localIdentifier</code> of the measure to filter. You can specify <code>localIdentifier</code> explicitly or
+pass an instance of the measure, and the factory will extract <code>localIdentifier</code> for you.</p></li>
+<li><p><code>attributesOrLocalIds</code> is an array of <code>localIdentifier</code> strings of the attributes that defines the ranking granularity.
+You can specify <code>localIdentifier</code> explicitly or pass an instance of the attribute, and the factory will extract <code>localIdentifier</code> for you.
+This parameter is optional. If it is not specified, the ranking behaves as if you would enter the list of all attributes in the visualization.</p></li>
+<li><p><code>operator</code> is one of the following:</p>
+<ul>
+<li><code>&quot;TOP&quot;</code> returns records with the highest values of the filtered measure for the granularity specified by the filter attributes.</li>
+<li><code>&quot;BOTTOM&quot;</code> returns records with the lowest values of the filtered measure for the granularity specified by the filter attributes.</li>
+</ul></li>
+<li><p><code>value</code> is the number of the ranked records to return. The number must be a positive integer (1, 2, 3, ...).</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="filter-set-on-a-specific-measure"></a><a href="#filter-set-on-a-specific-measure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter set on a specific measure</h2>
+<p>Applying a filter to a specific measure is helpful when you have duplicate measures with different filters. You can apply
+filters to measures created from facts or MAQL metrics using the <code>modifySimpleMeasure</code>function:</p>
+<pre><code class="hljs css language-javascript">modifyMeasure(measure, modifications)
+</code></pre>
+<ul>
+<li>When both the measure filter of the <code>DateFilter</code> type and the global filter of the <code>DateFilter</code> type are set with
+the <strong>same</strong> date dimension, the measure date filter overrides the global date filter for this
+measure (global date filters are still applied to other measures that do not have a measure date filter defined).</li>
+<li>When the measure filter of the <code>DateFilter</code> type and the global filter of the <code>DateFilter</code> type are set with <strong>different</strong>
+date dimensions, the filters are interpreted as an intersection of those filters (f1 AND f2).</li>
+</ul>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { ColumnChart } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-charts"</span>;
+<span class="hljs-keyword">import</span> { modifySimpleMeasure, newPositiveAttributeFilter } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+
+<span class="hljs-keyword">const</span> californiaSales = modifySimpleMeasure(
+                            Ldm.$TotalSales,
+                            m =&gt; m.filters(newPositiveAttributeFilter(Ldm.StateName, [<span class="hljs-string">"California"</span>])).alias(<span class="hljs-string">"California Sales"</span>)
+                        );
+
+<span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ColumnChart</span>
+        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[</span> <span class="hljs-attr">californiaSales</span> ]}
+    /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="filter-examples"></a><a href="#filter-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter examples</h2>
+<h3><a class="anchor" aria-hidden="true" id="insightview-component-filter"></a><a href="#insightview-component-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>InsightView component filter</h3>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-ext/styles/css/main.css"</span>;
+<span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+<span class="hljs-keyword">import</span> { newPositiveAttributeFilter } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+
+<span class="hljs-keyword">const</span> filters = [
+    newPositiveAttributeFilter(Ldm.StateName, [<span class="hljs-string">"California"</span>]),
+    newPositiveAttributeFilter(Ldm.IsKidsItem, [<span class="hljs-string">"true"</span>])
+];
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">400</span>, <span class="hljs-attr">width:</span> <span class="hljs-attr">600</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+        <span class="hljs-attr">insight</span>=<span class="hljs-string">"&lt;visualization-identifier&gt;"</span>
+        <span class="hljs-attr">filters</span>=<span class="hljs-string">{filters}</span>
+    /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<p>If you reference a saved visualization with active filters and set the <code>filters</code> prop on the InsightView component, both sets of filters will be merged using the following rules:</p>
+<ul>
+<li>If the active filter in the saved visualization and the filter defined with the <code>filters</code> prop have the same object qualifier (identifier or URI), the filter defined with the <code>filters</code> prop overwrites the active filter in the saved visualization.</li>
+<li>All other filters, both saved and from the <code>filters</code> prop, will be added.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="chart-component-filter"></a><a href="#chart-component-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chart component filter</h3>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { ColumnChart } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-charts"</span>;
+<span class="hljs-keyword">import</span> { newNegativeAttributeFilter } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+
+<span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ColumnChart</span>
+        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.$TotalSales]}</span>
+        <span class="hljs-attr">filters</span>=<span class="hljs-string">{[</span>
+            <span class="hljs-attr">newNegativeAttributeFilter</span>(
+                <span class="hljs-attr">Ldm.StateName</span>,
+                { <span class="hljs-attr">uris:</span> ["/<span class="hljs-attr">gdc</span>/<span class="hljs-attr">md</span>/<span class="hljs-attr">xms7ga4tf3g3nzucd8380o2bev8oeknp</span>/<span class="hljs-attr">obj</span>/<span class="hljs-attr">2210</span>/<span class="hljs-attr">elements</span>?<span class="hljs-attr">id</span>=<span class="hljs-string">6340116</span>"] })
+        ]}
+    /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="attribute-filter-component-filter"></a><a href="#attribute-filter-component-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attribute Filter component filter</h3>
+<p>The Attribute Filter component renders a dropdown list of all values of the selected attribute. The Attribute Filter component has the <code>onApply</code> function property. This function is called when the user clicks the <strong>Apply</strong> button in the filter dropdown. The function receives an attribute filter with either selected attribute values (positive filter) or not selected attribute values (negative filter).</p>
+<p>See the <a href="https://gdui-examples.herokuapp.com/attribute-filter-components">live example</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="attribute-elements-component-filter"></a><a href="#attribute-elements-component-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attribute Elements component filter</h3>
+<p>Pass a custom children function to the Attribute Elements component. This function will receive a parameter with a list of attribute values for the selected attribute. You can use it to render any custom attribute filter.</p>
+<p>See the <a href="https://gdui-examples.herokuapp.com/attribute-filter-components">live example</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/8.1.0/table_totals.html"><span class="arrow-prev">← </span><span>Specify Table Totals</span></a><a class="docs-next button" href="/gooddata-ui/docs/8.1.0/create_custom_attribute_filter.html"><span>Create a Custom Attribute Filter</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#attribute-filter">Attribute filter</a><ul class="toc-headings"><li><a href="#positive-attribute-filter">Positive attribute filter</a></li><li><a href="#negative-attribute-filter">Negative attribute filter</a></li></ul></li><li><a href="#date-filter">Date filter</a><ul class="toc-headings"><li><a href="#absolute-date-filter">Absolute date filter</a></li><li><a href="#relative-date-filter">Relative date filter</a></li><li><a href="#relative-filter-examples">Relative filter examples</a></li></ul></li><li><a href="#filter-by-a-measure-value">Filter by a measure value</a><ul class="toc-headings"><li><a href="#filtering-by-comparing-a-measure-value-to-a-specific-value">Filtering by comparing a measure value to a specific value</a></li><li><a href="#filtering-by-comparing-a-measure-value-to-a-value-range">Filtering by comparing a measure value to a value range</a></li><li><a href="#filtering-by-a-percentage-measure">Filtering by a percentage measure</a></li></ul></li><li><a href="#ranking-filter">Ranking filter</a></li><li><a href="#filter-set-on-a-specific-measure">Filter set on a specific measure</a></li><li><a href="#filter-examples">Filter examples</a><ul class="toc-headings"><li><a href="#insightview-component-filter">InsightView component filter</a></li><li><a href="#chart-component-filter">Chart component filter</a></li><li><a href="#attribute-filter-component-filter">Attribute Filter component filter</a></li><li><a href="#attribute-elements-component-filter">Attribute Elements component filter</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2021 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.1.0"]}
+              });
+            </script></body></html>
