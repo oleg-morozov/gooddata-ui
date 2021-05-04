@@ -68,9 +68,10 @@
 <blockquote>
 <p><strong>Known issues</strong>:</p>
 <ul>
-<li><code>availableGranularities</code> in <code>relativeForm</code> is ignored. <code>availableGranularities</code> from the DateFilter component is used instead.
+<li><code>availableGranularities</code> in <code>relativeForm</code> has been removed. Use the <code>availableGranularities</code> from the Date Filter component instead.</li>
+<li>Values of Relative Form filters are not validated against the <a href="https://support.gooddata.com/hc/en-us/articles/215858108#anchor_8">platform limits for dates</a>. If the limit is hit, no data is shown in the filter.
 <ul>
-<li><em>This issue may be fixed in one of the future releases. The <code>availableGranularities</code> property may be removed from the DateFilter component.</em></li>
+<li><em>This issue may be fixed in one of the future releases.</em></li>
 </ul></li>
 </ul>
 </blockquote>
@@ -112,8 +113,8 @@
 <tr><td style="text-align:left">type</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">Must be set to <code>absoluteForm</code></td></tr>
 <tr><td style="text-align:left">name</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">The filter label</td></tr>
 <tr><td style="text-align:left">visible</td><td style="text-align:left">true</td><td style="text-align:left">boolean</td><td style="text-align:left">Specifies whether to display (<code>true</code>) or hide (<code>false</code>) the filter option</td></tr>
-<tr><td style="text-align:left">from</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">The beginning of the period; the default value formatted as <code>YYYY-MM-DD</code></td></tr>
-<tr><td style="text-align:left">to</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">The end of the period; the default value formatted as <code>YYYY-MM-DD</code></td></tr>
+<tr><td style="text-align:left">from</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">The beginning of the period; the default value formatted as <code>YYYY-MM-DD</code>; must be specified if the Absolute Form filter is set as the default filter option</td></tr>
+<tr><td style="text-align:left">to</td><td style="text-align:left">false</td><td style="text-align:left">string</td><td style="text-align:left">The end of the period; the default value formatted as <code>YYYY-MM-DD</code>; must be specified if the Absolute Form filter is set as the default filter option</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="relative-form"></a><a href="#relative-form" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Relative Form</h3>
@@ -127,10 +128,9 @@
 <tr><td style="text-align:left">type</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">Must be set to <code>relativeForm</code></td></tr>
 <tr><td style="text-align:left">name</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">The filter label</td></tr>
 <tr><td style="text-align:left">visible</td><td style="text-align:left">true</td><td style="text-align:left">boolean</td><td style="text-align:left">Specifies whether to display (<code>true</code>) or hide (<code>false</code>) the filter option</td></tr>
-<tr><td style="text-align:left">availableGranularities</td><td style="text-align:left">true</td><td style="text-align:left"><a href="#date-filter-granularity">DateFilterGranularity[]</a></td><td style="text-align:left">Types of granularity available in the form</td></tr>
 <tr><td style="text-align:left">granularity</td><td style="text-align:left">false</td><td style="text-align:left"><a href="#date-filter-granularity">DateFilterGranularity</a></td><td style="text-align:left">The default granularity</td></tr>
-<tr><td style="text-align:left">from</td><td style="text-align:left">false</td><td style="text-align:left">number</td><td style="text-align:left">The beginning of the period; the default value that specifies the length of the period based on the granularity and is relative to today (which is always zero)</td></tr>
-<tr><td style="text-align:left">to</td><td style="text-align:left">false</td><td style="text-align:left">number</td><td style="text-align:left">The end of the period; the default value that specifies the length of the period based on the granularity and is relative to today (which is always zero)</td></tr>
+<tr><td style="text-align:left">from</td><td style="text-align:left">false</td><td style="text-align:left">number</td><td style="text-align:left">The beginning of the period; the default value that specifies the length of the period based on the granularity and is relative to today (which is always zero); must be specified if the Relative Form filter is set as the default filter option</td></tr>
+<tr><td style="text-align:left">to</td><td style="text-align:left">false</td><td style="text-align:left">number</td><td style="text-align:left">The end of the period; the default value that specifies the length of the period based on the granularity and is relative to today (which is always zero); must be specified if the Relative Form filter is set as the default filter option</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="absolute-preset"></a><a href="#absolute-preset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Absolute preset</h3>

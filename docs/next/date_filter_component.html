@@ -66,9 +66,10 @@
 <blockquote>
 <p><strong>Known issues</strong>:</p>
 <ul>
-<li><code>availableGranularities</code> in <code>relativeForm</code> is ignored. <code>availableGranularities</code> from the Date Filter component is used instead.
+<li><code>availableGranularities</code> in <code>relativeForm</code> has been removed. Use the <code>availableGranularities</code> from the Date Filter component instead.</li>
+<li>Values of Relative Form filters are not validated against the <a href="https://support.gooddata.com/hc/en-us/articles/215858108#anchor_8">platform limits for dates</a>. If the limit is hit, no data is shown in the filter.
 <ul>
-<li><em>This issue may be fixed in one of the future releases. The <code>availableGranularities</code> property may be removed from the Date Filter component.</em></li>
+<li><em>This issue may be fixed in one of the future releases.</em></li>
 </ul></li>
 </ul>
 </blockquote>
