@@ -262,7 +262,7 @@ For more information on how to create predicates, see <a href="/gooddata-ui/docs
 <li><p>To make the legend appear as a popup in too small containers, set <code>config.legend.responsive</code> to <code>&quot;autoPositionWithPopup&quot;</code>.</p>
 <p>For a better visual experience, we recommend that you <a href="#enable-a-compact-size">enable the compact size</a> together with making the legend appear as a popup.</p>
 <p><img src="/gooddata-ui/docs/assets/top_legend.png" alt="PopUp Legend" title="PopUp Legend Component"></p>
-<p><strong>NOTE:</strong> When <code>config.legend.responsive</code> is set to <code>&quot;autoPositionWithPopup&quot;</code>, the <code>config.legend.position</code> property is ignored.</p></li>
+<p><strong>NOTE:</strong> When <code>config.legend.responsive</code> is set to <code>&quot;autoPositionWithPopup&quot;</code>, the <code>config.legend.position</code> property may be ignored for containers of a smaller size, and the legend position will be automatically adjusted anyway.</p></li>
 <li><p>To hide the legend, set <code>config.legend.enabled</code> to <code>false</code>.</p></li>
 </ul>
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
@@ -274,7 +274,7 @@ For more information on how to create predicates, see <a href="/gooddata-ui/docs
         legend: {
             enabled: true,
             position: "bottom", // "left", "right", "top"
-            responsive: true // "autoPositionWithPopup", false
+            responsive: "autoPositionWithPopup", // true, false
         }
     }}
 /&gt;
