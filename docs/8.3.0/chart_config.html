@@ -1,0 +1,412 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Chart Config · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This article describes the options for configuring a chart."/><meta name="docsearch:version" content="8.3.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Chart Config · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="This article describes the options for configuring a chart."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.3.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Properties</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/supported_versions.html">Supported Versions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/framework_overview.html">Architecture Overview</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/create_new_application.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/understand_execution_model.html">Understand the Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/export_catalog.html">Export Catalog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData Platform</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/platform_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/platform_sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/platform_cors.html">Deal with Cross-Origin Issues</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData.CN</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/cloudnative_introduction.html">GoodData.CN Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/cloudnative_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/cloudnative_local_dev.html">Set Up Development on a Workstation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/cloudnative_limitations.html">Limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/dashboard_view_component.html">DashboardView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/8.3.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Execution Model</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/execution_model.html">Detailed Description</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/custom_execution.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/result_specification.html">Specify the Result Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/embed_dashboard.html">Embed a Dashboard Created in KPI Dashboards</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ht_create_predicates.html">Create Header Predicates</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/backend_agnostic_apps.html">Building backend-agnostic applications</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Chart Config</h1></header><article><div><span><p>This article describes the options for configuring a chart.</p>
+<h2><a class="anchor" aria-hidden="true" id="structure"></a><a href="#structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structure</h2>
+<pre><code class="hljs css language-javascript">{
+    <span class="hljs-attr">chart</span>: {
+        <span class="hljs-attr">verticalAlign</span>: <span class="hljs-string">"top"</span> <span class="hljs-comment">// "top" | "middle" | "bottom"</span>
+    },
+    <span class="hljs-attr">colors</span>: [<span class="hljs-string">"rgb(195, 49, 73)"</span>, <span class="hljs-string">"rgb(168, 194, 86)"</span>], <span class="hljs-comment">// array of strings</span>
+    <span class="hljs-attr">xaxis</span>: {
+        <span class="hljs-attr">visible</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+        <span class="hljs-attr">labelsEnabled</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+        <span class="hljs-attr">rotation</span>: <span class="hljs-string">"auto"</span>, <span class="hljs-comment">// "auto" or numeral string</span>
+        <span class="hljs-attr">min</span>: <span class="hljs-string">"10"</span>, <span class="hljs-comment">// numeral string</span>
+        <span class="hljs-attr">max</span>: <span class="hljs-string">"20"</span> <span class="hljs-comment">// numeral string</span>
+    },
+    <span class="hljs-attr">yaxis</span>: {
+        <span class="hljs-attr">visible</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+        <span class="hljs-attr">labelsEnabled</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+        <span class="hljs-attr">rotation</span>: <span class="hljs-string">"auto"</span>, <span class="hljs-comment">// string</span>
+        <span class="hljs-attr">min</span>: <span class="hljs-string">"30"</span>, <span class="hljs-comment">// numeral string</span>
+        <span class="hljs-attr">max</span>: <span class="hljs-string">"40"</span> <span class="hljs-comment">// numeral string</span>
+    },
+    <span class="hljs-attr">secondary_yaxis</span>: {
+        <span class="hljs-attr">visible</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+        <span class="hljs-attr">labelsEnabled</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+        <span class="hljs-attr">rotation</span>: <span class="hljs-string">"auto"</span>, <span class="hljs-comment">// string</span>
+        <span class="hljs-attr">min</span>: <span class="hljs-string">"300"</span>, <span class="hljs-comment">// numeral string</span>
+        <span class="hljs-attr">max</span>: <span class="hljs-string">"400"</span>, <span class="hljs-comment">// numeral string</span>
+        <span class="hljs-attr">measures</span>: [<span class="hljs-string">"measureLocalIdentifier"</span>]
+    },
+    <span class="hljs-attr">legend</span>: {
+        <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+        <span class="hljs-attr">position</span>: <span class="hljs-string">"bottom"</span>, <span class="hljs-comment">// "top" | "left" | "right" | "bottom"</span>
+    },
+    <span class="hljs-attr">dataLabels</span>: {
+        <span class="hljs-attr">visible</span>: <span class="hljs-string">"auto"</span> <span class="hljs-comment">// "auto" | true | false</span>
+    },
+    <span class="hljs-attr">dataPoints</span>: {
+        <span class="hljs-attr">visible</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// "auto" | true | false</span>
+    },
+    <span class="hljs-attr">grid</span>: {
+        <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// boolean</span>
+    },
+    <span class="hljs-attr">separators</span>: {
+        <span class="hljs-attr">thousand</span>: <span class="hljs-string">","</span>,
+        <span class="hljs-attr">decimal</span>: <span class="hljs-string">"."</span>
+    },
+    <span class="hljs-attr">stackMeasures</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+    <span class="hljs-attr">stackMeasuresToPercent</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// boolean</span>
+    <span class="hljs-attr">primaryChartType</span>: <span class="hljs-string">"column"</span>, <span class="hljs-comment">// string</span>
+    <span class="hljs-attr">secondaryChartType</span>: <span class="hljs-string">"area"</span>, <span class="hljs-comment">// string</span>
+    <span class="hljs-attr">dualAxis</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// boolean</span>
+}
+</code></pre>
+<p><strong>NOTE:</strong> <code>primaryChartType</code>, <code>secondaryChartType</code>, and <code>dualAxis</code> are available only for <a href="/gooddata-ui/docs/8.3.0/combo_chart_component.html">combo charts</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="align-a-chart-vertically"></a><a href="#align-a-chart-vertically" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Align a chart vertically</h2>
+<p>You can configure a vertical alignment for <a href="/gooddata-ui/docs/8.3.0/pie_chart_component.html">pie charts</a> and <a href="/gooddata-ui/docs/8.3.0/donut_chart_component.html">donut charts</a>.</p>
+<p>To align a chart vertically, set <code>config.chart.verticalAlign</code> to one of the possible values: <code>top</code>, <code>middle</code>, <code>bottom</code>. If not set, it defaults to <code>middle</code>.</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with a custom chart alignment</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+    <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+    config={{
+        chart: {
+            verticalAlign: "bottom"
+        }
+    }}
+/&gt;
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configure-colors"></a><a href="#configure-colors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure colors</h2>
+<p>To configure colors, use the following options:</p>
+<ul>
+<li><a href="#color-array">Color array (the <code>colors</code> property)</a></li>
+<li><a href="#custom-color-palette">Custom color palette (the <code>colorPalette</code> property)</a></li>
+<li><a href="#color-mapping">Color mapping (the <code>colorMapping</code> property)</a></li>
+</ul>
+<p>If you have more than one option configured for a visualization, the following rules apply:</p>
+<ul>
+<li>The <code>colors</code> property overrides a custom color palette uploaded through the API.</li>
+<li>The <code>colorPalette</code> property overrides the <code>colors</code> property and the custom color palette uploaded through the API.</li>
+<li>The <code>colorMapping</code> property overrides the <code>colorPalette</code> property, the <code>colors</code> property, and the custom color palette uploaded through the API.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="color-array"></a><a href="#color-array" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Color array</h3>
+<p>The following are examples of a color array:</p>
+<pre><code class="hljs css language-javascript">[<span class="hljs-string">"rgb(195, 49, 73)"</span>, <span class="hljs-string">"rgb(168, 194, 86)"</span>]
+
+</code></pre>
+<pre><code class="hljs css language-javascript">[<span class="hljs-string">"#fa0510"</span>, <span class="hljs-string">"#AA2030"</span>]
+
+</code></pre>
+<p>If there are fewer colors than data points, then the colors are repeated. For example, here is how colors will be used for two colors and three data points:</p>
+<pre><code class="hljs css language-javascript">[<span class="hljs-string">"rgb(195, 49, 73)"</span>, <span class="hljs-string">"rgb(168, 194, 86)"</span>, <span class="hljs-string">"rgb(195, 49, 73)"</span>]
+</code></pre>
+<p>To change colors in a chart, provide a <code>config</code> for each component where you want to change colors, or create a wrapped components with a <code>config</code> baked in.</p>
+<p><strong>NOTE:</strong> Heatmaps use only the first color from the provided colors as the base color, and generate the other colors themselves.</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with custom colors and palette options</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+    <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+    config={{
+        colors: ["rgb(195, 49, 73)", "rgb(168, 194, 86)"]
+    }}
+/&gt;
+</span></code></pre>
+<p>Within one visualization:</p>
+<ul>
+<li>The <code>colors</code> property overrides a custom color palette uploaded through the API.</li>
+<li>The <code>colors</code> property can be overridden by the <a href="#custom-color-palette"><code>colorPalette</code> property</a> or the <a href="#color-mapping"><code>colorMapping</code> property</a>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="custom-color-palette"></a><a href="#custom-color-palette" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom color palette</h3>
+<p>If you <a href="https://help.gooddata.com/pages/viewpage.action?pageId=34341106">uploaded a custom color palette</a> to your project, the visualizations created based on the <a href="/gooddata-ui/docs/8.3.0/visualization_component.html">Visualization component</a> use this palette instead of the default colors.</p>
+<p>To override the uploaded custom color palette for a specific visualization, define the <code>colorPalette</code> property for this visualization.</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with a custom palette</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+   <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+   config={{
+       colorPalette: [{
+            guid: "01",
+            fill: {
+                r: 195,
+                g: 49,
+                b: 73
+            }
+        }, {
+            guid: "02",
+            fill: {
+                r: 168,
+                g: 194,
+                b: 86
+            }
+        }, {
+            guid: "03",
+            fill: {
+                r: 243,
+                g: 217,
+                b: 177
+            }
+        }]
+    }}
+/&gt;
+</span></code></pre>
+<p>Within one visualization:</p>
+<ul>
+<li>The <code>colorPalette</code> property overrides the custom color palette uploaded through the API and the <code>colors</code> property.</li>
+<li>The <code>colorPalette</code> property can be overriden by the <code>colorMapping</code> property.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="color-mapping"></a><a href="#color-mapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Color mapping</h3>
+<p>Color mapping allows you to assign colors to individual measures or attribute elements. To set up color mapping, set the <code>colorMapping</code> property.</p>
+<p>The <code>colorMapping</code> property contains an array of objects. Each object is represented by a pair of a mapping predicate and a color (color GUID or color value).</p>
+<ul>
+<li>A <strong>mapping predicate</strong> is a function that takes a result header as the first argument and returns a Boolean value indicating whether the color will be assigned to a particular measure or attribute element.
+For more information on how to create predicates, see <a href="/gooddata-ui/docs/8.3.0/ht_create_predicates.html">Create Predicates</a>.</li>
+<li>A <strong>color</strong> is an object that contains two keys, <code>type</code> and <code>value</code>.
+<ul>
+<li>To assign a color from a color palette (either the custom color palette uploaded through the API or the palette defined by the <code>colorPalette</code> property), set <code>type</code> to <code>guid</code>, and set <code>value</code> to the GUID of the color from the palette.</li>
+<li>To assign a custom color, set <code>type</code> to <code>rgb</code>, and set <code>value</code> to an object containing the keys <code>r</code>, <code>g</code>, and <code>b</code> with numerical values.</li>
+</ul></li>
+</ul>
+<p>The following example shows how to assign the color with GUID <code>02</code> to the measure with the local identifier <code>m1_localIdentifier</code>, and the black color to the measure with the local identifier <code>m2_localIdentifier</code>:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with custom color mapping</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+    <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+    config={{
+        colorMapping: [{
+            predicate: (headerItem) =&gt; {
+                return headerItem.measureHeaderItem &amp;&amp; (headerItem.measureHeaderItem.localIdentifier === "m1_localIdentifier")
+            },
+            color: {
+                type: "guid",
+                value: "02"
+            }
+        }, {
+            predicate: (headerItem) =&gt; {
+                return headerItem.measureHeaderItem &amp;&amp; (headerItem.measureHeaderItem.localIdentifier === "m2_localIdentifier")
+            },
+            color: {
+                type: "rgb",
+                value: {
+                    r: 0,
+                    g: 0,
+                    b: 0
+                }
+            }
+        }]
+    }}
+/&gt;
+</span></code></pre>
+<p>Within one visualization, the <code>colorMapping</code> property overrides the <code>colorPalette</code> property (while still can use its colors), the <code>colors</code> property, and the custom color palette uploaded through the API.</p>
+<h2><a class="anchor" aria-hidden="true" id="change-legend-visibility-and-position"></a><a href="#change-legend-visibility-and-position" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Change legend visibility and position</h2>
+<ul>
+<li>To hide the legend, set <code>config.legend.enabled</code> to <code>false</code>.</li>
+<li>To change the legend position, adjust the <code>config.legend.position</code> property (<code>&quot;left&quot;</code>/<code>&quot;right&quot;</code>/<code>&quot;top&quot;</code>/<code>&quot;bottom&quot;</code>).</li>
+</ul>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with a custom legend position</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+    <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+    config={{
+        legend: {
+            enabled: true,
+            position: "bottom" // "left", "right", "top"
+        }
+    }}
+/&gt;
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="change-a-separator-in-the-number-format"></a><a href="#change-a-separator-in-the-number-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Change a separator in the number format</h2>
+<ul>
+<li>To change the thousands separator, adjust the <code>config.separators.thousand</code> property.</li>
+<li>To change the decimal separator, adjust the <code>config.separators.decimal</code> property.</li>
+</ul>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with a custom separator in the number format</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+    <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+    config={{
+        separators: {
+            thousand: ",",
+            decimal: "."
+        }
+    }}
+/&gt;
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configure-axes"></a><a href="#configure-axes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure axes</h2>
+<p>The properties listed in this section are specific to the <strong>X</strong> axis. To get the properties for the <strong>Y</strong> axis, replace <code>xaxis</code> with <code>yaxis</code> in a property's name.</p>
+<ul>
+<li><p>To hide the axis, set <code>config.xaxis.visible</code> to <code>false</code>. If not set, it defaults to <code>true</code> (the axis is visible).</p></li>
+<li><p>To hide axis labels, set <code>config.xaxis.labelsEnabled</code> to <code>false</code>. If not set, it defaults to <code>true</code> (the axis labels are visible).</p>
+<p><strong>NOTE:</strong> When <code>config.xaxis.visible</code> is set to <code>false</code>, axis labels are hidden automatically regardless of what <code>config.xaxis.labelsEnabled</code> is set to.</p></li>
+<li><p>To rotate axis labels, set <code>config.xaxis.rotation</code> to a desired value.</p></li>
+<li><p>To set the axis scale, set <code>config.xaxis.min</code> and <code>config.xaxis.max</code> to desired values.</p></li>
+<li><p>To show measures on a secondary axis, set <code>config.secondary_xaxis.measures</code> to the measures that you want to display. If <code>config.secondary_xaxis.measures</code> is not set, all measures are displayed on the main axis by default.</p></li>
+<li><p>To hide the axis name, set <code>config.xaxis.name.visible</code> to <code>false</code>. If not set, it defaults to <code>true</code> (the axis name is visible).</p></li>
+<li><p>To set the axis name position, set <code>config.xaxis.name.position</code> to one of the possible values: <code>low</code>, <code>middle</code>, <code>high</code>.</p>
+<p><strong>NOTE:</strong> If the axis represents more than one attribute/measure, the <code>config.xaxis.name.visible</code> and <code>config.xaxis.name.position</code> properties are both ignored, and the axis name is hidden.</p></li>
+</ul>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with settings for the x-axis</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+    <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+    config={{
+        xaxis: {
+            visible: false,
+            labelsEnabled: false,
+            rotation: "-90",
+            min: "150",
+            max: "440",
+            name: {
+                position: "low", // "low", "middle", "high"
+            }
+        },
+        secondary_xaxis: {
+            visible: true,
+            labelsEnabled: true,
+            rotation: "-90",
+            min: "1500",
+            max: "4400",
+            name: {
+                visible: false
+            }
+            measures: ["measureLocalIdentifier1", "measureLocalIdentifier2"]
+        }
+    }}
+/&gt;
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configure-canvases"></a><a href="#configure-canvases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure canvases</h2>
+<ul>
+<li>To configure data labels, set the <code>config.dataLabels</code> property.</li>
+<li>To hide data points from a chart, set <code>config.dataPoints</code> to <code>false</code>. This applies to the following types of charts:
+<ul>
+<li><a href="/gooddata-ui/docs/8.3.0/line_chart_component.html">Line charts</a></li>
+<li><a href="/gooddata-ui/docs/8.3.0/area_chart_component.html">Area charts</a></li>
+<li><a href="/gooddata-ui/docs/8.3.0/combo_chart_component.html">Combo charts</a> with at least one of the combined charts being a <a href="/gooddata-ui/docs/8.3.0/line_chart_component.html">line chart</a> or an <a href="/gooddata-ui/docs/8.3.0/area_chart_component.html">area chart</a>.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with settings for the canvas</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+    <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+    config={{
+        dataLabels: true,
+        dataPoints: false,
+        grid: {
+            enabled: false
+        }
+    }}
+/&gt;
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configure-stacking"></a><a href="#configure-stacking" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure stacking</h2>
+<ul>
+<li>You can configure stacking for the following types of charts:
+<ul>
+<li><p><a href="/gooddata-ui/docs/8.3.0/area_chart_component.html">Area charts</a></p></li>
+<li><p><a href="/gooddata-ui/docs/8.3.0/bar_chart_component.html">Bar charts</a></p></li>
+<li><p><a href="/gooddata-ui/docs/8.3.0/column_chart_component.html">Column charts</a></p></li>
+<li><p><a href="/gooddata-ui/docs/8.3.0/combo_chart_component.html">Combo charts</a></p>
+<p><strong>NOTE:</strong> In combo charts using column or area charts, stacking is applied only to the measures shown on the left axis.</p></li>
+<li><p>Charts with the <a href="#configure-axes">secondary axis</a></p></li>
+</ul></li>
+<li>To display the total contribution of each measure, enable <code>config.stackMeasures</code>.
+<ul>
+<li>For area charts, <code>config.stackMeasures</code> is enabled by default.</li>
+<li>For bar charts, column charts, and charts with the secondary axis, <code>config.stackMeasures</code> is ignored when the chart has only one measure.</li>
+</ul></li>
+<li>To display the percentage contribution of each measure, enable <code>config.stackMeasuresToPercent</code>.
+<ul>
+<li>If both <code>config.stackMeasuresToPercent</code> and <code>config.stackMeasures</code> are present, <code>config.stackMeasuresToPercent</code> overwrites <code>config.stackMeasures</code>.</li>
+<li>For charts with the secondary axis, <code>config.stackMeasuresToPercent</code> is applied only to the left axis.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { InsightView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+
+<span class="hljs-comment">// Example of embedding a visualization with stacking</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">InsightView</span>
+    <span class="hljs-attr">insight</span>=&lt;<span class="hljs-attr">InsightView-id</span>&gt;</span>
+    config={{
+        stackMeasures: false,
+        stackMeasuresToPercent: true
+    }}
+/&gt;
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="customize-tooltips-and-fonts"></a><a href="#customize-tooltips-and-fonts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Customize tooltips and fonts</h2>
+<p>To customize tooltips and fonts, <a href="/gooddata-ui/docs/8.3.0/create_new_visualization.html">implement a custom visualization</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/8.3.0/ranking_filter_component.html"><span class="arrow-prev">← </span><span>Ranking Filter</span></a><a class="docs-next button" href="/gooddata-ui/docs/8.3.0/attribute_element_option.html"><span class="function-name-prevnext">AttributeElements Component Options</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#structure">Structure</a></li><li><a href="#align-a-chart-vertically">Align a chart vertically</a></li><li><a href="#configure-colors">Configure colors</a><ul class="toc-headings"><li><a href="#color-array">Color array</a></li><li><a href="#custom-color-palette">Custom color palette</a></li><li><a href="#color-mapping">Color mapping</a></li></ul></li><li><a href="#change-legend-visibility-and-position">Change legend visibility and position</a></li><li><a href="#change-a-separator-in-the-number-format">Change a separator in the number format</a></li><li><a href="#configure-axes">Configure axes</a></li><li><a href="#configure-canvases">Configure canvases</a></li><li><a href="#configure-stacking">Configure stacking</a></li><li><a href="#customize-tooltips-and-fonts">Customize tooltips and fonts</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2021 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.3.0"]}
+              });
+            </script></body></html>

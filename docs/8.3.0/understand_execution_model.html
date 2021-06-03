@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Understand the Execution Model · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Before you start building your first analytical application with GoodData.UI, take a few more minutes to understand"/><meta name="docsearch:version" content="8.3.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Understand the Execution Model · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="Before you start building your first analytical application with GoodData.UI, take a few more minutes to understand"/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.3.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/supported_versions.html">Supported Versions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/framework_overview.html">Architecture Overview</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/create_new_application.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/8.3.0/understand_execution_model.html">Understand the Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/export_catalog.html">Export Catalog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData Platform</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/platform_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/platform_sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/platform_cors.html">Deal with Cross-Origin Issues</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData.CN</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/cloudnative_introduction.html">GoodData.CN Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/cloudnative_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/cloudnative_local_dev.html">Set Up Development on a Workstation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/cloudnative_limitations.html">Limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/table_component.html">Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/dashboard_view_component.html">DashboardView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Execution Model</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/execution_model.html">Detailed Description</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/custom_execution.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/result_specification.html">Specify the Result Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/embed_dashboard.html">Embed a Dashboard Created in KPI Dashboards</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/ht_create_predicates.html">Create Header Predicates</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/backend_agnostic_apps.html">Building backend-agnostic applications</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.3.0/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Understand the Execution Model</h1></header><article><div><span><p>Before you start building your first analytical application with GoodData.UI, take a few more minutes to understand
+the core concepts behind computing and rendering data using GoodData.UI.</p>
+<h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<p>GoodData.UI offers a foundation that covers an entire life cycle of data to visualize:</p>
+<ol>
+<li>Specification of what data to compute</li>
+<li>APIs to asynchronously compute the data according to the specification</li>
+<li>APIs to access the computed results</li>
+<li>APIs to transform the results and perform client-side post-processing</li>
+</ol>
+<p>This foundation is suitable for building your own visualization components or addressing custom analytics
+use cases.</p>
+<p>On top of this foundation, the GoodData.UI builds different React components with convenient public APIs. The
+React components are responsible for:</p>
+<ul>
+<li>Constructing a valid data specification</li>
+<li>Driving the computation on the Analytical Backend</li>
+<li>Rendering the data or, alternatively, exposing data to render using your own custom visual component</li>
+</ul>
+<p>We recommend that you start your GoodData.UI journey by using the existing React visual components; you can find
+documentation for them in the menu on the left.</p>
+<p>The remainder of this document describes essentials of data specification which is all you need to know before
+you start using the visual components.</p>
+<p>You can learn more about the lower level, non-React APIs in <a href="/gooddata-ui/docs/8.3.0/custom_execution.html">Custom Executions</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="how-to-specify-data-to-render"></a><a href="#how-to-specify-data-to-render" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to specify data to render</h3>
+<p>At the lowest level of every data visualization in GoodData.UI is the specification of what data to calculate on the
+backend so that it can be visualized. We call this specification the <em>Execution Definition</em>.</p>
+<p>The execution definition captures the following:</p>
+<ul>
+<li>What the <strong>measures</strong> to calculate</li>
+<li>For which <strong>attributes</strong> these measures should be calculated</li>
+<li>What <strong>filters</strong> to apply</li>
+<li>How to <strong>slice and dice</strong> the result</li>
+<li>What <strong>totals</strong> and rollups to include in the result</li>
+<li>How to <strong>sort</strong> the result</li>
+</ul>
+<p>All the visualization components in GoodData.UI create the execution definition, use it to start an
+execution on an Analytical Backend and then from the execution result they load views of the data to visualize.</p>
+<p>The visual components in GoodData.UI provide a convenience layer and shield you from creating
+a potentially complex execution definitions. You do not have to carefully craft the full execution definition for, let's say,
+<code>ColumnChart</code> that you place into your application.</p>
+<p>Instead, you specify what measures you are interested in, what attribute should be used to create columns and what
+attribute should be used to stack the columns. Given this input, the visualization will craft the full execution definition
+and drive it to obtain the data to visualize.</p>
+<h3><a class="anchor" aria-hidden="true" id="measures-attributes-and-filters"></a><a href="#measures-attributes-and-filters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measures, attributes, and filters</h3>
+<p>These are best described with an example. Imagine you are an account manager for a Franchise network.
+You want to know the <strong>average daily amount</strong> of money for each <strong>Franchise office</strong> in the <strong>USA</strong>.</p>
+<p>Let's introduce the main concepts:</p>
+<ul>
+<li>A <strong>measure</strong> is a computational expression that aggregates one or more numerical values. In this example, you are interested in the <strong>average daily amount</strong>.</li>
+<li>An <strong>attribute</strong> breaks the measure apart and provides context to the data. In this example, the measure is sliced by the <strong>location</strong> of the Franchise offices.</li>
+<li>A <strong>filter</strong> is a set of conditions that removes specific values from your original data. In this example, you want to see only <strong>USA-specific locations</strong>.</li>
+</ul>
+<p>Let's display your data as a column chart:</p>
+<p><img src="/gooddata-ui/docs/assets/intro_column_chart.png" alt="Column Chart" title="Column Chart"></p>
+<p>The chart shows the elements (measure, attribute, filter) that together work as unified input for creating a <strong>visualization</strong> using GoodData.UI, which is a view into a specific part of your data.</p>
+<p>In the column chart:</p>
+<ul>
+<li><code>$ Avg Daily Total Sales</code> is a <strong>measure</strong>.</li>
+<li><code>Location State</code> is an <strong>attribute</strong>.</li>
+<li>A <strong>filter</strong> applied to the chart shows only USA-specific values of <code>Location State</code>, which represent the offices located in the USA.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="where-do-measures-and-attributes-come-from"></a><a href="#where-do-measures-and-attributes-come-from" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Where do measures and attributes come from?</h3>
+<p>Both the GoodData platform and GoodData.CN implement a concept of workspaces. A workspace defines a <strong>logical data model</strong> (LDM)
+and is linked to the data source that contains data conforming to this LDM.</p>
+<p>The workspace LDM consists of datasets that are composed of facts and attributes. Additionally, the workspace may define
+complex measures using the powerful <strong>Multi-Dimensional Analytical Query Language</strong> (MAQL). These complex measures work on top
+of the facts and attributes in your LDM.</p>
+<p>The LDM and complex MAQL measures essentially form a semantic layer on top of your data. This semantic layer hides a
+lot of complexity that you may typically encounter when directly constructing SQL queries.</p>
+<p>The semantic layer then exposes the available datasets, attributes, facts, and complex MAQL measures that you can
+use in your application to specify what data to visualize.</p>
+<p>Each of the semantic layer entities has their own identifier. When your application renders visual components, the props
+that specify measures and attributes always reference the semantic layer entity and provide additional information on
+top of it.</p>
+<h2><a class="anchor" aria-hidden="true" id="attributes-and-measures-in-your-application"></a><a href="#attributes-and-measures-in-your-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attributes and measures in your application</h2>
+<p>Once you have a GoodData platform or GoodData.CN workspace that has the LDM and potentially complex MAQL measures,
+you can start building an application using GoodData.UI.</p>
+<p>The attributes, measures, filters, sorting, totals, slicing and dicing are all covered by different types of the execution model
+that is implemented in <code>@gooddata/sdk-model</code>.
+Instances of these types is what the visual components accept in their props.</p>
+<p>The execution model comes with factory functions to create instances of any types that play a role in the model. For
+instance, to define a new measure that you can then use as input for the <code>ColumnChart</code> component, you would do something similar to the following:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { newMeasure, newAttribute } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+
+<span class="hljs-keyword">const</span> myMeasure = newMeasure(<span class="hljs-string">"measureIdentifier"</span>);
+<span class="hljs-keyword">const</span> myAttribute = newAttribute(<span class="hljs-string">"attributeDisplayFormIdentifier"</span>);
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><p><code>measureIdentifier</code> is the identifier of either a fact in your LDM or a complex MAQL measure defined on top of the LDM.</p></li>
+<li><p><code>attributeLabelIdentifier</code> is the identifier of a display form (label) of an attribute in your LDM.</p></li>
+</ul>
+<p>Once you have an instance of the measure defined, you can use it to create a visual component:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { ColumnChart } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-charts"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyColumnChart</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ColumnChart</span> <span class="hljs-attr">measures</span>=<span class="hljs-string">{[myMeasure]}</span> <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{[myAttribute]}/</span>&gt;</span></span>
+    );
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="generating-code-representation-of-the-semantic-layer"></a><a href="#generating-code-representation-of-the-semantic-layer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generating code representation of the semantic layer</h3>
+<p>Manually creating measures and attributes can be time-consuming, especially when your LDM is large.</p>
+<p>We have created the <a href="/gooddata-ui/docs/8.3.0/export_catalog.html"><code>catalog-export</code></a> tool to help with this. The tool can connect to
+either the GoodData platform or GoodData.CN and transform the entities in the semantic layer of your
+workspace into code representation.</p>
+<p>The tool retrieves the LDM and complex MAQL measures from your workspace and generates a file in either JavaScript or
+TypeScript that will contain code constants for all the semantic layer entities. You can then import the definitions
+from this file and use them directly.</p>
+<p>For instance:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { $AvgDailyTotalSales, LocationState } <span class="hljs-keyword">from</span> <span class="hljs-string">"./generatedLdm"</span>;
+<span class="hljs-keyword">import</span> { ColumnChart } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-charts"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyColumnChart</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ColumnChart</span> <span class="hljs-attr">measures</span>=<span class="hljs-string">{[$AvgDailyTotalSales]}</span> <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{[LocationState]}/</span>&gt;</span></span>
+    );
+}
+</code></pre>
+<p><strong>NOTE</strong>: You can run <code>@gooddata/catalog-export</code> any time to refresh the contents of the generated file.</p>
+<h2><a class="anchor" aria-hidden="true" id="summary"></a><a href="#summary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h2>
+<p>You specify what data to render by referencing attributes or measures defined in your workspace. The simplest way
+to get started is to use the <a href="/gooddata-ui/docs/8.3.0/export_catalog.html">catalog-export</a> tool that will generate a file with
+code representation of all essential entities in your workspace.</p>
+<p>The execution model in GoodData.UI offers additional functionality. You can learn more about it in the
+<a href="/gooddata-ui/docs/8.3.0/execution_model.html">detailed description</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/8.3.0/create_new_application.html"><span class="arrow-prev">← </span><span>Create Your First Application Using Accelerator Toolkit</span></a><a class="docs-next button" href="/gooddata-ui/docs/8.3.0/export_catalog.html"><span>Export Catalog</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#how-to-specify-data-to-render">How to specify data to render</a></li><li><a href="#measures-attributes-and-filters">Measures, attributes, and filters</a></li><li><a href="#where-do-measures-and-attributes-come-from">Where do measures and attributes come from?</a></li></ul></li><li><a href="#attributes-and-measures-in-your-application">Attributes and measures in your application</a><ul class="toc-headings"><li><a href="#generating-code-representation-of-the-semantic-layer">Generating code representation of the semantic layer</a></li></ul></li><li><a href="#summary">Summary</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2021 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.3.0"]}
+              });
+            </script></body></html>
