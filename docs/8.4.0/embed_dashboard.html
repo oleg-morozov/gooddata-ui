@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Embed a Dashboard Created in KPI Dashboards · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="To embed an existing dashboard created in KPI Dashboards, use the [DashboardView component](/gooddata-ui/docs/8.4.0/dashboard_view_component.html)."/><meta name="docsearch:version" content="8.4.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Embed a Dashboard Created in KPI Dashboards · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="To embed an existing dashboard created in KPI Dashboards, use the [DashboardView component](/gooddata-ui/docs/8.4.0/dashboard_view_component.html)."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.4.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Development Tips</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/supported_versions.html">Supported Versions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/framework_overview.html">Architecture Overview</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/create_new_application.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/understand_execution_model.html">Understand the Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/export_catalog.html">Export Catalog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData Platform</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/platform_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/platform_sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/platform_cors.html">Deal with Cross-Origin Issues</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData.CN</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/cloudnative_introduction.html">GoodData.CN Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/cloudnative_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/cloudnative_local_dev.html">Set Up Development on a Workstation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/cloudnative_limitations.html">Limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/dashboard_view_component.html">DashboardView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/on_legend_ready.html">OnLegendReady</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Execution Model</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/execution_model.html">Detailed Description</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/custom_execution.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/result_specification.html">Specify the Result Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/8.4.0/embed_dashboard.html">Embed a Dashboard Created in KPI Dashboards</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Projects</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/ht_create_predicates.html">Create Header Predicates</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/backend_agnostic_apps.html">Building backend-agnostic applications</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/placeholders.html">Visualization Definition Placeholders</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.4.0/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Embed a Dashboard Created in KPI Dashboards</h1></header><article><div><span><p>To embed an existing dashboard created in KPI Dashboards, use the <a href="/gooddata-ui/docs/8.4.0/dashboard_view_component.html">DashboardView component</a>.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li><p>Obtain the identifier of the dashboard via <a href="/gooddata-ui/docs/8.4.0/export_catalog.html">catalog-export</a>.</p></li>
+<li><p>Import the DashboardView component from the <code>@gooddata/sdk-ui-ext</code> package into your app:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { DashboardView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+</code></pre></li>
+<li><p>Create a <code>DashboardView</code> component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { DashboardView } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-ext/styles/css/main.css"</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">DashboardView</span> <span class="hljs-attr">dashboard</span>=<span class="hljs-string">"aby3polcaFxy"</span> /&gt;</span></span>;
+</code></pre></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="edit-mode"></a><a href="#edit-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Edit mode</h2>
+<p>The DashboardView component itself does not support editing of the dashboards. However, you can use the Embedded KPI Dashboard application to edit the dashboards and then use DashboardView to view them.</p>
+<p><strong>NOTE:</strong> The following example will <strong>not</strong> make sure that the custom filters you may have set for DashboardView will be reflected in the embedded KPI Dashboards. To do that, use the <a href="https://help.gooddata.com/pages/viewpage.action?pageId=81968283">postMessages API</a>. In addition, any customization you may have set using the <a href="/gooddata-ui/docs/8.4.0/dashboard_view_component.html#customizations">customizations</a> will <strong>not</strong> be applied to the embedded KPI Dashboards.</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> React, { useCallback, useEffect, useState } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { DashboardView, clearDashboardViewCaches } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-ext"</span>;
+<span class="hljs-keyword">import</span> { useWorkspace } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui"</span>;
+<span class="hljs-keyword">import</span> { EmbeddedKpiDashboard } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-embedding"</span>;
+
+<span class="hljs-keyword">const</span> dashboardId = <span class="hljs-string">"&lt;dashboard-id&gt;"</span>;
+<span class="hljs-keyword">const</span> backendUrl = <span class="hljs-string">"&lt;backend-url&gt;"</span>;
+
+<span class="hljs-keyword">const</span> containerStyle = {
+    <span class="hljs-attr">width</span>: <span class="hljs-number">1200</span>, <span class="hljs-comment">// set to at least 1170px, otherwise edit mode of KPI Dashboards will not work properly</span>
+    <span class="hljs-attr">height</span>: <span class="hljs-number">800</span>, <span class="hljs-comment">// set a fixed height to prevent layout shifts when switching to and from edit mode</span>
+};
+
+<span class="hljs-keyword">const</span> DashboardViewEditExample = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> [isEditing, setIsEditing] = useState(<span class="hljs-literal">false</span>);
+    <span class="hljs-keyword">const</span> workspace = useWorkspace();
+
+    <span class="hljs-keyword">const</span> listener = useCallback(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> type = e.data.gdc?.event.name;
+
+        <span class="hljs-keyword">if</span> (type === EmbeddedKpiDashboard.GdcKdEventType.DashboardSaved) {
+            <span class="hljs-comment">// this means the user has made some changes and saved them</span>
+            <span class="hljs-comment">// clear cache to make sure the dashboard is reloaded...</span>
+            clearDashboardViewCaches();
+            <span class="hljs-comment">// ... and switch back to view mode</span>
+            setIsEditing(<span class="hljs-literal">false</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (type === EmbeddedKpiDashboard.GdcKdEventType.SwitchedToView) {
+            <span class="hljs-comment">// this means the user did not save the changes and clicked the "Cancel" button</span>
+            <span class="hljs-comment">// so we just switch back to view mode</span>
+            setIsEditing(<span class="hljs-literal">false</span>);
+        }
+    }, []);
+
+    useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-comment">// when switching to edit mode, attach an event listener to detect when the user is done with their edits</span>
+        <span class="hljs-comment">// and we remove the listener when switching back</span>
+        <span class="hljs-keyword">if</span> (isEditing) {
+            <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"message"</span>, listener, <span class="hljs-literal">false</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">window</span>.removeEventListener(<span class="hljs-string">"message"</span>, listener, <span class="hljs-literal">false</span>);
+        }
+
+        <span class="hljs-comment">// clean up when this component is unmounted</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">window</span>.removeEventListener(<span class="hljs-string">"message"</span>, listener, <span class="hljs-literal">false</span>);
+    }, [isEditing]);
+
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{containerStyle}</span>&gt;</span>
+            {isEditing ? (
+                {/*
+                    - we use an iframe with a special URL constructed from the dashboard data
+                      (the "?mode=edit" will make sure the KPI Dashboards will open directly in edit mode)
+                    - we make sure it fills the whole parent container by setting the size to 100%
+                */}
+                <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span>
+                    <span class="hljs-attr">src</span>=<span class="hljs-string">{</span>`${<span class="hljs-attr">backendUrl</span>}/<span class="hljs-attr">dashboards</span>/<span class="hljs-attr">embedded</span>/#/<span class="hljs-attr">project</span>/${<span class="hljs-attr">workspace</span>}/<span class="hljs-attr">dashboard</span>/${<span class="hljs-attr">dashboardId</span>}?<span class="hljs-attr">mode</span>=<span class="hljs-string">edit</span>`}
+                    <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span>
+                    <span class="hljs-attr">height</span>=<span class="hljs-string">"100%"</span>
+                    <span class="hljs-attr">frameBorder</span>=<span class="hljs-string">"0"</span>
+                /&gt;</span>
+            ) : (
+                <span class="hljs-tag">&lt;<span class="hljs-name">React.Fragment</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setIsEditing(true)}&gt;
+                        Edit dashboard using embedded KPI Dashboards
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">DashboardView</span> <span class="hljs-attr">dashboard</span>=<span class="hljs-string">{dashboardId}</span> /&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">React.Fragment</span>&gt;</span>
+            )}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+};
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/8.4.0/ht_embed_visualization.html"><span class="arrow-prev">← </span><span>Embed an Insight Created in Analytical Designer</span></a><a class="docs-next button" href="/gooddata-ui/docs/8.4.0/table_totals.html"><span>Specify Table Totals</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#edit-mode">Edit mode</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2021 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.4.0"]}
+              });
+            </script></body></html>
