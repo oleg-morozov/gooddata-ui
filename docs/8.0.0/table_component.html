@@ -11,7 +11,7 @@
 <span class="hljs-keyword">import</span> { Table } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/react-components'</span>;
 
 &lt;Table
-    projectId={&lt;project-id&gt;}
+    projectId={&lt;workspace-id&gt;}
     measures={&lt;measures&gt;}
     sdk={&lt;sdk&gt;}
     …
@@ -61,7 +61,7 @@
 <tr><th style="text-align:left">Name</th><th style="text-align:left">Required?</th><th style="text-align:left">Type</th><th style="text-align:left">Description</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align:left">projectId</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">The project ID</td></tr>
+<tr><td style="text-align:left">projectId</td><td style="text-align:left">true</td><td style="text-align:left">string</td><td style="text-align:left">The workspace ID</td></tr>
 <tr><td style="text-align:left">measures</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/8.0.0/afm.html#measure">Measure[]</a></td><td style="text-align:left">An array of measure definitions (either measure or attribute definition must be provided for the table to render properly)</td></tr>
 <tr><td style="text-align:left">attributes</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/8.0.0/afm.html#attribute">Attribute[]</a></td><td style="text-align:left">An array of attribute definitions (either measure or attribute definition must be provided for the table to render properly)</td></tr>
 <tr><td style="text-align:left">totals</td><td style="text-align:left">false</td><td style="text-align:left"><a href="/gooddata-ui/docs/8.0.0/table_totals.html">Total[]</a></td><td style="text-align:left">An array of total definitions</td></tr>

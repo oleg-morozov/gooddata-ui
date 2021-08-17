@@ -88,7 +88,7 @@
 <p>The following example shows the function specified as children in the Execution component that displays the execution output on the console.</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { Execute, isEmptyResult } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/react-components'</span>;
  
-&lt;Execute afm={&lt;afm&gt;} projectId={&lt;project-id&gt;}&gt; onLoadingChanged={e=&gt;{}} onError={e=&gt;{}}&gt;
+&lt;Execute afm={&lt;afm&gt;} projectId={&lt;workspace-id&gt;}&gt; onLoadingChanged={e=&gt;{}} onError={e=&gt;{}}&gt;
     {
         (executionResult) =&gt; {
             console.log(isEmptyResult(executionResult) ? 'empty result' : executionResult);

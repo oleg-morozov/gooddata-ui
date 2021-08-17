@@ -10,7 +10,7 @@
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> backend = bearFactory();
 
 <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> backend
-   .workspace(<span class="hljs-string">"project_id"</span>)
+   .workspace(<span class="hljs-string">"workspace_id"</span>)
    .execution()
    .forItems(measuresAndAttributes, filters)
    .withSorting(...sorting)
@@ -20,7 +20,7 @@
 <span class="hljs-keyword">const</span> firstPage = <span class="hljs-keyword">await</span> result.readWindow([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">10</span>, <span class="hljs-number">10</span>]);
 <span class="hljs-keyword">const</span> allData = <span class="hljs-keyword">await</span> result.readAll();
 </code></pre>
-<p>In the above example, the code starts an execution in the workspace with <code>project_id</code>. It specifies execution for the <code>measuresAndAttributes</code> array filtered by the <code>filters</code> array.</p>
+<p>In the above example, the code starts an execution in the workspace with <code>workspace_id</code>. It specifies execution for the <code>measuresAndAttributes</code> array filtered by the <code>filters</code> array.</p>
 <p>On top of that, it configures <code>sorting</code> of the result data and how to lay out the data into <code>dimensions</code>.</p>
 <p>This article describes the different items and filters that you can input as execution items. For the description of sorting
 and dimensionality setup, see <a href="/gooddata-ui/docs/8.3.0/result_specification.html">Specify the Result Structure</a>.</p>

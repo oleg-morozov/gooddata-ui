@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>gdc-catalog-export · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="`gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData project."/><meta name="docsearch:version" content="4.1.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="gdc-catalog-export · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="`gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData project."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>gdc-catalog-export · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="`gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData workspace."/><meta name="docsearch:version" content="4.1.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="gdc-catalog-export · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="`gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData workspace."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -59,9 +59,9 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">gdc-catalog-export</h1></header><article><div><span><p><code>gdc-catalog-export</code> is a tool for exporting a list of catalog items and date datasets from a GoodData project.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">gdc-catalog-export</h1></header><article><div><span><p><code>gdc-catalog-export</code> is a tool for exporting a list of catalog items and date datasets from a GoodData workspace.</p>
 <p>Using this list, you can create AFMs with meaningful object names instead of using URIs or identifiers. For example, use <code>gdc-catalog-export</code> when you are working with <a href="/gooddata-ui/docs/4.1.1/data_layer.html">DataLayer</a>.</p>
-<p><code>gdc-catalog-export</code> exports only data from a project (production data). If you<a href="https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project">uploaded data to your project from a file</a>, the data from the file is added as a separate dataset (non-production data), and <code>gdc-catalog-export</code> cannot retrieve it. This also include any measures that have been created using the data from that separate dataset.</p>
+<p><code>gdc-catalog-export</code> exports only data from a workspace (production data). If you<a href="https://help.gooddata.com/pages/viewpage.action?pageId=34341714">uploaded data to your workspace from a file</a>, the data from the file is added as a separate dataset (non-production data), and <code>gdc-catalog-export</code> cannot retrieve it. This also include any measures that have been created using the data from that separate dataset.</p>
 <h2><a class="anchor" aria-hidden="true" id="installing-gdc-catalog-export"></a><a href="#installing-gdc-catalog-export" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing gdc-catalog-export</h2>
 <p>To install the stable version, run the following command:</p>
 <pre><code class="hljs css language-bash">yarn global add gdc-catalog-export
@@ -85,7 +85,7 @@
 <p>You are prompted to enter input information to export the catalog.</p>
 <ol>
 <li><p>Enter your username and password.</p></li>
-<li><p>Choose the project that you want to export the catalog data from.</p></li>
+<li><p>Choose the workspace that you want to export the catalog data from.</p></li>
 <li><p>Enter the file name that you want to export the data to (the default file name is <code>catalog.json</code>).</p>
 <p>If the file already exists, you are asked whether you want to overwrite it.</p>
 <p>If you choose to overwrite, the tool overwrite the files with new data. Otherwise, you are asked to enter a different name for the file.</p></li>
@@ -99,7 +99,7 @@
     <span class="hljs-string">"hostname"</span>: <span class="hljs-string">"https://secure.gooddata.com"</span>,
     <span class="hljs-string">"username"</span>: <span class="hljs-string">"john.doe@example.com"</span>,
     <span class="hljs-string">"password"</span>: <span class="hljs-string">"secret"</span>,
-    <span class="hljs-string">"projectId"</span>: <span class="hljs-string">"yourProjectId"</span>,
+    <span class="hljs-string">"projectId"</span>: <span class="hljs-string">"yourWorkspaceId"</span>,
     <span class="hljs-string">"output"</span>: <span class="hljs-string">"outputFile.json"</span>
 }
 </code></pre>
@@ -108,7 +108,7 @@
 <li><p><strong>username</strong> is your GoodData login username.</p></li>
 <li><p><strong>password</strong> is your GoodData login password.</p>
 <p>We do not recommend that you store the password in the config file. A more secure option is to provide it through the interactive interface or by using the <code>--password</code> parameter when running the command.</p></li>
-<li><p><strong>projectId</strong> is the ID of the project that you want to export the data from.</p></li>
+<li><p><strong>projectId</strong> is the ID of the workspace that you want to export the data from.</p></li>
 <li><p><strong>output</strong> is the name/path for the output file.</p></li>
 </ul>
 <p>To provide a custom config file, run the tool with the <code>--config</code> parameter:</p>
@@ -116,7 +116,7 @@
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="command-line-parameters"></a><a href="#command-line-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command Line Parameters</h3>
 <p>You can use command line parameters to set up a configuration needed to obtain data.</p>
-<pre><code class="hljs css language-bash">$ gdc-catalog-export--project-id&lt;project-id&gt; --username &lt;your-email&gt; --password &lt;your-password&gt; --output &lt;file-name-path&gt; --hostname&lt;host-url&gt; --config &lt;/path/to/customConfig&gt;
+<pre><code class="hljs css language-bash">$ gdc-catalog-export--project-id&lt;workspace-id&gt; --username &lt;your-email&gt; --password &lt;your-password&gt; --output &lt;file-name-path&gt; --hostname&lt;host-url&gt; --config &lt;/path/to/customConfig&gt;
 </code></pre>
 <p>Any parameter provided as a command line parameter has the highest priority. If you also use a config file to set up a c onfiguration, the config file paramters get overriden, and the command line parameters are used.</p>
 <p>To see all the available parameters, run the following command:</p>
@@ -129,7 +129,7 @@
 
     -h, --<span class="hljs-built_in">help</span>          output usage information
     -V, --version       output the version number
-    --project-id &lt;id&gt;   Project id <span class="hljs-keyword">for</span> <span class="hljs-built_in">which</span> you want to <span class="hljs-built_in">export</span> the catalog.
+    --project-id &lt;id&gt;   Workspace id <span class="hljs-keyword">for</span> <span class="hljs-built_in">which</span> you want to <span class="hljs-built_in">export</span> the catalog.
     --username &lt;email&gt;  Your username that you use to <span class="hljs-built_in">log</span> <span class="hljs-keyword">in</span> to GoodData platform.
     --password &lt;value&gt;  Your password that you use to <span class="hljs-built_in">log</span> <span class="hljs-keyword">in</span> to GoodData platform.
     --output &lt;value&gt;    Output file (defaults to catalog.json). The output file will be created <span class="hljs-keyword">in</span> current working directory

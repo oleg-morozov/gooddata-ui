@@ -95,8 +95,8 @@ $ npm install @gooddata/react-components
 <ol>
 <li><p>Obtain the identifier of the visualization by one of the following methods:</p>
 <ul>
-<li>Via the gray pages (<a href="https://help.gooddata.com/display/doc/Find+the+Project+ID">find the ID of your project</a>, ie <code>la84vcyhrq8jwbu4wpipw66q2sqeb923</code>):
-<pre><code class="hljs css language-bash">https://secure.gooddata.com/gdc/md/{project-id}/query/visualizationobjects
+<li>Via the gray pages (<a href="https://help.gooddata.com/pages/viewpage.action?pageId=86796773">find the ID of your workspace</a>, ie <code>la84vcyhrq8jwbu4wpipw66q2sqeb923</code>):
+<pre><code class="hljs css language-bash">https://secure.gooddata.com/gdc/md/{workspace-id}/query/visualizationobjects
 https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visualizationobjects
 </code></pre>
 //TODO what do next? where is identifier?</li>
@@ -105,7 +105,7 @@ https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visual
 <li><p>Import the <code>Visualization</code> component from the <code>@gooddata/react-components</code> package into your app:</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { Visualization } <span class="hljs-keyword">from</span> <span class="hljs-string">'@gooddata/react-components'</span>;
 </code></pre></li>
-<li><p>Create a <code>Visualization</code> component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:</p>
+<li><p>Create a <code>Visualization</code> component in your app, and provide it with the workspace ID and the visualization identifier that you obtained at Step 1:</p>
 <pre><code class="hljs css language-javascript">// be sure to wrap the component in block-element with non-auto height
 &lt;div style={{ height: 300 }}&gt;
   // This is an example of saved visualization (by identifier)
@@ -159,7 +159,7 @@ https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visual
 You can choose any <a href="react_components.md">supported visualization type</a>, ie: <code>BarChart</code>, <code>ColumnChart</code>, <code>LineChart</code>, <code>PieChart</code>, <code>Table</code> etc.</p>
 <p><strong>Steps:</strong></p>
 <ol>
-<li><a href="https://help.gooddata.com/display/doc/Find+the+Project+ID">Find your project ID</a>,
+<li><a href="https://help.gooddata.com/pages/viewpage.action?pageId=86796773">Find your workspace ID</a>,
 we will use: <code>la84vcyhrq8jwbu4wpipw66q2sqeb923</code>.</li>
 <li>Obtain data identifiers using <a href="gdc-catalog-export">gdc-catalog-export</a>.</li>
 <li>Import the visualization type that you want to use.
@@ -170,7 +170,7 @@ we will use: <code>la84vcyhrq8jwbu4wpipw66q2sqeb923</code>.</li>
 
 <span class="hljs-keyword">const</span> { BarChart } = AfmComponents;
 
-<span class="hljs-keyword">const</span> projectId = <span class="hljs-string">'la84vcyhrq8jwbu4wpipw66q2sqeb923'</span>; <span class="hljs-comment">// Replace with your project ID.</span>
+<span class="hljs-keyword">const</span> projectId = <span class="hljs-string">'la84vcyhrq8jwbu4wpipw66q2sqeb923'</span>; <span class="hljs-comment">// Replace with your workspace ID.</span>
 <span class="hljs-keyword">const</span> afm = {};
 <span class="hljs-keyword">const</span> resultSpec = {};
 <span class="hljs-keyword">const</span> customConfig = {};

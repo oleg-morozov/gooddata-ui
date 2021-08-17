@@ -60,7 +60,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">How to Create Your First Visualization with GoodData UI SDK</h1></header><article><div><span><p>This tutorial will guide you through the process of creating your first smart application using Facebook’s <code>create-react-app</code> tool and will show you the GoodData UI SDK in action.</p>
-<p>When you complete this tutorial, you will be able to display various measures and charts from the <a href="https://secure.gooddata.com/#s=/gdc/projects/la84vcyhrq8jwbu4wpipw66q2sqeb923%7CprojectDashboardPage%7C/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/33807%7Caa0fb2c4d399">GoodSales demo project</a> within the context of your React application.</p>
+<p>When you complete this tutorial, you will be able to display various measures and charts from the <a href="https://secure.gooddata.com/#s=/gdc/workspaces/la84vcyhrq8jwbu4wpipw66q2sqeb923%7CworkspaceDashboardPage%7C/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/33807%7Caa0fb2c4d399">GoodSales demo workspace</a> within the context of your React application.</p>
 <h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
 <p>To successfully complete this tutorial, you are required to:</p>
 <ul>
@@ -249,8 +249,8 @@ measure=<span class="hljs-string">"atSHqCtAePe4"</span> /&gt;
    projectId=<span class="hljs-string">"la84vcyhrq8jwbu4wpipw66q2sqeb923"</span>
    measure=<span class="hljs-string">"atSHqCtAePe4"</span> /&gt;
 </code></pre>
-<p>In this component, <code>projectId=&quot;la84vcyhrq8jwbu4wpipw66q2sqeb923&quot;</code> is a hardcoded reference to the GoodSales demo project ID, and <code>measure=&quot;atSHqCtAePe4&quot;</code> is a hardcoded reference to the measure named <code>Avg Deal Size</code>.</p>
-<p>With the <a href="gdc-catalog-export">gdc-catalog-export</a> tool, you can serialize the list of all measures, attributes and other relevant objects from your project.</p>
+<p>In this component, <code>projectId=&quot;la84vcyhrq8jwbu4wpipw66q2sqeb923&quot;</code> is a hardcoded reference to the GoodSales demo workspace ID, and <code>measure=&quot;atSHqCtAePe4&quot;</code> is a hardcoded reference to the measure named <code>Avg Deal Size</code>.</p>
+<p>With the <a href="gdc-catalog-export">gdc-catalog-export</a> tool, you can serialize the list of all measures, attributes and other relevant objects from your workspace.</p>
 <p>To install the tool, run the following command from the command line:</p>
 <pre><code class="hljs css language-bash">yarn global add gdc-catalog-export
 </code></pre>
@@ -309,14 +309,14 @@ You can now reference the measure using its human-readable alias (<code>Avg Deal
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App;
 </code></pre>
-<p>Notice that the code in the <code>App.js</code> file still includes the hardcoded reference to the project (<code>la84vcyhrq8jwbu4wpipw66q2sqeb923</code> at line 17). In your real application, you may prefer to pass the project ID via URL or hash parameter, or it may be retrieved from your server-side APIs (if you are integrating GoodData into an existing application). It depends on your application's architecture.</p>
+<p>Notice that the code in the <code>App.js</code> file still includes the hardcoded reference to the workspace (<code>la84vcyhrq8jwbu4wpipw66q2sqeb923</code> at line 17). In your real application, you may prefer to pass the workspace ID via URL or hash parameter, or it may be retrieved from your server-side APIs (if you are integrating GoodData into an existing application). It depends on your application's architecture.</p>
 <h2><a class="anchor" aria-hidden="true" id="step-9-add-more-visualizations"></a><a href="#step-9-add-more-visualizations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 9. Add more visualizations</h2>
 <p>So far, you have added a single number using the KPI component.</p>
 <p>You can add more different elements: tables, charts, custom visualizations. The GoodData UI SDK provides a continuously growing set of built-in components, see <a href="react_components.md">React Components</a>).</p>
 <h2><a class="anchor" aria-hidden="true" id="next-steps"></a><a href="#next-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next steps</h2>
 <p>In a real application, you will probably do a number of things differently. For example:</p>
 <ul>
-<li>Avoid hardcoding the project ID.</li>
+<li>Avoid hardcoding the workspace ID.</li>
 <li>Use your GoodData domain with CORS settings so you do not need to use a local proxy (this is what you will have to do for the production deployment even if you prefer to use a proxy for local development). For more information, see <a href="ht_access_gd_api_directly.md">How to Access the GoodData API Directly</a>.</li>
 <li>Authenticate your users using single sign-on rather than sending them to a proxied GoodData login page.</li>
 </ul>
