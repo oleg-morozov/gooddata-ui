@@ -70,7 +70,7 @@
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">'@gooddata/react-components/styles/css/main.css'</span>;
 
-<span class="hljs-keyword">import</span> { employeeNameIdentifier, projectId } <span class="hljs-keyword">from</span> <span class="hljs-string">'../utils/fixtures'</span>;
+<span class="hljs-keyword">import</span> { employeeNameIdentifier, workspaceId } <span class="hljs-keyword">from</span> <span class="hljs-string">'../utils/fixtures'</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AttributeFilterExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
     onApply(params) {
@@ -83,7 +83,7 @@
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">AttributeFilter</span>
                     <span class="hljs-attr">filter</span>=<span class="hljs-string">{Model.negativeAttributeFilter(employeeNameIdentifier,</span> [])}
-                    <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
+                    <span class="hljs-attr">projectId</span>=<span class="hljs-string">{workspaceId}</span>
                     <span class="hljs-attr">onApply</span>=<span class="hljs-string">{this.onApply}</span>
                     <span class="hljs-attr">sdk</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">sdk</span>&gt;</span>}
                 /&gt;
@@ -99,7 +99,7 @@
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">AttributeFilter</span>
                     <span class="hljs-attr">filter</span>=<span class="hljs-string">{Model.positiveAttributeFilter(employeeNameIdentifier,</span> ["<span class="hljs-attr">Abbie</span> <span class="hljs-attr">Adams</span>"], <span class="hljs-attr">true</span>)}
-                    <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
+                    <span class="hljs-attr">projectId</span>=<span class="hljs-string">{workspaceId}</span>
                     <span class="hljs-attr">onApply</span>=<span class="hljs-string">{this.onApply}</span>
                     <span class="hljs-attr">sdk</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">sdk</span>&gt;</span>}
                 /&gt;
@@ -121,7 +121,7 @@
                 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-name">AttributeFilter</span>
                         <span class="hljs-attr">filter</span>=<span class="hljs-string">{this.state.filter}</span>
-                        <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
+                        <span class="hljs-attr">projectId</span>=<span class="hljs-string">{workspaceId}</span>
                         <span class="hljs-attr">onApplyWithFilterDefinition</span>=<span class="hljs-string">{this.onApplyWithFilterDefinition}</span>
                         <span class="hljs-attr">sdk</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">sdk</span>&gt;</span>}
                     /&gt;

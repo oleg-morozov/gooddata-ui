@@ -121,7 +121,7 @@
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
 <span class="hljs-keyword">import</span> { Execute, isEmptyResult } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/react-components"</span>;
 
-<span class="hljs-keyword">import</span> { totalSalesIdentifier, projectId } <span class="hljs-keyword">from</span> <span class="hljs-string">"../utils/fixtures"</span>;
+<span class="hljs-keyword">import</span> { totalSalesIdentifier, workspaceId } <span class="hljs-keyword">from</span> <span class="hljs-string">"../utils/fixtures"</span>;
 <span class="hljs-keyword">import</span> { Loading } <span class="hljs-keyword">from</span> <span class="hljs-string">"./utils/Loading"</span>;
 <span class="hljs-keyword">import</span> { <span class="hljs-built_in">Error</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"./utils/Error"</span>;
 
@@ -242,7 +242,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">Execute</span>
                     <span class="hljs-attr">key</span>=<span class="hljs-string">{executionNumber}</span>
                     <span class="hljs-attr">afm</span>=<span class="hljs-string">{afm}</span>
-                    <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
+                    <span class="hljs-attr">projectId</span>=<span class="hljs-string">{workspaceId}</span>
                     <span class="hljs-attr">onLoadingChanged</span>=<span class="hljs-string">{this.onLoadingChanged}</span>
                     <span class="hljs-attr">onError</span>=<span class="hljs-string">{this.onError}</span>
                 &gt;</span>{this.executeChildrenFunction}

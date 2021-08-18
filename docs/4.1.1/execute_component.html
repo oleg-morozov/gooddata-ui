@@ -217,7 +217,7 @@
 
   render() {
     <span class="hljs-keyword">const</span> { error, isLoading, executionNumber, willFail } = <span class="hljs-keyword">this</span>.state;
-    <span class="hljs-keyword">const</span> projectId = <span class="hljs-string">'hdint8y1xvk9oyns1r0iefknwivzlb4g'</span>;
+    <span class="hljs-keyword">const</span> workspaceId = <span class="hljs-string">'hdint8y1xvk9oyns1r0iefknwivzlb4g'</span>;
     <span class="hljs-keyword">const</span> afm = {
       <span class="hljs-attr">measures</span>: [
         {
@@ -226,7 +226,7 @@
               <span class="hljs-attr">measure</span>: {
                   <span class="hljs-attr">item</span>: {
                       <span class="hljs-comment">// In order to showcase the fail state, we send invalid measure uri</span>
-                      <span class="hljs-attr">uri</span>: willFail ? <span class="hljs-string">`/gdc/md/<span class="hljs-subst">${projectId}</span>/obj/15415`</span> : <span class="hljs-literal">null</span>
+                      <span class="hljs-attr">uri</span>: willFail ? <span class="hljs-string">`/gdc/md/<span class="hljs-subst">${workspaceId}</span>/obj/15415`</span> : <span class="hljs-literal">null</span>
                   },
                   <span class="hljs-attr">aggregation</span>: <span class="hljs-string">'sum'</span>
               }
@@ -251,7 +251,7 @@
       <span class="hljs-tag">&lt;<span class="hljs-name">Execute</span>
         <span class="hljs-attr">key</span>=<span class="hljs-string">{executionNumber}</span>
         <span class="hljs-attr">afm</span>=<span class="hljs-string">{afm}</span>
-        <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
+        <span class="hljs-attr">projectId</span>=<span class="hljs-string">{workspaceId}</span>
         <span class="hljs-attr">onLoadingChanged</span>=<span class="hljs-string">{this.onLoadingChanged}</span>
         <span class="hljs-attr">onError</span>=<span class="hljs-string">{this.onError}</span>
         <span class="hljs-attr">children</span>=<span class="hljs-string">{</span>

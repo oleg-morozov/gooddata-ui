@@ -170,7 +170,7 @@ we will use: <code>la84vcyhrq8jwbu4wpipw66q2sqeb923</code>.</li>
 
 <span class="hljs-keyword">const</span> { BarChart } = AfmComponents;
 
-<span class="hljs-keyword">const</span> projectId = <span class="hljs-string">'la84vcyhrq8jwbu4wpipw66q2sqeb923'</span>; <span class="hljs-comment">// Replace with your workspace ID.</span>
+<span class="hljs-keyword">const</span> workspaceId = <span class="hljs-string">'la84vcyhrq8jwbu4wpipw66q2sqeb923'</span>; <span class="hljs-comment">// Replace with your workspace ID.</span>
 <span class="hljs-keyword">const</span> afm = {};
 <span class="hljs-keyword">const</span> resultSpec = {};
 <span class="hljs-keyword">const</span> customConfig = {};
@@ -194,7 +194,7 @@ To create a bar chart that renders <code># of Activities</code> sliced by <code>
 
 <span class="hljs-keyword">const</span> { BarChart } = AfmComponents;
 
-<span class="hljs-keyword">const</span> projectId = <span class="hljs-string">'la84vcyhrq8jwbu4wpipw66q2sqeb923'</span>;
+<span class="hljs-keyword">const</span> workspaceId = <span class="hljs-string">'la84vcyhrq8jwbu4wpipw66q2sqeb923'</span>;
 <span class="hljs-keyword">const</span> afm = {
     <span class="hljs-attr">measures</span>: [
         {
@@ -224,7 +224,7 @@ render() {
      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">BarChart</span>
                 <span class="hljs-attr">afm</span>=<span class="hljs-string">{afm}</span>
-                <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
+                <span class="hljs-attr">projectId</span>=<span class="hljs-string">{workspaceId}</span>
                 <span class="hljs-attr">resultSpec</span>=<span class="hljs-string">{resultSpec}</span>
         /&gt;</span>
      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
@@ -253,7 +253,7 @@ render() {
      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">BarChart</span>
                 <span class="hljs-attr">afm</span>=<span class="hljs-string">{afm}</span>
-                <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span>
+                <span class="hljs-attr">projectId</span>=<span class="hljs-string">{workspaceId}</span>
                 <span class="hljs-attr">resultSpec</span>=<span class="hljs-string">{resultSpec}</span>
         /&gt;</span>
      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>

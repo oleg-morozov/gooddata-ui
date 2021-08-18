@@ -77,7 +77,7 @@
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">'@gooddata/react-components/styles/css/main.css'</span>;
 
-<span class="hljs-keyword">import</span> { employeeNameIdentifier, projectId } <span class="hljs-keyword">from</span> <span class="hljs-string">'../utils/fixtures'</span>;
+<span class="hljs-keyword">import</span> { employeeNameIdentifier, workspaceId } <span class="hljs-keyword">from</span> <span class="hljs-string">'../utils/fixtures'</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AttributeFilterItem</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
     <span class="hljs-keyword">static</span> propTypes = {
@@ -105,7 +105,7 @@
     render() {
         <span class="hljs-keyword">return</span> (
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">minHeight:</span> <span class="hljs-attr">500</span> }}&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">AttributeElements</span> <span class="hljs-attr">identifier</span>=<span class="hljs-string">{employeeNameIdentifier}</span> <span class="hljs-attr">projectId</span>=<span class="hljs-string">{projectId}</span> <span class="hljs-attr">options</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">limit:</span> <span class="hljs-attr">20</span> }}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">AttributeElements</span> <span class="hljs-attr">identifier</span>=<span class="hljs-string">{employeeNameIdentifier}</span> <span class="hljs-attr">projectId</span>=<span class="hljs-string">{workspaceId}</span> <span class="hljs-attr">options</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">limit:</span> <span class="hljs-attr">20</span> }}&gt;</span>
                     {({ validElements, loadMore, isLoading, error }) =&gt; {
                         const {
                             offset = null,
