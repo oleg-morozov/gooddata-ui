@@ -199,7 +199,7 @@ functionality is going to remain in the <code>api-client-gd</code> package, the 
 features and are easier to use.</p>
 <p>To adopt this change, migrate all custom executions so that they use the analytical backend SPI. The new entry
 point to execution is:</p>
-<p><code>backend.workspace(&lt;projectId&gt;).execution()</code></p>
+<p><code>backend.workspace(&lt;workspaceId&gt;).execution()</code></p>
 <p>This is a gateway to the new execution APIs where you can set up custom execution with the same flexibility and
 more convenience than with the lower-level Execute AFM component.</p>
 <p><strong>NOTE:</strong> For information about further levels of flexibility and performance that you can achieve with the new execution
