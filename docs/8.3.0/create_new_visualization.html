@@ -88,7 +88,7 @@ the data to render and then access the results:</p>
                             {slices.map((slice, idx) =&gt; {
                                 // for each slice (row), print the header and then the actual formatted data points
                                 return (
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"idx"</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{idx}</span>&gt;</span>
                                         {slice.sliceTitles().join("&gt;")} - {slice.dataPoints().map(dp =&gt; dp.formattedValue())}
                                     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>)
                                 })}

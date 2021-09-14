@@ -114,7 +114,7 @@ execution()
 
 execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees, Ldm.$TotalSales])
-    .withDimensions(newTwoDimensional([Ldm.LocationState], [MeasureGroupIdentifier]));
+    .withDimensions(...newTwoDimensional([Ldm.LocationState], [MeasureGroupIdentifier]));
 
 {
     <span class="hljs-attr">data</span>: [
@@ -130,7 +130,7 @@ execution()
 
 execution()
     .forItems([Ldm.LocationState, Ldm.$FranchiseFees, Ldm.$TotalSales])
-    .withDimensions(newTwoDimensional([MeasureGroupIdentifier], [Ldm.LocationState]));
+    .withDimensions(...newTwoDimensional([MeasureGroupIdentifier], [Ldm.LocationState]));
 
 <span class="hljs-comment">// `executionResult` is returned with measures in the first dimension:</span>
 {
@@ -147,7 +147,7 @@ execution()
 
 execution()
     .forItems([Ldm.LocationState, Ldm.LocationCity, Ldm.$FranchiseFees])
-    .withDimensions(newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]));
+    .withDimensions(...newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]));
 
 {
 <span class="hljs-attr">data</span>: [
@@ -168,7 +168,7 @@ execution()
 
 execution()
     .forItems([Ldm.LocationState, Ldm.LocationCity, Ldm.$FranchiseFees])
-    .withDimensions(newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]))
+    .withDimensions(...newTwoDimensional([Ldm.LocationState], [Ldm.LocationCity, MeasureGroupIdentifier]))
     .withSorting(newAttributeSort(Ldm.LocationState, <span class="hljs-string">"desc"</span>));
 </code></pre>
 <p>For more information about how to define sorts, see <a href="/gooddata-ui/docs/8.4.0/understand_execution_model.html">Execution Model</a>.</p>
