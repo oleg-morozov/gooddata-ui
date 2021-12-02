@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Dashboard Plugin API · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Your plugin can take advantage of several categories of APIs that are outlined in this article."/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Dashboard Plugin API · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="Your plugin can take advantage of several categories of APIs that are outlined in this article."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class=""><a href="/gooddata-ui/docs/roadmap.html" target="_blank">Roadmap</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Dashboard</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/supported_versions.html">Supported Versions and Compatibility</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/framework_overview.html">Architecture Overview</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/api_maturity.html">API Maturity</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/roadmap.html">Roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/create_new_application.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/understand_execution_model.html">Understand the Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/export_catalog.html">Export Catalog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData Platform</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/platform_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/platform_sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/platform_cors.html">Deal with Cross-Origin Issues</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData.CN</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/cloudnative_introduction.html">GoodData.CN Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/cloudnative_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/cloudnative_local_dev.html">Set Up Development on a Workstation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/cloudnative_limitations.html">Limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/dashboard_view_component.html">DashboardView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/attribute_filter_button_component.html">Attribute Filter Button</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/on_legend_ready.html">OnLegendReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/data_sampling.html">Data Sampling</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Dashboard</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/dashboard_intro.html">Introduction to the Dashboard Component</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/dashboard_plugins.html">Dashboard Plugins</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/next/dashboard_plugins_api.html">Dashboard Plugin API</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/dashboard_embedding.html">Dashboard Embedding</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/dashboard_component.html">Dashboard Component</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Execution Model</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/execution_model.html">Detailed Description</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/custom_execution.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/result_specification.html">Specify the Result Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/embed_dashboard.html">Embed a Dashboard Created in KPI Dashboards</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Workspaces</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/ht_create_predicates.html">Create Header Predicates</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/backend_agnostic_apps.html">Building backend-agnostic applications</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/placeholders.html">Visualization Definition Placeholders</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/next/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Dashboard Plugin API</h1></header><article><div><span><p>Your plugin can take advantage of several categories of APIs that are outlined in this article.</p>
+<p>All the public and most of the alpha-level APIs have detailed documentation in form of TSDoc. We generate the API
+doc website from these comments. You can find the API reference <a href="https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.html">here</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="plugin-contract"></a><a href="#plugin-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin contract</h2>
+<p>The plugin contract is the first API that you will come in touch with. The contract defines properties that you need
+to fill in and functions to implement, including the functions that allow you to specify code
+to run on load, during registration, and after unload.</p>
+<p>A new plugin that is bootstrapped using the <a href="18_dashboard_plugins#getting-started">Plugin Development Toolkit</a> sets up
+all the contract essentials and provides a template implementation of some of the functions by subclassing
+the <code>DashboardPluginV1</code>.</p>
+<p>You can modify your subclass as needed. You can even add a plugin-specific internal state into this class, if needed.</p>
+<h3><a class="anchor" aria-hidden="true" id="onpluginloaded"></a><a href="#onpluginloaded" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>onPluginLoaded</h3>
+<p>When implemented, this function is called right after your plugin is loaded and is about to be used on a dashboard.
+At this point, your code receives information about the context in which it will operate. Most notably:</p>
+<ul>
+<li>The Analytical Backend that is currently in use</li>
+<li>The workspace that the user works with</li>
+<li>The reference of the dashboard that is about to be loaded</li>
+<li>The Analytical Backend setup authenticated and ready to use in case your plugin needs to read additional data from the backend</li>
+</ul>
+<p>This function may return a promise. In that case, the dashboard loader waits until the promise is resolved and
+then proceeds. The loader does not impose any timeout on the <code>onPluginLoaded</code> call. If you make calls over the network,
+a good practice is to consider potential failures and include timeouts and necessary fallbacks.</p>
+<p><strong>NOTE:</strong> If your implementation of this function fails with an exception, the loader excludes your plugin from further processing.</p>
+<h4><a class="anchor" aria-hidden="true" id="parameterization"></a><a href="#parameterization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameterization</h4>
+<p>To allow a plugin to be reused across dashboards, you can make each link between a dashboard and your plugin specify
+additional parameters. These parameters can then be used to customize the behavior of the plugin for
+a particular dashboard.</p>
+<p>Both the GoodData platform and GoodData.CN treat parameters opaquely. Only soft-size limits of 2,048 bytes for
+the length of the parameter string are imposed. Otherwise, the parameters are fully under your control and responsibility.</p>
+<p>If the parameters are specified on the link between a dashboard and your plugin, the loader sends them as the
+second argument to the <code>onPluginLoad</code> function.</p>
+<h3><a class="anchor" aria-hidden="true" id="register"></a><a href="#register" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>register</h3>
+<p>This is a mandatory function that your plugin must implement. This function is called after the plugin is loaded.
+In this function, you then can register customizations to the dashboard.</p>
+<p>Your function is always called with the following parameters:</p>
+<ul>
+<li><p>Dashboard context</p>
+<p>Similar to <code>onPluginLoaded</code>, the context contains essential information describing the backend, workspace, and
+dashboard.</p></li>
+<li><p>Customization API</p>
+<p>The customization API allows your code to add new content to a dashboard. Calls to these APIs are only valid
+during the registration phase. If you hold onto the received APIs and attempt to make changes later on, they
+will have no effect and will result in warnings in the browser console.</p>
+<p>For more information, see <a href="18_dashboard_plugins_api#customization-api">Customization API</a>.</p></li>
+<li><p>Event handler API</p>
+<p>The event handler API allows your code to add or remove your own custom event handlers for different events
+happening on the dashboard. If needed, you can hold onto the event handler API and use it to add or remove handlers
+at any time during the plugin lifecycle.</p>
+<p>For more information, see <a href="18_dashboard_plugins_api#event-handler-api">Event handler API</a>.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="onpluginunload"></a><a href="#onpluginunload" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>onPluginUnload</h3>
+<p>When implemented, this function is called right before the dashboard that uses your plugin is unmounted.
+In this function, your code can do additional teardown and cleanup specific to your plugin.</p>
+<p>Your function may be asynchronous and return a promise. At this point, the dashboard loader does not wait for the returned
+promise to resolve.</p>
+<h2><a class="anchor" aria-hidden="true" id="customization-api"></a><a href="#customization-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Customization API</h2>
+<p>The customization API is an entry point to all the customization and enhancement capabilities that your code can take advantage of. The
+API is described in detail in the <a href="https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardcustomizer.html">API reference</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="customize-rendering-of-insights"></a><a href="#customize-rendering-of-insights" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Customize rendering of insights</h3>
+<p>Call the <code>insightWidgets()</code> method on the customization API to get to the API through which you can customize
+how the <a href="https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardinsightcustomizer.html">insight widgets</a>
+on your dashboard will be rendered.</p>
+<ul>
+<li><p>To <strong>render data for one or more insights</strong> using your own custom visualizations, the insight widget customization API provides the following methods:</p>
+<ul>
+<li><p><code>withCustomProvider()</code></p>
+<p>When calling this method, you can register a function that will be called by the Dashboard component every time it
+wants to render an insight widget. The function will receive a widget definition and the insight to be rendered. This function
+is expected to return a React component to use for rendering that widget. If the function does not return
+a custom component, the Dashboard component falls back and uses the built-in component.</p>
+<p>Your function must determine that a particular insight widget should be rendered using
+a custom component and then return the custom component. How your function determines this is up to you.</p></li>
+<li><p><code>withTag()</code></p>
+<p>This is a convenience method on top of the <code>withCustomProvider</code> method. To identify insight widgets to render
+using custom components, use tags. You can assign arbitrary tags to your insight objects and then use this
+method to register a renderer for the insight widgets that have this tag.</p>
+<p>To learn how to tag insights, see either the GoodData platform or GoodData.CN API documentation.</p></li>
+</ul></li>
+<li><p>To <strong>add additional elements on top of the insight widgets</strong> that are rendered using the built-in renderers, the insight widget customization API provides
+a method to register a &quot;decorator&quot; called <code>withCustomDecorator()</code>.</p>
+<p>In some way, the decorators resemble a concept of middleware that you may be familiar with from <code>express</code> or <code>redux</code>. Instead of
+registering a function that evaluates the widget and insight and returns a React component, for decorators you have to
+register a factory function. This factory function receives a provider for the component to decorate
+and must then return a function to provide a decorator component. The function to return has the same signature as
+the insight provider function that you register in <code>withCustomProvider</code>.</p>
+<p>This is best described in code:</p>
+<pre><code class="hljs css language-javascript">withCustomDecorator(<span class="hljs-function">(<span class="hljs-params">next</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">insight, widget</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (some_condition_to_prevent_decoration) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyCustomDecorator</span>(<span class="hljs-params">props</span>) </span>{
+             <span class="hljs-keyword">const</span> Decorated = next(insight, widget);
+
+             <span class="hljs-keyword">return</span> (
+                 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My Custom Decoration<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-name">Decorated</span> {<span class="hljs-attr">...props</span>} /&gt;</span>
+                 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+             )
+        }
+
+        <span class="hljs-keyword">return</span> MyCustomDecorator;
+    }
+})
+</code></pre></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="customize-rendering-of-kpis"></a><a href="#customize-rendering-of-kpis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Customize rendering of KPIs</h3>
+<p>Call the <code>kpiWidgets()</code> method on the customization API to get to the API through which you can customize
+how the <a href="https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardkpicustomizer.html">KPI widgets</a>
+on your dashboard will be rendered.</p>
+<p>The KPI widgets are a special type of widgets available only on the GoodData platform. Their purpose is to render the value of
+a single measure, possibly compared to the value of the measure in the previous period. The KPI widgets additionally
+allow dashboard consumers to register alerts for when the measure value changes.</p>
+<p>Similar to the insight widget customization API, you can register your own components to render the KPI widgets or
+to add extra elements on top of the widgets.</p>
+<p>The KPI customization API contains the <code>withCustomProvider()</code> and <code>withCustomDecorator()</code> methods that behave the same way
+the <a href="18_dashboard_plugins_api#customize-rendering-of-insights">insight widget methods</a> do.</p>
+<h3><a class="anchor" aria-hidden="true" id="custom-widgets"></a><a href="#custom-widgets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom widgets</h3>
+<p>With custom widgets, you can enrich dashboards with arbitrary content. For example, your dashboard can use
+a built-in insight and widget renderers and then use the custom widgets to add extra content such as images,
+additional text, or forms.</p>
+<p>Your must first register a custom widget type, which is declaration of the custom widget type. The declaration
+links the custom widget type name and the React component to use for rendering.</p>
+<p>Once you have registered the custom widget type, you can add any number of widgets of this type to your dashboard using the
+layout manipulation API.</p>
+<p><strong>NOTE:</strong> The default plugin bootstrapped by the Plugin Development Toolkit defines a sample custom widget
+that you can try out right away.</p>
+<h4><a class="anchor" aria-hidden="true" id="register-types-of-custom-widget"></a><a href="#register-types-of-custom-widget" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Register types of custom widget</h4>
+<p>Call the <code>customWidgets()</code> method on the customization API to get to the API through which you can
+register <a href="https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardwidgetcustomizer.html">custom widget types</a>.</p>
+<p>Use the <code>addCustomWidget()</code> method to register a custom widget type and provide your custom React component. The
+props for this component will be of the <code>IDashboardWidgetProps</code> type. The <code>widget</code> property contains a payload
+for the custom widget.</p>
+<h4><a class="anchor" aria-hidden="true" id="add-custom-widgets-to-a-dashboard"></a><a href="#add-custom-widgets-to-a-dashboard" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add custom widgets to a dashboard</h4>
+<p>Once you have a custom widget type registered, you can add instances of the widgets of this type to a dashboard. To do so,
+use the layout manipulation API.</p>
+<p>Call the <code>layout()</code> method on the customization API to get to the API through which you can
+<a href="https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardlayoutcustomizer.html">customize the layout</a>.
+To be prepared for different types of layouts that may be implemented in the future, the layout manipulation API contains
+methods to customize the layout of a particular type.</p>
+<p>The Dashboard component supports only the fluid 12-column grid layout. To customize this layout, use
+the <code>customizeFluidLayout()</code> function to register your customization function.</p>
+<p>You have to implement the fluid layout customization function yourself. This function is called with
+the following parameters:</p>
+<ul>
+<li><p>The layout as currently defined on the dashboard</p>
+<p>The layout is provided so that your code can inspect the layout and determine what and where
+to customize if needed. Depending on your use case, you may or may not need to inspect the layout. For instance, if you
+are adding a custom header on top of the dashboard, you can just do that.</p></li>
+<li><p><a href="https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.ifluidlayoutcustomizer.html">The fluid layout customization API</a></p>
+<p>This API allows you to add new sections (rows) to a dashboard or add new items (columns) to existing
+sections.</p></li>
+</ul>
+<p><strong>NOTE:</strong> The function that you register at this point will be called once during the dashboard initialization to modify
+the layout before it is stored in the Dashboard component's state. This API does not support further modifications of the layout that is
+already rendered. The Dashboard component provides alpha-level APIs that can be used to add, move, or remove widgets once the Dashboard component is rendered.</p>
+<h4><a class="anchor" aria-hidden="true" id="create-sections-items-and-custom-widgets"></a><a href="#create-sections-items-and-custom-widgets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create sections, items, and custom widgets</h4>
+<p>We do not recommend that you create sections, items, and custom widget objects manually. The Dashboard component
+contains convenient factory functions to create these objects:</p>
+<ul>
+<li><p><code>newDashboardSection</code> creates a new section (row) with a number of items (columns) that contain custom widgets.</p></li>
+<li><p><code>newDashboardItem</code> creates a new item (column) that contains a custom widget.</p></li>
+<li><p><code>newCustomWidget</code> creates a custom widget.</p>
+<p>When creating a custom widget, you have to specify a unique identifier for this widget, the type of the custom widget,
+and optionally additional data to include in the widget.</p>
+<p>The custom widget renderer that you registered previously will receive all this information so you can customize rendering
+based on the additional data.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="event-handler-api"></a><a href="#event-handler-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event handler API</h2>
+<p>The event handler API is an entry point to the event handling and subscription subsystem of the Dashboard component.
+The Dashboard component is designed to be fully observable via events, and you can register handlers for any of these events.</p>
+<p><strong>NOTE:</strong> Keep in mind that the API maturity of most of the events is <code>@alpha</code>. That means that they may change in one of the future
+versions of GoodData.UI and break your plugin if you try to upgrade to it.</p>
+<p>The <a href="https://sdk.gooddata.com/gooddata-ui-apidocs/v8.7.0/docs/sdk-ui-dashboard.idashboardeventing.html">event handler API</a> has several methods
+that can be divided into the following groups:</p>
+<ul>
+<li><p><code>addEventHandler()</code> and <code>removeEventHandler()</code></p>
+<p>These are convenience methods that allow you to add or remove event handlers for a single type of the event or
+for all events. You can specify a particular event type such as <code>&quot;GDC.DASH/EVT.INITIALIZED&quot;</code>, and add a function to
+receive the event; or, you can specify an event type as <code>&quot;*&quot;</code>, and add a function to receive events of all types.</p>
+<p>For more information, see the API reference for the event handler API.</p></li>
+<li><p><code>addCustomEventHandler()</code> and <code>removeCustomEventHandler()</code></p>
+<p>These methods allow you to customize the event handling setup. For each custom event handler,
+you can specify a function to evaluate whether the event should be dispatched to the handler function.</p>
+<p>For more information, see the API reference for the event handler API.</p></li>
+<li><p><code>subscribeToStateChanges()</code> and <code>unsubscribeFromStateChanges()</code></p>
+<p>In more advanced use cases, your non-React code may need to <code>select</code> data from the Dashboard component's state using the
+Model Selector APIs. To do that, your code needs the latest version of the Dashboard component's state. Using
+these methods, you can subscribe to receive the state updates.</p>
+<p><strong>NOTE:</strong> You need to subscribe to receive the state changes only if you have code outside of React components and outside
+of the event handlers that need to <code>select</code> from the state. When in React components, you can use the <code>useDashboardSelector</code>
+to <code>select</code> from the state.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="interacting-with-the-dashboard-component-apis"></a><a href="#interacting-with-the-dashboard-component-apis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interacting with the Dashboard component APIs</h2>
+<p>The Dashboard component APIs are described <a href="/gooddata-ui/docs/next/dashboard_component.html">in this article</a> and in the API reference. This section
+describes how code in your plugin can access those APIs.</p>
+<p>The way to interact with the Dashboard component's APIs depends on from where you want to do so.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-the-apis-from-react-components"></a><a href="#using-the-apis-from-react-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the APIs from React components</h3>
+<p>Your custom React components are mounted right into the dashboard's React tree from where they can use hooks
+to interact with the Redux-based dashboard APIs:</p>
+<ul>
+<li>The <code>useDashboardSelector</code> hook helps interact with the Model Selector API.</li>
+<li>The <code>useDashboardDispatch</code> hook helps dispatch actions from the Model Command API.</li>
+</ul>
+<p><strong>NOTE:</strong> All of the actions in the Model Command API are alpha-level APIs and will most likely change in one of the
+future releases of the Dashboard component.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-the-apis-from-outside-react-components"></a><a href="#using-the-apis-from-outside-react-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the APIs from outside React components</h3>
+<p>Your custom non-React code may need to use the Model Selector API or dispatch actions from the Model Command API.
+Because that code is completely out of any React tree, you need to access these APIs differently.</p>
+<ul>
+<li><p>In the <strong>event handler code</strong>, you receive access points to the Model APIs as arguments. Event handler functions have the following arguments:</p>
+<ul>
+<li><code>event</code> to handle</li>
+<li>The <code>dashboardDispatch</code> function to dispatch actions from the Model Command API</li>
+<li>The <code>stateSelect</code> function to use for accessing the Model Selector API</li>
+</ul>
+<p>The <code>dashboardDispatch</code> and <code>stateSelect</code> semantics are the same as with the <code>useDashboardDispatch</code> and
+<code>useDashboardSelector</code> hooks.</p></li>
+<li><p>In <strong>all other code</strong> that is not connected to the Dashboard component using React or using an event handler, you need to
+use the <code>subscribeToStateChanges()</code> method. The callback function that you pass to this method will be triggered
+every time the Dashboard component's state changes. Your function can store this somewhere and
+pass it as input to the selectors.</p>
+<p><strong>IMPORTANT!</strong> Never modify the state to which you subscribe. GoodData.UI does not support this action. The only
+supported way to modify the state is through the Model Command API.</p></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/next/dashboard_plugins.html"><span class="arrow-prev">← </span><span>Dashboard Plugins</span></a><a class="docs-next button" href="/gooddata-ui/docs/next/dashboard_embedding.html"><span>Dashboard Embedding</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#plugin-contract">Plugin contract</a><ul class="toc-headings"><li><a href="#onpluginloaded">onPluginLoaded</a></li><li><a href="#register">register</a></li><li><a href="#onpluginunload">onPluginUnload</a></li></ul></li><li><a href="#customization-api">Customization API</a><ul class="toc-headings"><li><a href="#customize-rendering-of-insights">Customize rendering of insights</a></li><li><a href="#customize-rendering-of-kpis">Customize rendering of KPIs</a></li><li><a href="#custom-widgets">Custom widgets</a></li></ul></li><li><a href="#event-handler-api">Event handler API</a></li><li><a href="#interacting-with-the-dashboard-component-apis">Interacting with the Dashboard component APIs</a><ul class="toc-headings"><li><a href="#using-the-apis-from-react-components">Using the APIs from React components</a></li><li><a href="#using-the-apis-from-outside-react-components">Using the APIs from outside React components</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2021 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:next"]}
+              });
+            </script></body></html>

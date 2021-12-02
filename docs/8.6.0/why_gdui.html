@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Why GoodData.UI? · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The purpose of this document is to describe a proven design pattern for creating a modern analytical or data exploration application."/><meta name="docsearch:version" content="8.6.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Why GoodData.UI? · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="The purpose of this document is to describe a proven design pattern for creating a modern analytical or data exploration application."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.6.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class=""><a href="/gooddata-ui/docs/roadmap.html" target="_blank">Roadmap</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Introduction</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/8.6.0/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/supported_versions.html">Supported Versions and Compatibility</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/framework_overview.html">Architecture Overview</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/create_new_application.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/understand_execution_model.html">Understand the Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/export_catalog.html">Export Catalog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData Platform</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/platform_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/platform_sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/platform_cors.html">Deal with Cross-Origin Issues</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData.CN</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/cloudnative_introduction.html">GoodData.CN Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/cloudnative_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/cloudnative_local_dev.html">Set Up Development on a Workstation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/cloudnative_limitations.html">Limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/dashboard_view_component.html">DashboardView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/attribute_filter_button_component.html">Attribute Filter Button</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/on_legend_ready.html">OnLegendReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/data_sampling.html">Data Sampling</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Execution Model</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/execution_model.html">Detailed Description</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/custom_execution.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/result_specification.html">Specify the Result Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/embed_dashboard.html">Embed a Dashboard Created in KPI Dashboards</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Workspaces</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ht_create_predicates.html">Create Header Predicates</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/backend_agnostic_apps.html">Building backend-agnostic applications</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/placeholders.html">Visualization Definition Placeholders</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Why GoodData.UI?</h1></header><article><div><span><p>The purpose of this document is to describe a proven design pattern for creating a modern analytical or data exploration application.</p>
+<p>We will also introduce an open-source reference implementation of the ideas described in this document.</p>
+<p>Before we dive deeper into the technical topics, let’s first discuss what interactive analytical applications are, and more importantly, why you should care about them.</p>
+<h2><a class="anchor" aria-hidden="true" id="what-is-it-for"></a><a href="#what-is-it-for" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is it for?</h2>
+<p>If you are developing a B2B application, you may have noticed that the requirements for the user interface have changed over the last few years.</p>
+<p>Your customers have always purchased your software because it made employees more efficient.</p>
+<p>Traditionally, this efficiency was achieved by making users’ jobs easier through capabilities such as an effective user interface and integrations with third-party systems.</p>
+<p>This is no longer enough. Your software is expected to make them more efficient by helping them work <em>smarter</em>.</p>
+<p>This isn’t big news for you if you’re working on marketing automation or digital campaign products.</p>
+<p>Leading ad tech platforms such as Google Ads provide a user interface that seamlessly combines a transactional campaign management user interface with analytical capabilities.</p>
+<p>As more and more jobs are becoming data driven, the odds are that sooner or later, your customers will demand this kind of smart user interface.</p>
+<p><img src="/gooddata-ui/docs/assets/route_detail.jpg" alt="Route Detail"></p>
+<h2><a class="anchor" aria-hidden="true" id="common-solutions"></a><a href="#common-solutions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Common solutions</h2>
+<p>At a glance, developing an analytical application may sound like an easy task that can be solved in one of the following ways:</p>
+<ul>
+<li>Purchase and embed a business intelligence or dashboarding tool.</li>
+<li>Build something from scratch using SQL, one of many visualization libraries, and some code that will glue it all together.</li>
+</ul>
+<p>Both solutions have their natural pros and cons.</p>
+<h3><a class="anchor" aria-hidden="true" id="business-intelligence-tools"></a><a href="#business-intelligence-tools" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Business intelligence tools</h3>
+<p>Business intelligence or dashboarding tools may be appealing as their main selling point is that they enable your team to achieve a lot with a minimal impact on your engineering backlog.</p>
+<p>In an ideal world, it works like this:</p>
+<ul>
+<li>Your data engineers prepare the data and annotate it using a tool-specific metadata language.</li>
+<li>Once this is done, users who are relatively non-technical can create visualizations and dashboards in a point-and-click user interface.</li>
+<li>An application engineer embeds the finished dashboard into the admin section of your application.</li>
+</ul>
+<p>Even though this simplicity may be appealing, questions about flexibility and control immediately come to an engineer’s mind:</p>
+<p>It may meet the requirements <em>now</em>. But what if our requirements change?</p>
+<p>How much flexibility do we have if we want to change the built-in visualizations, interaction patterns, or other components?</p>
+<p>More importantly, does it really meet the requirements?</p>
+<p>These tools typically give you a dashboard that can be embedded into the admin section. It can support a fixed set of interaction patterns (filtering, drilling, navigating between dashboards). Will a dashboard in the admin interface make your casual business user work faster?</p>
+<p>And how much did you say it will cost us?</p>
+<h3><a class="anchor" aria-hidden="true" id="sql-and-charting-libraries"></a><a href="#sql-and-charting-libraries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQL and charting libraries</h3>
+<p>If flexibility and control are what your team is looking for, the most obvious option is to roll up your sleeves.</p>
+<p>The situation looks simple:</p>
+<ul>
+<li>You have data ready in your database (an application, a read replica, or even better, in a modern cloud data warehouse such as Snowflake, Redshift, or BigQuery).</li>
+<li>There are plenty of open source charting libraries.</li>
+<li>If you can write code, it must be easy.</li>
+</ul>
+<p>It is actually not difficult to get started. If all you need is one screen with a few charts and there is nothing more urgent in your backlog, then this is not a bad way to start.</p>
+<p>However, there are a couple of things to think about:</p>
+<ul>
+<li>It is easy to create static charts with a few hard-coded SQL queries, but new requirements will keep coming. Are you sure your SQL queries won’t turn into a big ball of mud or a spaghetti monster?</li>
+<li>The data model may change — not that frequently, but it happens. Are you ready to refactor all the complex analytical queries when it does?</li>
+<li>How about interactivity? Think filtering by various dimensional and numeric criteria, think drilling, think dynamic charts with user-defined measures and granularity.</li>
+</ul>
+<p>Which way sounds more convincing to you? Buy or build?</p>
+<h2><a class="anchor" aria-hidden="true" id="building-the-right-way"></a><a href="#building-the-right-way" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building the right way</h2>
+<p>We are developers ourselves. Our daily job is to build a platform that powers analytical applications that are used by half of Fortune 500 companies. Some of them use interactive dashboards, some of them use our data exploration tool, some of them use custom-built applications.</p>
+<p><img src="/gooddata-ui/docs/assets/DV_ano_video_ad.png" alt="Route Detail"></p>
+<p>However, the point of this article is not to sell you on what we do. Instead, we would like to share some of the best practices, key principles, and tools we have developed that allow us to cover such a variety of use cases.</p>
+<p>Let’s start with the key principles:</p>
+<ul>
+<li>Productivity: Our developers must be able to move fast.</li>
+<li>Flexibility and openness: Be ready for unexpected requirements.</li>
+<li>Developer friendliness: Fit into existing ecosystems and have good documentation and examples.</li>
+</ul>
+<p>Being open and developer friendly is pretty straightforward. Let’s dive deeper into what it means to architect an interactive analytical application for developer productivity.</p>
+<h2><a class="anchor" aria-hidden="true" id="architect-for-productivity"></a><a href="#architect-for-productivity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architect for productivity</h2>
+<p>What is the ultimate productivity killer when building a modern web UI?</p>
+<p>You may have the greatest component framework in the world, but you cannot move forward until the back-end part of your project is ready. Like any other development, there are two things that take time:</p>
+<ul>
+<li>Building the back-end features (anticipated)</li>
+<li>Redesigning the back end to fit new requirements, which always comes as a surprise… surprisingly</li>
+</ul>
+<p>In other words, you want to avoid creating a brittle interface between our frontend and backend layer. Designing the contract between the front end and back end the right way is the key to productivity of front-end development.</p>
+<p>What does that mean? The front-end engineer must be able to generate any analytical query in a way that:</p>
+<ul>
+<li>Reflects the business logic behind the query rather than technicalities of the data model. Focus on measures and granularity rather than table joins.</li>
+<li>Is independent of the nuances of the underlying data model. It can be normalized, denormalized, star schema, or snowflake, or it may evolve from one to another over time.</li>
+</ul>
+<p>There are a number of ways that your front end can request data from the back end:</p>
+<ul>
+<li>Issue a SQL query directly: Just for the sake of completeness, we all know this is not the right way. It’s prone to security issues, harder to maintain, not speaking of the fact that not all front-end engineers have the necessary database skills.</li>
+<li>URL parameters: You may be tempted to just sketch out an initial set of parameters based on requirements and start quickly with queries such as /query?id=queryId&amp;dateFrom=xxxx6dateTo=xxxx&amp;country=yyyy but things can get really messy as the reporting requirements and implied number of parameters grow.</li>
+<li>Extensible API: This involves perhaps encoding the possible parameters using semi-structured format such as JSON. We’re getting there, but there are so many ways to do that. Let me share what works for us.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="solution-attributes-filters-measures"></a><a href="#solution-attributes-filters-measures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Solution: Attributes, filters, measures</h3>
+<p>In GoodData, we have standardized the declarative query language based on three key components: Attributes (another word for dimensions as in “dimensional modeling”), Filters, and Measures. AFM for short.</p>
+<p>It’s a programmatic representation of the end user’s mental model. Think about all UI tools, from pivot tables in Excel to specialized analytics and data exploration tools. By the way, this is also how an analyst defines a visualization in GoodData’s Analytical Designer:</p>
+<p><img src="/gooddata-ui/docs/assets/ad_bubble.png" alt="AD Bubble"></p>
+<p>The AFM approach is a great fit to modern reactive web development frameworks such as React.js: you can easily imagine that the bubble chart above is rendered by a React.js code that looks like that:</p>
+<pre><code class="hljs css language-jsx">&lt;BubbleChart
+    xAxisMeasure={cancelledFlights}
+    yAxisMeasure={carrierDelayScore}
+    viewBy={carrierName}
+    filters={[]}
+/&gt;
+</code></pre>
+<p>The following diagram shows the full flow from a visualization and the underlying React component to the REST API of the GoodData platform:</p>
+<p><img src="/gooddata-ui/docs/assets/AD_React_GD.png" alt="AD React GD"></p>
+<p>The attribute-filter-measure is a relatively common querying idiom among analytics systems, so we made the architecture pluggable. So, with a bit of JavaScript code that implements the AFM contract for a different service, your version of that diagram may look like this:</p>
+<p><img src="/gooddata-ui/docs/assets/AD_React_Druid.png" alt="AD React Druid"></p>
+<p>It’s simple, it maps well to your use cases, it works.</p>
+<p><em>Note: On the GoodData platform and GoodData.CN, the AFM query pattern works even with non-trivial dimensional models with multiple fact tables, conformed dimensions, and even many-to-many relationships.</em></p>
+<p><em>More information about our analytics engine and semantic layer is available from the <a href="https://developer.gooddata.com/analytics">developer portal</a>.</em></p>
+<h3><a class="anchor" aria-hidden="true" id="interactivity"></a><a href="#interactivity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interactivity</h3>
+<p>When you think about interactivity, the AFM interface plays with React.js even better.</p>
+<p>Do you want to let your end user drill into a data point in your chart?</p>
+<p>Let’s have a bar chart showing revenue by month. A corresponding React component may look like</p>
+<pre><code class="hljs css language-jsx">&lt;BarChart measure={revenue} viewBy={month} /&gt;
+</code></pre>
+<p>Let’s assume the end user clicks a bar that represents August 2020 and that the value of this clicked month is assigned to the variable clickMonth.</p>
+<p>So we simply update the component with the filter component like this:</p>
+<pre><code class="hljs css language-jsx">&lt;BarChart measure={revenue} viewBy={date} filter={createMonthFilter(clickMonth)} /&gt;
+</code></pre>
+<p>The same approach can be done if you want to let your end users switch granularity, measures, or other parameters of the chart.</p>
+<h3><a class="anchor" aria-hidden="true" id="openness-and-extensibility"></a><a href="#openness-and-extensibility" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Openness and extensibility</h3>
+<p>In various code samples earlier in this document, we were using specific visualization components such as <code>&lt;BarChart /&gt;</code> and <code>&lt;BubbleChart /&gt;</code>.</p>
+<p>You can imagine that your AFM enabled React library has more visualizations like that. But no visualization framework in the world will cover all visualizations you will ever need. Unless it’s extensible by design.</p>
+<p>If you think about it, the components such as <code>&lt;BarChart /&gt;</code> or <code>&lt;BubbleChart /&gt;</code> do two things:</p>
+<ol>
+<li>They pass the AFM query to the analytical backend and retrieve the result set.</li>
+<li>They pass the result set (maybe with some on-the-fly transformation if necessary) to the actual charting component.</li>
+</ol>
+<p>The first step (query execution) can be naturally separated into a reusable component. Let’s call it <a href="/gooddata-ui/docs/8.6.0/create_new_visualization.html"><code>&lt;Execute /&gt;</code></a>.</p>
+<p>With such a component, it’s no surprise that the <code>&lt;BarChart /&gt;</code> component from the previous examples can be implemented like this:</p>
+<pre><code class="hljs css language-jsx">&lt;Execute measures={measures} slicesBy={viewBy}&gt;
+  { (error, isLoading, result) } =&gt; (
+     // some error handling code
+     // some loading indicator handling code
+     &lt;ActualBarChartFromAChartingLibrary data={tranformForMyChartingLibrary(result)} /&gt;
+  )
+&lt;/Execute&gt;
+</code></pre>
+<p>And once we have this <code>&lt;Execute /&gt;</code> component then adding it to the public API of our collection of React components is quite a natural step. You can see it in action in our <a href="https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-execute?file=/src/App/index.js">code sandbox</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="integrated-point-and-click-development"></a><a href="#integrated-point-and-click-development" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Integrated point-and-click development</h3>
+<p>If you are still reading, you can probably write React code and you can appreciate the flexibility of a good React.js library.</p>
+<p>On the other hand, you usually want to start with something simple. And for quick iterations over early prototypes, writing code may look like an overkill, especially if a non-technical user can create data visualization using a point-and-click user interface.</p>
+<p>Especially if the user interface is <a href="https://developer.gooddata.com/assets/Images/f13aa4ea68c25b095fd77de672e82e3e.webm">as easy as this</a>.</p>
+<p>You don’t want to type <code>&lt;BarChart /&gt;</code> every time your UI designer creates a bar chart. It is more natural to grab the identifier of whatever your point-and-click colleague created. Maybe with something like this:</p>
+<pre><code class="hljs css language-jsx">&lt;InsightView insight={id} /&gt;
+</code></pre>
+<p>An interactive example is available from <a href="https://codesandbox.io/s/github/gooddata/gooddata-ui-examples/tree/master/example-insightview?file=/src/App/index.js">here</a>. And here you can find more about the <a href="/gooddata-ui/docs/8.6.0/ht_embed_visualization.html">InsightView</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="reference-implementation"></a><a href="#reference-implementation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference implementation</h2>
+<p>We said that we don’t want to discourage you from building your interactive end-user friendly analytics yourself.</p>
+<p>If you decide to go that way, our key recommendation is to think twice before designing your API contract and consider the attributes-filters-measures approach rather than any shortcuts.</p>
+<p>For those of you who prefer to try something proven instead of re-inventing the infrastructure from scratch, we have decided to make the reference implementation of the aforementioned architectural best practices publicly available under the MIT open-source license.</p>
+<p>The library is called GoodData.UI, and two options are currently available from our <a href="https://github.com/gooddata/gooddata-ui-sdk">GitHub repository</a>:</p>
+<ul>
+<li>A fully open source implementation of the attributes-filters-measures querying pattern with pluggable back end.</li>
+<li>An extension of the open source library that includes Highcharts-based visualizations; since Highcharts itself is not open-source, this extension is only available under a proprietary license too. However, the source code is fully available in the <a href="https://github.com/gooddata/gooddata-ui-sdk">GitHub repository</a>.</li>
+</ul>
+<p>Would you like to know more? Check out the following resources:</p>
+<ul>
+<li><a href="/gooddata-ui/docs/8.6.0/about_gooddataui.html">Documentation and tutorials</a>.</li>
+<li>Interactive code samples.</li>
+<li>Additional examples in not so interactive but comprehensive <a href="https://gdui-examples.herokuapp.com/">gallery</a>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting started</h2>
+<p>And if you just want to get started, you can do that in just three simple steps:</p>
+<ol>
+<li>Get a free GoodData account at <a href="www.gooddata.com/free">www.gooddata.com/free</a> (unless you are an existing GoodData customer).</li>
+<li>Type <code>npx @gooddata/create-gooddata-react-app my-app</code> in the terminal window.</li>
+<li>In the newly created folder, type <code>yarn start</code> to see the automatically generated skeleton of your first analytical web application with additional instructions.</li>
+</ol>
+<p>A complete tutorial is available from <a href="/gooddata-ui/docs/8.6.0/create_new_application.html">here</a>. If you prefer to use the standard create-react-app and add GoodData.UI library manually, <a href="/gooddata-ui/docs/8.6.0/platform_integration.html">check out this other tutorial</a>.</p>
+<p>And if you have any questions about the GoodData platform, GoodData.CN, GoodData.UI, or just this document, feel free to ask us in our community forums at <a href="community.gooddata.com">community.gooddata.com</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/8.6.0/about_gooddataui.html"><span class="arrow-prev">← </span><span class="function-name-prevnext">About GoodData.UI</span></a><a class="docs-next button" href="/gooddata-ui/docs/8.6.0/interactive_examples.html"><span>Interactive Code Examples</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#what-is-it-for">What is it for?</a></li><li><a href="#common-solutions">Common solutions</a><ul class="toc-headings"><li><a href="#business-intelligence-tools">Business intelligence tools</a></li><li><a href="#sql-and-charting-libraries">SQL and charting libraries</a></li></ul></li><li><a href="#building-the-right-way">Building the right way</a></li><li><a href="#architect-for-productivity">Architect for productivity</a><ul class="toc-headings"><li><a href="#solution-attributes-filters-measures">Solution: Attributes, filters, measures</a></li><li><a href="#interactivity">Interactivity</a></li><li><a href="#openness-and-extensibility">Openness and extensibility</a></li><li><a href="#integrated-point-and-click-development">Integrated point-and-click development</a></li></ul></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#getting-started">Getting started</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2021 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.6.0"]}
+              });
+            </script></body></html>

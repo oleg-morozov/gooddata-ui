@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Dashboard Embedding · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Embedding a dashboard without plugins"/><meta name="docsearch:version" content="8.7.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Dashboard Embedding · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="## Embedding a dashboard without plugins"/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.7.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class=""><a href="/gooddata-ui/docs/roadmap.html" target="_blank">Roadmap</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Dashboard</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/supported_versions.html">Supported Versions and Compatibility</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/framework_overview.html">Architecture Overview</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/api_maturity.html">API Maturity</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/roadmap.html">Roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_new_application.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/understand_execution_model.html">Understand the Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/export_catalog.html">Export Catalog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData Platform</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/platform_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/platform_sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/platform_cors.html">Deal with Cross-Origin Issues</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData.CN</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/cloudnative_introduction.html">GoodData.CN Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/cloudnative_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/cloudnative_local_dev.html">Set Up Development on a Workstation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/cloudnative_limitations.html">Limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/dashboard_view_component.html">DashboardView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_filter_button_component.html">Attribute Filter Button</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/on_legend_ready.html">OnLegendReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/data_sampling.html">Data Sampling</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Dashboard</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/dashboard_intro.html">Introduction to the Dashboard Component</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/dashboard_plugins.html">Dashboard Plugins</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/dashboard_plugins_api.html">Dashboard Plugin API</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/dashboard_embedding.html">Dashboard Embedding</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/dashboard_component.html">Dashboard Component</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Execution Model</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/execution_model.html">Detailed Description</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/custom_execution.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/result_specification.html">Specify the Result Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/embed_dashboard.html">Embed a Dashboard Created in KPI Dashboards</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Workspaces</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/ht_create_predicates.html">Create Header Predicates</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/backend_agnostic_apps.html">Building backend-agnostic applications</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/placeholders.html">Visualization Definition Placeholders</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Dashboard Embedding</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="embedding-a-dashboard-without-plugins"></a><a href="#embedding-a-dashboard-without-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embedding a dashboard without plugins</h2>
+<p>The simplest way of embedding a dashboard is to use the <a href="/gooddata-ui/docs/dashboard_component.html">Dashboard component</a> directly.
+This approach does not provide any interoperability with the dashboard plugins (see <a href="/gooddata-ui/docs/dashboard_embedding.html#embedding-dashboards-with-plugins">Embedding dashboards with plugins</a> if you need to support them).</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-comment">// make sure to import styles for components you expect to be on your Dashboards</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-charts/styles/css/main.css"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-geo/styles/css/main.css"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot/styles/css/main.css"</span>;
+<span class="hljs-comment">// import the styles for the Dashboard component itself</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-dashboard/styles/css/main.css"</span>;
+
+<span class="hljs-keyword">import</span> { idRef } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { Dashboard } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-dashboard"</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Dashboard</span> <span class="hljs-attr">dashboard</span>=<span class="hljs-string">{idRef(</span>"&lt;<span class="hljs-attr">dashboard-identifier</span>&gt;</span>")} /&gt;;
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="embedding-dashboards-with-plugins"></a><a href="#embedding-dashboards-with-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embedding dashboards with plugins</h2>
+<p>To embed dashboards with plugin support, use the following methods:</p>
+<ul>
+<li><a href="/gooddata-ui/docs/dashboard_embedding.html#embed-with-local-plugins-only">Embed with local plugins only</a></li>
+<li><a href="/gooddata-ui/docs/dashboard_embedding.html#embed-with-remote-plugins">Embed with remote plugins</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="embed-with-local-plugins-only"></a><a href="#embed-with-local-plugins-only" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embed with local plugins only</h3>
+<p>Embedding a dashboard with local plugin support allows you to customize the embedded dashboard by providing plugins directly in your application.
+You can use more than one plugin. Any plugins linked to the dashboard will be ignored. Only the local plugins will be used.</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+
+<span class="hljs-keyword">import</span> { idRef } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { useDashboardLoader } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-loaders"</span>;
+<span class="hljs-keyword">import</span> { DashboardPluginV1 } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-dashboard"</span>;
+
+<span class="hljs-comment">// sample plugin, see other parts of the docs on more details on how to write these</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LocalPlugin</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DashboardPluginV1</span> </span>{
+    author = <span class="hljs-string">"your name"</span>;
+    displayName = <span class="hljs-string">"plugin display name"</span>; <span class="hljs-comment">// useful for debugging</span>
+    version = <span class="hljs-string">"1.0"</span>; <span class="hljs-comment">// or whatever version you want</span>
+
+    register(ctx, customize, handlers) {
+        <span class="hljs-comment">// implement your plugin logic here</span>
+    }
+}
+
+<span class="hljs-keyword">const</span> LocalExtraPlugin = {
+    <span class="hljs-attr">factory</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">new</span> LocalPlugin(),
+};
+
+<span class="hljs-keyword">const</span> dashboardRef = idRef(<span class="hljs-string">"&lt;dashboard-identifier&gt;"</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> LocalPluginsExample = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> { status, result, error } = useDashboardLoader({
+        <span class="hljs-attr">dashboard</span>: dashboardRef,
+        <span class="hljs-comment">// indicate that only local plugins should be used</span>
+        <span class="hljs-attr">loadingMode</span>: <span class="hljs-string">"staticOnly"</span>,
+        <span class="hljs-comment">// define the extra plugins, this can also be an array</span>
+        <span class="hljs-attr">extraPlugins</span>: LocalExtraPlugin,
+    });
+
+    <span class="hljs-keyword">if</span> (status === <span class="hljs-string">"loading"</span> || status === <span class="hljs-string">"pending"</span>) {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Loading dashboard...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+    }
+
+    <span class="hljs-keyword">if</span> (error) {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Error loading dashboard...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+    }
+
+    <span class="hljs-comment">// the loader result returns the component to be used</span>
+    <span class="hljs-comment">// and also props that need to be passed to it</span>
+    <span class="hljs-keyword">const</span> { DashboardComponent, <span class="hljs-attr">props</span>: dashboardProps } = result;
+
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">DashboardComponent</span> {<span class="hljs-attr">...dashboardProps</span>} /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="embed-with-remote-plugins"></a><a href="#embed-with-remote-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embed with remote plugins</h3>
+<p>Embedding a dashboard with remote plugin support allows you to mimic the behavior of the KPI Dashboards, to dynamically load plugins linked to a particular dashboard and to use them.</p>
+<p>For this to work in your application, consider the following interoperability requirements:</p>
+<h4><a class="anchor" aria-hidden="true" id="webpack-integration"></a><a href="#webpack-integration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Webpack integration</h4>
+<p>The dynamic plugin loading logic uses the <a href="https://webpack.js.org/concepts/module-federation/">Webpack Module Federation</a> feature underneath.
+To provide the necessary integration points that the dashboard plugins need, your application must be built using Webpack 5
+(the exact version this was tested with is 5.58.0) with the following configuration added to the Webpack config file:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { ModuleFederationPlugin } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"webpack"</span>).container;
+<span class="hljs-keyword">const</span> deps = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./package.json"</span>).dependencies;
+
+<span class="hljs-comment">// add all the gooddata packages to the module federation scope so that they can be reused</span>
+<span class="hljs-keyword">const</span> gooddataSharePackagesEntries = <span class="hljs-built_in">Object</span>.keys(deps)
+    .filter(<span class="hljs-function">(<span class="hljs-params">pkg</span>) =&gt;</span> pkg.startsWith(<span class="hljs-string">"@gooddata"</span>))
+    .reduce(<span class="hljs-function">(<span class="hljs-params">acc, curr</span>) =&gt;</span> {
+        acc[curr] = {
+            <span class="hljs-attr">singleton</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">eager</span>: <span class="hljs-literal">true</span>,
+        };
+        <span class="hljs-keyword">return</span> acc;
+    }, {});
+
+<span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-comment">// ... rest of your webpack config</span>
+    <span class="hljs-attr">plugins</span>: [
+        <span class="hljs-comment">// ... rest of your plugins</span>
+
+        <span class="hljs-comment">// Add the correctly configured ModuleFederationPlugin</span>
+        <span class="hljs-comment">// Keep all the settings as shown, otherwise strange errors may occur</span>
+        <span class="hljs-keyword">new</span> ModuleFederationPlugin({
+            <span class="hljs-attr">shared</span>: {
+                <span class="hljs-attr">react</span>: {
+                    <span class="hljs-attr">import</span>: <span class="hljs-string">"react"</span>,
+                    <span class="hljs-attr">shareKey</span>: <span class="hljs-string">"react"</span>,
+                    <span class="hljs-attr">singleton</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-attr">eager</span>: <span class="hljs-literal">true</span>,
+                },
+                <span class="hljs-string">"react-dom"</span>: {
+                    <span class="hljs-attr">singleton</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-attr">eager</span>: <span class="hljs-literal">true</span>,
+                },
+                ...gooddataSharePackagesEntries,
+            },
+        }),
+    ],
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="content-security-policy"></a><a href="#content-security-policy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Content security policy</h4>
+<blockquote>
+<p>This section is only relevant for GoodData.CN users. If you use the GoodData platform, skip this section and proceed to <a href="/gooddata-ui/docs/dashboard_embedding.html#using-the-dynamic-loader">Using the dynamic loader</a>.</p>
+</blockquote>
+<p>If you want to use the remote plugins on GoodData.CN, add the server that you use to host the plugin assets into your Content Security Policy configuration.
+In your ingress Helm chart, make sure that the following CSP headers have your plugin hosting endpoint included:</p>
+<ul>
+<li><code>script-src</code></li>
+<li><code>img-src</code></li>
+<li><code>style-src</code></li>
+<li><code>font-src</code></li>
+</ul>
+<p>For example, assuming <code>plugins.example.com</code> is your plugin hosting endpoint, you need to add it like this:</p>
+<pre><code class="hljs css language-yml"><span class="hljs-attr">controller:</span>
+    <span class="hljs-comment"># ...rest of your config</span>
+    <span class="hljs-attr">addHeaders:</span>
+        <span class="hljs-comment"># ...rest of your addHeaders</span>
+        <span class="hljs-attr">Content-Security-Policy:</span> <span class="hljs-string">&gt;
+            script-src 'self' 'unsafe-inline' 'unsafe-eval' plugins.example.com;
+            img-src 'self' data: blob: plugins.example.com;
+            style-src 'self' 'unsafe-inline' plugins.example.com;
+            font-src 'self' data: plugins.example.com;
+            ... rest of the CSP headers
+</span></code></pre>
+<h4><a class="anchor" aria-hidden="true" id="using-the-dynamic-loader"></a><a href="#using-the-dynamic-loader" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the dynamic loader</h4>
+<p>Once you have <a href="/gooddata-ui/docs/dashboard_embedding.html#content-security-policy">updated the Webpack config</a>, you can start using the dynamic plugins.</p>
+<p>The following example loads the dashboard similar to the dashboard <a href="/gooddata-ui/docs/dashboard_embedding.html#embed-with-local-plugins-only">embedded with local plugins only</a>,
+but will also load any plugins linked to this dashboard and use them.</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+
+<span class="hljs-keyword">import</span> { idRef } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { useDashboardLoader } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-loaders"</span>;
+
+<span class="hljs-comment">// create the interop object that the useDashboardLoader uses</span>
+<span class="hljs-comment">// to interact with the module federation system</span>
+<span class="hljs-comment">// both __webpack-prefixed global variables are provided by Webpack</span>
+<span class="hljs-keyword">const</span> adaptiveLoadOptions = {
+    <span class="hljs-attr">moduleFederationIntegration</span>: {
+        <span class="hljs-attr">__webpack_init_sharing__</span>:
+            <span class="hljs-keyword">typeof</span> __webpack_init_sharing__ !== <span class="hljs-string">"undefined"</span> ? __webpack_init_sharing__ : <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">__webpack_share_scopes__</span>:
+            <span class="hljs-keyword">typeof</span> __webpack_share_scopes__ !== <span class="hljs-string">"undefined"</span> ? __webpack_share_scopes__ : <span class="hljs-literal">null</span>,
+    },
+};
+
+<span class="hljs-keyword">const</span> dashboardRef = idRef(<span class="hljs-string">"&lt;dashboard-identifier&gt;"</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> DynamicPluginsExample = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> { status, result } = useDashboardLoader({
+        <span class="hljs-attr">dashboard</span>: dashboardRef,
+        <span class="hljs-comment">// indicate that remote plugins should be used</span>
+        <span class="hljs-attr">loadingMode</span>: <span class="hljs-string">"adaptive"</span>,
+        <span class="hljs-comment">// provide the interop object to the loader</span>
+        adaptiveLoadOptions,
+    });
+
+    <span class="hljs-keyword">if</span> (status === <span class="hljs-string">"loading"</span> || status === <span class="hljs-string">"pending"</span>) {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Loading dashboard...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+    }
+
+    <span class="hljs-keyword">if</span> (error) {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Error loading dashboard...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+    }
+
+    <span class="hljs-comment">// the loader result returns the component to be used</span>
+    <span class="hljs-comment">// and also props that need to be passed to it</span>
+    <span class="hljs-keyword">const</span> { DashboardComponent, <span class="hljs-attr">props</span>: dashboardProps } = result;
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">DashboardComponent</span> {<span class="hljs-attr">...dashboardProps</span>} /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="using-both-local-and-remote-plugins"></a><a href="#using-both-local-and-remote-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using both local and remote plugins</h4>
+<p>To use both local and remote plugins to further customize the dashboard, provide the <code>extraPlugins</code> configuration property similarly to how it is done when <a href="/gooddata-ui/docs/dashboard_embedding.html#embed-with-local-plugins-only">embedding a dashboard with local plugins only</a>.
+However, to make sure that your local plugins keep working, you need to pass down a special constant to the Dashboard component called <code>ReactDashboardContext</code>:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+
+<span class="hljs-keyword">import</span> { idRef } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { useDashboardLoader } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-loaders"</span>;
+<span class="hljs-comment">// import the ReactDashboardContext constant from the package</span>
+<span class="hljs-keyword">import</span> { ReactDashboardContext } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-dashboard"</span>;
+
+<span class="hljs-keyword">const</span> adaptiveLoadOptions = {
+    <span class="hljs-comment">// omitted for brevity</span>
+};
+
+<span class="hljs-keyword">const</span> dashboardRef = idRef(<span class="hljs-string">"&lt;dashboard-identifier&gt;"</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> MixedPluginsExample = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> { status, result } = useDashboardLoader({
+        <span class="hljs-attr">dashboard</span>: dashboardRef,
+        <span class="hljs-comment">// indicate that both local and remote plugins should be used</span>
+        <span class="hljs-attr">loadingMode</span>: <span class="hljs-string">"adaptive"</span>,
+        <span class="hljs-comment">// provide the interop object to the loader</span>
+        adaptiveLoadOptions,
+        <span class="hljs-comment">// define the extra plugins, this can also be an array</span>
+        <span class="hljs-attr">extraPlugins</span>: SomeLocalPlugin, <span class="hljs-comment">// omitted for brevity</span>
+    });
+
+    <span class="hljs-keyword">if</span> (status === <span class="hljs-string">"loading"</span> || status === <span class="hljs-string">"pending"</span>) {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Loading dashboard...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+    }
+
+    <span class="hljs-keyword">if</span> (error) {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Error loading dashboard...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+    }
+
+    <span class="hljs-comment">// the loader result returns the component to be used</span>
+    <span class="hljs-comment">// and also props that need to be passed to it</span>
+    <span class="hljs-keyword">const</span> { DashboardComponent, <span class="hljs-attr">props</span>: dashboardProps } = result;
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">DashboardComponent</span>
+                {<span class="hljs-attr">...dashboardProps</span>}
+                // <span class="hljs-attr">pass</span> <span class="hljs-attr">the</span> <span class="hljs-attr">ReactDashboardContext</span> <span class="hljs-attr">constant</span> <span class="hljs-attr">this</span> <span class="hljs-attr">property</span> <span class="hljs-attr">to</span> <span class="hljs-attr">the</span> <span class="hljs-attr">Dashboard</span> <span class="hljs-attr">component</span>
+                // <span class="hljs-attr">this</span> <span class="hljs-attr">will</span> <span class="hljs-attr">ensure</span> <span class="hljs-attr">that</span> <span class="hljs-attr">local</span> <span class="hljs-attr">plugins</span> <span class="hljs-attr">will</span> <span class="hljs-attr">keep</span> <span class="hljs-attr">working</span> <span class="hljs-attr">even</span> <span class="hljs-attr">when</span> <span class="hljs-attr">using</span> <span class="hljs-attr">dynamic</span> <span class="hljs-attr">plugins</span> <span class="hljs-attr">as</span> <span class="hljs-attr">well</span>
+                <span class="hljs-attr">additionalReduxContext</span>=<span class="hljs-string">{ReactDashboardContext}</span>
+            /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    );
+};
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/dashboard_plugins_api.html"><span class="arrow-prev">← </span><span>Dashboard Plugin API</span></a><a class="docs-next button" href="/gooddata-ui/docs/dashboard_component.html"><span>Dashboard Component</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#embedding-a-dashboard-without-plugins">Embedding a dashboard without plugins</a></li><li><a href="#embedding-dashboards-with-plugins">Embedding dashboards with plugins</a><ul class="toc-headings"><li><a href="#embed-with-local-plugins-only">Embed with local plugins only</a></li><li><a href="#embed-with-remote-plugins">Embed with remote plugins</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2021 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.7.0"]}
+              });
+            </script></body></html>

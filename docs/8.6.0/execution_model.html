@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Execution Model Details · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The execution model of GoodData.UI is used to specify what data to compute on an Analytical Backend. Parts of the model"/><meta name="docsearch:version" content="8.6.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Execution Model Details · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="The execution model of GoodData.UI is used to specify what data to compute on an Analytical Backend. Parts of the model"/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.6.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class=""><a href="/gooddata-ui/docs/roadmap.html" target="_blank">Roadmap</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Execution Model</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/about_gooddataui.html">About GoodData.UI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/why_gdui.html">Why GoodData.UI?</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/interactive_examples.html">Interactive Code Examples</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/whats_new_8.html">What&#x27;s New in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/breaking_changes_8.html">Breaking Changes in Version 8.0</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/migration_guide_8.html">Migration from Version 7.x</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/supported_versions.html">Supported Versions and Compatibility</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/framework_overview.html">Architecture Overview</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/api_maturity.html">API Maturity</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/create_new_application.html">Create Your First Application Using Accelerator Toolkit</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/understand_execution_model.html">Understand the Execution Model</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/export_catalog.html">Export Catalog</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData Platform</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/platform_intro.html">GoodData Platform Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/platform_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/platform_sso.html">Set Up Authentication and Single Sign-On</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/platform_cors.html">Deal with Cross-Origin Issues</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration with GoodData.CN</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/cloudnative_introduction.html">GoodData.CN Introduction</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/cloudnative_integration.html">Integrate into an Existing Application</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/cloudnative_local_dev.html">Set Up Development on a Workstation</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/cloudnative_limitations.html">Limitations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Visual Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/start_with_visual_components.html">Start with Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/theme_provider.html">Theme Provider</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/area_chart_component.html">Area Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/bar_chart_component.html">Bar Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/bubble_chart_component.html">Bubble Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/bullet_chart_component.html">Bullet Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/column_chart_component.html">Column Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/combo_chart_component.html">Combo Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/donut_chart_component.html">Donut Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/geo_pushpin_chart_component.html">Geo Pushpin Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/headline_component.html">Headline</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/heatmap_component.html">Heatmap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/kpi_component.html">KPI</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/line_chart_component.html">Line Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/pie_chart_component.html">Pie Chart</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/pivot_table_component.html">Pivot Table</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/scatter_plot_component.html">Scatter Plot</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/treemap_component.html">Treemap</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/visualization_component.html">InsightView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/dashboard_view_component.html">DashboardView</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/attribute_filter_component.html">Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/attribute_filter_button_component.html">Attribute Filter Button</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/date_filter_component.html">Date Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/measure_value_filter_component.html">Measure Value Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ranking_filter_component.html">Ranking Filter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Properties</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/chart_config.html">Chart Config</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/attribute_element_option.html">AttributeElements Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/date_filter_option.html">DateFilter Component Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/drillable_item.html">DrillableItems</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/error_component.html">ErrorComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/loading_component.html">LoadingComponent</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/on_export_ready.html">OnExportReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/on_fire_drill_event.html">OnDrill</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/on_legend_ready.html">OnLegendReady</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/data_sampling.html">Data Sampling</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Execution Model</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/gooddata-ui/docs/8.6.0/execution_model.html">Detailed Description</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/time_over_time_comparison.html">Time-over-Time Comparison</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/arithmetic_measure.html">Arithmetic Measure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Custom Visualizations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/create_new_visualization.html">Create a Custom Visualization</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/custom_execution.html">Custom Executions</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/result_specification.html">Specify the Result Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Development Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ht_embed_visualization.html">Embed an Insight Created in Analytical Designer</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/embed_dashboard.html">Embed a Dashboard Created in KPI Dashboards</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/table_totals.html">Specify Table Totals</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/filter_visual_components.html">Filter Visual Components</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/create_custom_attribute_filter.html">Create a Custom Attribute Filter</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ht_render_visualization_from_different_domain.html">Access Multiple Domains and Workspaces</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ht_use_react_component_in_angular_2.x.html">Use Angular 9+</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/ht_create_predicates.html">Create Header Predicates</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/backend_agnostic_apps.html">Building backend-agnostic applications</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/placeholders.html">Visualization Definition Placeholders</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/support_options.html">Support Options</a></li><li class="navListItem"><a class="navItem" href="/gooddata-ui/docs/8.6.0/live_examples.html">Examples Gallery</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Execution Model Details</h1></header><article><div><span><p>The execution model of GoodData.UI is used to specify what data to compute on an Analytical Backend. Parts of the model
+are also used as input to the visual components to tell them what data to obtain and render.</p>
+<p>This document builds up on the <a href="/gooddata-ui/docs/8.6.0/understand_execution_model.html">execution model basics</a> and goes into more detail about
+the available types and functions available for their creation and manipulation.</p>
+<h2><a class="anchor" aria-hidden="true" id="execution-model-concepts"></a><a href="#execution-model-concepts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execution model concepts</h2>
+<p>To simplify the creation of various types of objects that specify what data to render, the model uses a combination
+of two typical object creation patterns: factory function and builder.</p>
+<h3><a class="anchor" aria-hidden="true" id="creating-objects"></a><a href="#creating-objects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating objects</h3>
+<p>The model provides a single factory function to create each type of objects. There are several conventions:</p>
+<ul>
+<li>The factory functions are always named <code>new&lt;ObjectType&gt;</code>.</li>
+<li>The factory functions can create only syntactically valid objects; all essential object parameters are required
+arguments to the function call.</li>
+<li>For simple objects, optional parameters follow the required arguments.</li>
+<li>For complex objects (such as measures), the last parameter is a <code>modifications</code> function which you can implement.
+This function will receive an instance of the builder with methods to customize different parameters of the object
+under construction.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="accessing-object-properties"></a><a href="#accessing-object-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessing object properties</h3>
+<p>The model provides accessor functions to access object properties. The naming convention for an accessor function is <code>&lt;objectType&gt;Property(object)</code>, where the first and only parameter is the object to access.</p>
+<p><strong>Examples:</strong> <code>attributeAlias</code>, <code>measureLocalId</code>, <code>measureFormat</code>, <code>filterAttributeElements</code></p>
+<h3><a class="anchor" aria-hidden="true" id="modifying-objects"></a><a href="#modifying-objects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modifying objects</h3>
+<p>The model provides specialized functions to allow modification of complex objects: measures and attributes. There
+are several conventions:</p>
+<ul>
+<li>The modification functions are always named <code>modify&lt;ObjectType&gt;</code>.</li>
+<li>The first parameter is the object to modify.</li>
+<li>The second parameter is the modification function. This function will receive an instance of the builder with methods
+to customize different parameters of the object.</li>
+<li>The modification functions treat input as immutable. They will create new objects instead of modifying the
+inputs.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="local-identifiers-and-referencing-objects"></a><a href="#local-identifiers-and-referencing-objects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Local identifiers and referencing objects</h3>
+<p>The <code>localIdentifier</code>, or <code>localId</code> for short, is a user-assigned identifier that you have to use when referencing
+attributes and measures in the scope of a single visualization or execution.</p>
+<p>The execution model automatically generates stable <code>localId</code>'s as it creates the attribute and measure objects. You can pass the attribute and measure objects by its value. However, if you want to use the same attribute or measure multiple times in the same visualization, you have to create a copy of the object and assign it a different <code>localId</code> yourself.</p>
+<p>You can use the <code>modify&lt;ObjectType&gt;</code> functions to override the <code>localId</code> of an attribute or measure. The builder instances that your modification function receives have functions to manipulate <code>localId</code>. The behavior of the modification functions in regards to <code>localId</code> is as follows:</p>
+<ul>
+<li><p>If you call <code>m =&gt; m.defaultLocalId()</code>, the default logic for <code>localId</code> generation will kick in <strong>after</strong> all
+other object modifications are applied.</p></li>
+<li><p>If you call <code>m =&gt; m.localId(customValue)</code>, the modified object will have your custom <code>localId</code>.</p></li>
+<li><p>If you do not call <code>defaultLocalId</code> or <code>localId</code>, the modification object will have the same <code>localId</code> as the
+original object.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="attribute"></a><a href="#attribute" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attribute</h2>
+<p>Each attribute is defined by its <code>displayForm</code> - also known as <code>label</code> in GoodData.CN - that will be used to
+slice the data. You can create an attribute definition using the following factory function:</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-keyword">const</span> attribute = newAttribute(<span class="hljs-string">"&lt;attribute-displayForm-identifier&gt;"</span>);
+</code></pre>
+<p>Each attribute requires a <code>localIdentifier</code> that you can use to reference the attribute in the scope of the execution (for instance, when specifying sorting). The factory function assigns a stable <code>localIdentifier</code> for you.</p>
+<p>You can optionally override the <code>localIdentifier</code> and also the title of the attribute in the factory function call:</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-keyword">const</span> attribute = newAttribute(<span class="hljs-string">"&lt;attribute-displayForm-identifier&gt;"</span>, m =&gt; m.localId(<span class="hljs-string">"myLocalId"</span>).alias(<span class="hljs-string">"My Attribute"</span>));
+</code></pre>
+<p>You can modify an existing attribute using the <code>modifyAttribute</code> function:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { newAttribute, modifyAttribute } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+
+<span class="hljs-keyword">const</span> attribute = newAttribute(<span class="hljs-string">"displayFormIdentifier"</span>, m =&gt; m.alias(<span class="hljs-string">"My Custom Name"</span>));
+
+<span class="hljs-comment">// notice the call to defaultLocalId() - this ensures the new object will have a different, generated localId</span>
+<span class="hljs-keyword">const</span> sameAttributeDifferentName = modifyAttribute(attribute, m =&gt; m.alias(<span class="hljs-string">"Corrected Name"</span>).defaultLocalId());
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="filter"></a><a href="#filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter</h2>
+<p>You can limit the execution by providing one or more <code>filter</code>'s. Multiple filters are always interpreted as an intersection of all individual filters (<code>f1 AND f2 AND f3...</code>).</p>
+<p>The execution model provides several factory functions to create filter objects, one function for each type of filters supported by GoodData.UI:</p>
+<ul>
+<li><code>newPositiveAttributeFilter</code></li>
+<li><code>newNegativeAttributeFilter</code></li>
+<li><code>newAbsoluteDateFilter</code></li>
+<li><code>newRelativeDateFilter</code></li>
+<li><code>newMeasureValueFilter</code></li>
+<li><code>newRankingFilter</code></li>
+</ul>
+<p><strong>NOTE:</strong> You can find in-depth explanation of the filters and examples using the factory functions in <a href="/gooddata-ui/docs/8.6.0/filter_visual_components.html">Filter Visual Components</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="measure"></a><a href="#measure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measure</h2>
+<p>Measures in the scope of execution indicate what values the Analytical Backend must calculate and include in the result,
+potentially sliced as indicated by the different attributes in the execution.</p>
+<p>You can construct measures of multiple types:</p>
+<ul>
+<li>Measures created by aggregating facts in your logical data model</li>
+<li>Measures created by referencing an existing, potentially complex MAQL metric</li>
+<li>Arithmetic measures constructed by combining existing measures as operands of arithmetic operations</li>
+<li>Time-over-time comparison measures constructed by &quot;shifting&quot; the calculation in time</li>
+</ul>
+<p>The factory functions are the following:</p>
+<ul>
+<li><code>newMeasure</code> creates a new measure from a fact or a MAQL metric.</li>
+<li><code>newArithmeticMeasure</code> creates a new arithmetic measure.</li>
+<li><code>newPopMeasure</code> creates a new period-over-period comparison measure.</li>
+<li><code>newPreviousPeriodMeasure</code> creates a new previous period comparison measure.</li>
+</ul>
+<p>The modification function is <code>modifyMeasure</code>. It modifies measure-agnostic parameters (format, alias, localId) of any type of a measure.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="hljs css language-js harmony"><span class="hljs-keyword">import</span> { newMeasure, newArithmeticMeasure, modifyMeasure } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+
+<span class="hljs-keyword">const</span> measureFromMaqlMetric = newMeasure(<span class="hljs-string">"maqlMetricIdentifier"</span>);
+<span class="hljs-keyword">const</span> measureFromFact = newMeasure(<span class="hljs-string">"factIdentifier"</span>, m =&gt; m.aggregation(<span class="hljs-string">"avg"</span>).alias(<span class="hljs-string">"Custom Name"</span>));
+<span class="hljs-keyword">const</span> measureWithFilter = newMeasure(<span class="hljs-string">"factIdentifier"</span>, m =&gt; m.filters(newPositiveAttributeFilter(<span class="hljs-string">"displayFormId"</span>, [<span class="hljs-string">"value"</span>])));
+
+<span class="hljs-keyword">const</span> arithmeticMeasure = newArithmeticMeasure(
+                                [measureFromFact, measureFromMaqlMetric],
+                                <span class="hljs-string">"sum"</span>,
+                                m =&gt; m.alias(<span class="hljs-string">"Custom Name For Arithmetic Measure"</span>).format(<span class="hljs-string">"$#,#0.0"</span>)
+                          );
+
+<span class="hljs-comment">// notice the call to defaultLocalId; this ensures that this new measure will have a different localId - one that reflects</span>
+<span class="hljs-comment">// that the title and the format is different.</span>
+<span class="hljs-keyword">const</span> modifiedArithmeticMeasure = modifyMeasure(arithmeticMeasure,
+                                    m =&gt; m.alias(<span class="hljs-string">"Different Name For Arithmetic Measure"</span>).format(<span class="hljs-string">"$#,#0"</span>).defaultLocalId()
+                                  );
+</code></pre>
+<p><strong>NOTE:</strong> You can find examples for the other factory functions together with a detailed description of time-over-time comparison measures in <a href="/gooddata-ui/docs/8.6.0/time_over_time_comparison.html">Time-over-Time Comparison</a>. The
+arithmetic measures are described in <a href="/gooddata-ui/docs/8.6.0/arithmetic_measure.html">Arithmetic Measure</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="aggregation-inside-a-measure"></a><a href="#aggregation-inside-a-measure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aggregation inside a measure</h3>
+<p>Each measure created from a fact can specify <code>aggregation</code> of data. Aggregation is represented by a string value that defines the aggregation type.</p>
+<table>
+<thead>
+<tr><th style="text-align:left">Type</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><code>&quot;sum&quot;</code></td><td style="text-align:left">Returns a sum of all numbers in the set</td></tr>
+<tr><td style="text-align:left"><code>&quot;count&quot;</code></td><td style="text-align:left">Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter  (ignores the measure's <code>format</code> value and uses the default value <code>#,##0</code> instead)</td></tr>
+<tr><td style="text-align:left"><code>&quot;avg&quot;</code></td><td style="text-align:left">Returns the average value of all numbers in the set; null values are ignored</td></tr>
+<tr><td style="text-align:left"><code>&quot;min&quot;</code></td><td style="text-align:left">Returns the minimum value of all numbers in the set</td></tr>
+<tr><td style="text-align:left"><code>&quot;max&quot;</code></td><td style="text-align:left">Returns the maximum value of all numbers in the set</td></tr>
+<tr><td style="text-align:left"><code>&quot;median&quot;</code></td><td style="text-align:left">Counts the statistical median - an order statistic that gives the &quot;middle&quot; value of a sample. If the &quot;middle&quot; falls between two values, the function returns average of the two middle values. Null values are ignored.</td></tr>
+<tr><td style="text-align:left"><code>&quot;runsum&quot;</code></td><td style="text-align:left">Returns a sum of numbers increased by the sum from the previous value (accumulating a sum incrementally)</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="filters-in-a-measure-definition"></a><a href="#filters-in-a-measure-definition" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filters in a measure definition</h3>
+<p>Each measure can be filtered by attribute filters. Filters are represented by an array of <code>IFilter</code> objects.</p>
+<p>Only one filter of the <code>DateFilter</code> type is allowed in the measure's filter definition.</p>
+<ul>
+<li>When both the measure filter of the <code>DateFilter</code> type and the global filter of the <code>DateFilter</code> type are set with
+the <strong>same</strong> date dimension, the measure date filter overrides the global date filter for this measure
+(global date filters are still applied to other measures that do not have a measure date filter defined).</li>
+<li>When the measure filter of the <code>DateFilter</code> type and the global filter of the <code>DateFilter</code> type are set
+with <strong>different</strong> date dimensions, the filters are interpreted as an intersection of those filters (<code>f1 AND f2</code>).</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="show-a-measure-as-a-percentage"></a><a href="#show-a-measure-as-a-percentage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Show a measure as a percentage</h3>
+<p>When the execution runs on the Analytical Backend, the result measure data is, by default, returned as raw values (numbers).</p>
+<p>If you want the measures data to be displayed as a percentage instead, you can use the <code>modifySimpleMeasure</code> function
+of the execution model to turn on the <code>computeRatio</code> functionality:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { modifySimpleMeasure } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+
+<span class="hljs-comment">// This will modify an existing simple measure, turn on the computeRatio functionality and associate a new, default localId</span>
+<span class="hljs-keyword">const</span> ratioMeasure = modifySimpleMeasure(Ldm.$FranchiseFees, m =&gt; m.ratio().defaultLocalId());
+
+<span class="hljs-comment">// This will modify an existing simple measure, turn off the computeRatio functionality and associate a new, default localId</span>
+<span class="hljs-keyword">const</span> noRatio = modifySimpleMeasure(ratioMeasure, m =&gt; m.noRatio().defaultLocalId());
+</code></pre>
+<p>When the property is enabled, the measure's <code>format</code> value is ignored. The default format <code>#,##0.00%</code> is used instead.</p>
+<h2><a class="anchor" aria-hidden="true" id="sort-items"></a><a href="#sort-items" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sort items</h2>
+<p>The execution model provides factory functions to create sort items and the respective locators:</p>
+<ul>
+<li><code>newAttributeSortItem</code> creates a new attribute sort item.</li>
+<li><code>newMeasureSortItem</code> creates a new measure value sort item.</li>
+</ul>
+<p>For both of these, you can specify an attribute or measure either by <code>localId</code> or by passing the actual object.</p>
+<p>The second parameter is always the sort direction.</p>
+<p>When sorting by measures that are scoped for a particular attribute value (for example, in pivot tables), you must specify one or more attribute locators to pinpoint the exact measure to sort by. You can conveniently create attribute locators using the <code>newAttributeLocator</code> factory function.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="hljs css language-js harmony"><span class="hljs-keyword">import</span> { newAttribute, newMeasure, newAttributeSort, newMeasureSort, newAttributeLocator } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+
+<span class="hljs-keyword">const</span> attribute = newAttribute(<span class="hljs-string">"displayFormIdentifier"</span>, m =&gt; m.alias(<span class="hljs-string">"Custom Dimension"</span>));
+<span class="hljs-keyword">const</span> measure = newMeasure(<span class="hljs-string">"maqlMetricIdentifier"</span>, m =&gt; m.alias(<span class="hljs-string">"My Measure"</span>).format(<span class="hljs-string">"#0"</span>));
+
+<span class="hljs-keyword">const</span> attributeSort = newAttributeSort(attribute, <span class="hljs-string">"asc"</span>);
+
+<span class="hljs-keyword">const</span> measureSortWithoutAttributeLocator = newMeasureSort(measure, <span class="hljs-string">"asc"</span>);
+<span class="hljs-keyword">const</span> measureSortWithAttributeLocator = newMeasureSort(measure, <span class="hljs-string">"asc"</span>, [newAttributeLocator(attribute, <span class="hljs-string">"element-uri"</span>)])
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="attribute-area-sorting"></a><a href="#attribute-area-sorting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attribute area sorting</h3>
+<p>You can specify that the attribute sort should sort attribute values based on an aggregation function applied to
+all valid values belonging to each attribute value. This is extremely useful when sorting stacked visualizations such
+as stacked bar charts or area charts.</p>
+<p>Currently, only sorting by the <code>sum</code> function is supported.</p>
+<p>The following example shows sorting a table with two measures and a <code>Year</code> attribute. You can set sorting based on the <code>Year</code> attribute with:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { newAttribute, newAttributeAreaSort } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+
+<span class="hljs-keyword">const</span> attribute = newAttribute(<span class="hljs-string">"displayFormIdentifier"</span>, m =&gt; m.alias(<span class="hljs-string">"Custom Dimension"</span>));
+
+newAttributeAreaSort(attribute, <span class="hljs-string">"asc"</span>)
+</code></pre>
+<p>Consider the following original data:</p>
+<table>
+<thead>
+<tr><th style="text-align:left">Year</th><th style="text-align:left">2006</th><th style="text-align:left">2006</th><th style="text-align:left">2007</th><th style="text-align:left">2007</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Measures</td><td style="text-align:left">M1</td><td style="text-align:left">M2</td><td style="text-align:left">M1</td><td style="text-align:left">M2</td></tr>
+<tr><td style="text-align:left">Values</td><td style="text-align:left">1</td><td style="text-align:left">2</td><td style="text-align:left">3</td><td style="text-align:left">4</td></tr>
+</tbody>
+</table>
+<p>The sorting function (<code>sum</code>) is applied to all attribute element values for each attribute element (<code>2006</code> and <code>2007</code>).
+Notice that the area sort is summing up values across different measures (<code>M1</code> and <code>M2</code>):</p>
+<table>
+<thead>
+<tr><th style="text-align:left">2006</th><th style="text-align:left">2007</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">1 + 2 = 3</td><td style="text-align:left">3 + 4 = 7</td></tr>
+</tbody>
+</table>
+<p>Attribute values are then sorted by this computed value (<code>3</code> and <code>7</code>, respectively):</p>
+<table>
+<thead>
+<tr><th style="text-align:left">Year</th><th style="text-align:left">2007</th><th style="text-align:left">2007</th><th style="text-align:left">2006</th><th style="text-align:left">2006</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Measures</td><td style="text-align:left">M1</td><td style="text-align:left">M2</td><td style="text-align:left">M1</td><td style="text-align:left">M2</td></tr>
+<tr><td style="text-align:left">Values</td><td style="text-align:left">3</td><td style="text-align:left">4</td><td style="text-align:left">1</td><td style="text-align:left">2</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/gooddata-ui/docs/8.6.0/data_sampling.html"><span class="arrow-prev">← </span><span>Data Sampling</span></a><a class="docs-next button" href="/gooddata-ui/docs/8.6.0/time_over_time_comparison.html"><span>Time-over-Time Comparison</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#execution-model-concepts">Execution model concepts</a><ul class="toc-headings"><li><a href="#creating-objects">Creating objects</a></li><li><a href="#accessing-object-properties">Accessing object properties</a></li><li><a href="#modifying-objects">Modifying objects</a></li><li><a href="#local-identifiers-and-referencing-objects">Local identifiers and referencing objects</a></li></ul></li><li><a href="#attribute">Attribute</a></li><li><a href="#filter">Filter</a></li><li><a href="#measure">Measure</a><ul class="toc-headings"><li><a href="#aggregation-inside-a-measure">Aggregation inside a measure</a></li><li><a href="#filters-in-a-measure-definition">Filters in a measure definition</a></li><li><a href="#show-a-measure-as-a-percentage">Show a measure as a percentage</a></li></ul></li><li><a href="#sort-items">Sort items</a><ul class="toc-headings"><li><a href="#attribute-area-sorting">Attribute area sorting</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2021 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.6.0"]}
+              });
+            </script></body></html>
