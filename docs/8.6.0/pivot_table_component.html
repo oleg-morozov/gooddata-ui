@@ -80,15 +80,15 @@
 <p>The following code sample shows an arrangement for a typical pivot table:</p>
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot/styles/css/main.css"</span>;
 <span class="hljs-keyword">import</span> { PivotTable } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot"</span>;
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
 
 <span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">PivotTable</span>
-        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.$FranchiseFees]}</span>
-        <span class="hljs-attr">rows</span>=<span class="hljs-string">{[Ldm.LocationState]}</span>
-        <span class="hljs-attr">columns</span>=<span class="hljs-string">{[Ldm.DateMonth.Short]}</span>
+        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Md.$FranchiseFees]}</span>
+        <span class="hljs-attr">rows</span>=<span class="hljs-string">{[Md.LocationState]}</span>
+        <span class="hljs-attr">columns</span>=<span class="hljs-string">{[Md.DateMonth.Short]}</span>
     /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
 </code></pre>
@@ -96,14 +96,14 @@
 <p>You can also use the Pivot Table component to create a regular (flat) table.</p>
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot/styles/css/main.css"</span>;
 <span class="hljs-keyword">import</span> { PivotTable } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot"</span>;
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
 
 <span class="hljs-keyword">const</span> style = { <span class="hljs-attr">height</span>: <span class="hljs-number">300</span> };
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">PivotTable</span>
-        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.$FranchiseFees]}</span>
-        <span class="hljs-attr">rows</span>=<span class="hljs-string">{[Ldm.LocationState]}</span>
+        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Md.$FranchiseFees]}</span>
+        <span class="hljs-attr">rows</span>=<span class="hljs-string">{[Md.LocationState]}</span>
     /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
 </code></pre>
@@ -114,14 +114,14 @@
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot/styles/css/main.css"</span>;
 <span class="hljs-keyword">import</span> { PivotTable } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot"</span>;
 <span class="hljs-keyword">import</span> { newMeasureSort, newAttributeLocator } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
-<span class="hljs-keyword">import</span> { monthDateIdentifierJanuary } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm/ext"</span>;
+<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
+<span class="hljs-keyword">import</span> { monthDateIdentifierJanuary } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md/ext"</span>;
 
 <span class="hljs-keyword">const</span> sortBy = [
     newMeasureSort(
-        Ldm.$FranchiseFees,
+        Md.$FranchiseFees,
         <span class="hljs-string">"desc"</span>,
-        [newAttributeLocator(Ldm.DateMonth.Short, monthDateIdentifierJanuary)]
+        [newAttributeLocator(Md.DateMonth.Short, monthDateIdentifierJanuary)]
     )
 ];
 
@@ -129,9 +129,9 @@
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{style}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">PivotTable</span>
-        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.$FranchiseFees]}</span>
-        <span class="hljs-attr">rows</span>=<span class="hljs-string">{[Ldm.LocationState]}</span>
-        <span class="hljs-attr">columns</span>=<span class="hljs-string">{[Ldm.DateMonth.Short]}</span>
+        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Md.$FranchiseFees]}</span>
+        <span class="hljs-attr">rows</span>=<span class="hljs-string">{[Md.LocationState]}</span>
+        <span class="hljs-attr">columns</span>=<span class="hljs-string">{[Md.DateMonth.Short]}</span>
         <span class="hljs-attr">sortBy</span>=<span class="hljs-string">{sortBy}</span>
     /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
@@ -196,8 +196,8 @@ of width items that specify which columns should be affected and what width to s
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> config = {
     <span class="hljs-attr">columnSizing</span>: {
        <span class="hljs-attr">columnWidths</span>: [
-            newWidthForAttributeColumn(Ldm.Date, <span class="hljs-number">100</span>),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-number">200</span>)
+            newWidthForAttributeColumn(Md.Date, <span class="hljs-number">100</span>),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-number">200</span>)
        ]
     }
 }
@@ -233,7 +233,7 @@ of width items that specify which columns should be affected and what width to s
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> config = {
   <span class="hljs-attr">columnSizing</span>: {
     <span class="hljs-attr">columnWidths</span>: [
-        newWidthForAllColumnsForMeasure(Ldm.$FranchiseFees, <span class="hljs-number">200</span>)
+        newWidthForAllColumnsForMeasure(Md.$FranchiseFees, <span class="hljs-number">200</span>)
     ]
   }
 }
@@ -252,8 +252,8 @@ of width items that specify which columns should be affected and what width to s
     <span class="hljs-attr">columnSizing</span>: {
         <span class="hljs-attr">defaultWidth</span>: <span class="hljs-string">"autoresizeAll"</span>,
         <span class="hljs-attr">columnWidths</span>: [
-            newWidthForAttributeColumn(Ldm.Date, <span class="hljs-number">100</span>),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-number">200</span>),
+            newWidthForAttributeColumn(Md.Date, <span class="hljs-number">100</span>),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-number">200</span>),
         ]
     }
 }
@@ -269,7 +269,7 @@ of width items that specify which columns should be affected and what width to s
         <span class="hljs-attr">defaultWidth</span>: <span class="hljs-string">"autoresizeAll"</span>,
         <span class="hljs-attr">columnWidths</span>: [
             newWidthForAllMeasureColumns(<span class="hljs-number">200</span>),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-string">"auto"</span>),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-string">"auto"</span>),
         ]
     }
 }
@@ -286,8 +286,8 @@ of width items that specify which columns should be affected and what width to s
         <span class="hljs-attr">defaultWidth</span>: <span class="hljs-string">"autoresizeAll"</span>,
         <span class="hljs-attr">columnWidths</span>: [
             newWidthForAllMeasureColumns(<span class="hljs-number">200</span>),
-            newWidthForAllColumnsForMeasure(Ldm.$TotalSales, <span class="hljs-number">200</span>),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-string">"auto"</span>),
+            newWidthForAllColumnsForMeasure(Md.$TotalSales, <span class="hljs-number">200</span>),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-string">"auto"</span>),
         ]
     }
 }
@@ -386,8 +386,8 @@ of width items that specify which columns should be affected and what width to s
     <span class="hljs-attr">columnSizing</span>: {
         <span class="hljs-attr">defaultWidth</span>: <span class="hljs-string">"autoresizeAll"</span>,
         <span class="hljs-attr">columnWidths</span>: [
-            newWidthForAttributeColumn(Ldm.Date, <span class="hljs-number">100</span>),
-            newWidthForSelectedColumns(Ldm.$FranchiseFees, [newAttributeColumnLocator(Ldm.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-number">200</span>),
+            newWidthForAttributeColumn(Md.Date, <span class="hljs-number">100</span>),
+            newWidthForSelectedColumns(Md.$FranchiseFees, [newAttributeColumnLocator(Md.DateMonth.Short, monthDateJanuaryUri)], <span class="hljs-number">200</span>),
         ]
     }
 };

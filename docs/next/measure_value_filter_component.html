@@ -80,12 +80,12 @@
 <span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-filters/styles/css/main.css"</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-charts/styles/css/main.css"</span>;
 <span class="hljs-keyword">import</span> { MeasureValueFilter } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-filters"</span>;
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
 
 <span class="hljs-keyword">const</span> measureTitle = <span class="hljs-string">"$ Total Sales"</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SalesByResort</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-    <span class="hljs-keyword">this</span>.state = { <span class="hljs-attr">filters</span>: [ newMeasureValueFilter(Ldm.$TotalSales, <span class="hljs-string">"GREATER_THAN"</span>, <span class="hljs-number">0</span>) ] };
+    <span class="hljs-keyword">this</span>.state = { <span class="hljs-attr">filters</span>: [ newMeasureValueFilter(Md.$TotalSales, <span class="hljs-string">"GREATER_THAN"</span>, <span class="hljs-number">0</span>) ] };
 
     onApply = <span class="hljs-function"><span class="hljs-params">filter</span> =&gt;</span> {
         <span class="hljs-keyword">this</span>.setState({ <span class="hljs-attr">filters</span>: [filter] });
@@ -102,8 +102,8 @@
                     <span class="hljs-attr">buttonTitle</span>=<span class="hljs-string">{measureTitle}</span>
                 /&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">BarChart</span>
-                    <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.$TotalSales]}</span>
-                    <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{[Ldm.LocationResort]}</span>
+                    <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Md.$TotalSales]}</span>
+                    <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{[Md.LocationResort]}</span>
                     <span class="hljs-attr">filters</span>=<span class="hljs-string">{filters}</span>
                 /&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>

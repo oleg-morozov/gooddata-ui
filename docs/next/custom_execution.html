@@ -65,22 +65,22 @@
 <p>You can use an instance of the Analytical Backend to conveniently construct and perform the executions using a fluent API.</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> bearFactory <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-backend-bear"</span>;
 <span class="hljs-keyword">import</span> { newPositiveAttributeFilter, newMeasureSort, newTwoDimensional, MeasureGroupIdentifier } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
 
 <span class="hljs-keyword">const</span> backend = bearFactory();
 
 <span class="hljs-comment">// The execution will be done for single measure and on granularity of single attribute.</span>
-<span class="hljs-keyword">const</span> measuresAndAttributes = [Ldm.$AvgDailyTotalSales, Ldm.LocationState];
+<span class="hljs-keyword">const</span> measuresAndAttributes = [Md.$AvgDailyTotalSales, Md.LocationState];
 
 <span class="hljs-comment">// This filter tells backend to calculate data just for the listed states.</span>
-<span class="hljs-keyword">const</span> filter = newPositiveAttributeFilter(Ldm.LocationState, [<span class="hljs-string">"California"</span>, <span class="hljs-string">"Texas"</span>, <span class="hljs-string">"Oregon"</span>])
+<span class="hljs-keyword">const</span> filter = newPositiveAttributeFilter(Md.LocationState, [<span class="hljs-string">"California"</span>, <span class="hljs-string">"Texas"</span>, <span class="hljs-string">"Oregon"</span>])
 
 <span class="hljs-comment">// This sort definition tells backend to sort the result by value of the $AvgDailyTotalSales</span>
 <span class="hljs-keyword">const</span> sort = newMeasureSort($AvgDailyTotalSales, <span class="hljs-string">"desc"</span>);
 
 <span class="hljs-comment">// The dimensions specify how to slice and dice the result. In this example the result will be two dimensional</span>
 <span class="hljs-comment">// and resemble a table. There will be one row for each state and in each row there will be one columns for measure.</span>
-<span class="hljs-keyword">const</span> dimensions = newTwoDimensional([Ldm.LocationState], [MeasureGroupIdentifier]);
+<span class="hljs-keyword">const</span> dimensions = newTwoDimensional([Md.LocationState], [MeasureGroupIdentifier]);
 
 <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> backend
    .workspace(<span class="hljs-string">"workspace_id"</span>)
@@ -99,7 +99,7 @@ layer to work with the result data. It is called <code>DataViewFacade</code> and
 and exposes the data as data series that may be further scoped for some attributes and slices by other attributes.</p>
 <p>Building on top of the previous example, you can use <code>DataViewFacade</code> as follows:</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { DataViewFacade } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui"</span>
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
 <span class="hljs-keyword">import</span> first <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/first"</span>
 
 <span class="hljs-keyword">const</span> facade = DataViewFacade.for(allData);
@@ -112,7 +112,7 @@ and exposes the data as data series that may be further scoped for some attribut
 <span class="hljs-comment">// Note that if you set up the execution dimensionality so that one dimension contains both MeasureGroupIdentifier and </span>
 <span class="hljs-comment">// an attribute, then the result may contain multiple data series for the $AvgDailyTotalSales. Each of the data </span>
 <span class="hljs-comment">// series will be _scoped_ to a an element of the attribute for which it was calculated.</span>
-<span class="hljs-keyword">const</span> totalSales = allDataSeries.firstForMeasure(Ldm.$AvgDailyTotalSales);
+<span class="hljs-keyword">const</span> totalSales = allDataSeries.firstForMeasure(Md.$AvgDailyTotalSales);
 
 <span class="hljs-comment">// The series contains one data point per slice. There will be one slice for each attribute element in the</span>
 <span class="hljs-comment">// dimension opposite to the dimension that contains the MeasureGroupIdentifier. In this case that attribute</span>

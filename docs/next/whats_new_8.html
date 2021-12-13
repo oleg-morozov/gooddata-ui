@@ -123,9 +123,9 @@ used as inputs to different visualization components.</p>
 <p>To complete this story, we have enhanced the <code>catalog-export</code> tool so that it is now able to construct code constants
 representing the various logical data model (LDM) objects in your workspace. You can then use these constants directly in your application when defining visualizations. For instance, you can now do this:</p>
 <pre><code class="hljs css language-jsx">&lt;AreaChart
-    measures={[Ldm.$FranchiseFees]}
-    viewBy={[Ldm.LocationCity]}
-    stackBy={Ldm.LocationState}
+    measures={[Md.$FranchiseFees]}
+    viewBy={[Md.LocationCity]}
+    stackBy={Md.LocationState}
 /&gt;
 </code></pre>
 <p>-- all without the need to write any boilerplate code. The <a href="/gooddata-ui/docs/next/export_catalog.html">catalog-export</a> tool does all that for you.</p>
@@ -140,8 +140,8 @@ packaging and streamlined into a fluent API.</p>
 <pre><code class="hljs css language-javascript">backend
 .workspace(<span class="hljs-string">"myWorkspace"</span>)
 .execution()
-.forItems([Ldm.Won, Ldm.Region])
-.withSorting(newAttributeSort(Ldm.Region))
+.forItems([Md.Won, Md.Region])
+.withSorting(newAttributeSort(Md.Region))
 .execute()
 </code></pre>
 <p>At the lowest level, this is how you can create and trigger executions. We have also made significant changes in

@@ -102,13 +102,13 @@
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-charts/styles/css/main.css"</span>;
 <span class="hljs-keyword">import</span> { Heatmap } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-charts"</span>;
 
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }} <span class="hljs-attr">className</span>=<span class="hljs-string">"s-heat-map"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Heatmap</span>
-        <span class="hljs-attr">measure</span>=<span class="hljs-string">{Ldm.$TotalSales}</span>
-        <span class="hljs-attr">rows</span>=<span class="hljs-string">{Ldm.LocationState}</span>
-        <span class="hljs-attr">columns</span>=<span class="hljs-string">{Ldm.MenuCategory}</span>
+        <span class="hljs-attr">measure</span>=<span class="hljs-string">{Md.$TotalSales}</span>
+        <span class="hljs-attr">rows</span>=<span class="hljs-string">{Md.LocationState}</span>
+        <span class="hljs-attr">columns</span>=<span class="hljs-string">{Md.MenuCategory}</span>
         <span class="hljs-attr">onLoadingChanged</span>=<span class="hljs-string">{this.onLoadingChanged}</span>
         <span class="hljs-attr">onError</span>=<span class="hljs-string">{this.onError}</span>
     /&gt;</span>

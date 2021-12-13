@@ -157,8 +157,8 @@ longer work directly with the API client. This has the following impact:</p>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BarChart</span>
     <span class="hljs-attr">backend</span>=<span class="hljs-string">{backend}</span>
     <span class="hljs-attr">workspace</span>=<span class="hljs-string">"&lt;yourWorkspace&gt;"</span>
-    <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.Won]}</span>
-    <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{[Ldm.Product]}</span>
+    <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Md.Won]}</span>
+    <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{[Md.Product]}</span>
 /&gt;</span>
 </span></code></pre></li>
 <li><p>Use the newly available BackendProvider at the root of your application and remove use of the <code>sdk</code> property from
@@ -169,8 +169,8 @@ your application:</p>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BackendProvider</span> <span class="hljs-attr">backend</span>=<span class="hljs-string">{backend}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">BarChart</span>
         <span class="hljs-attr">workspace</span>=<span class="hljs-string">"&lt;yourWorkspaceId&gt;"</span>
-        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Ldm.Won]}</span>
-        <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{[Ldm.Product]}</span>
+        <span class="hljs-attr">measures</span>=<span class="hljs-string">{[Md.Won]}</span>
+        <span class="hljs-attr">viewBy</span>=<span class="hljs-string">{[Md.Product]}</span>
     /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">BackendProvider</span>&gt;</span>
 </span></code></pre></li>

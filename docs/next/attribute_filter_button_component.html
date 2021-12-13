@@ -77,7 +77,7 @@ The <code>onApply</code> callback receives a new filter definition that you can 
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-filters/styles/css/main.css"</span>;
 
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AttributeFilterButtonExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
     onApply(filter) {
@@ -88,7 +88,7 @@ The <code>onApply</code> callback receives a new filter definition that you can 
         <span class="hljs-keyword">return</span> (
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">AttributeFilterButton</span>
-                    <span class="hljs-attr">filter</span>=<span class="hljs-string">{newNegativeAttributeFilter(Ldm.EmployeeName.Default,</span> [])}
+                    <span class="hljs-attr">filter</span>=<span class="hljs-string">{newNegativeAttributeFilter(Md.EmployeeName.Default,</span> [])}
                     <span class="hljs-attr">onApply</span>=<span class="hljs-string">{this.onApply}</span>
                 /&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
@@ -105,7 +105,7 @@ The <code>onApply</code> callback receives a new filter definition that you can 
         <span class="hljs-keyword">return</span> (
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">AttributeFilterButon</span>
-                    <span class="hljs-attr">filter</span>=<span class="hljs-string">{newPositiveAttributeFilter(Ldm.EmployeeName.Default,</span> ["<span class="hljs-attr">Abbie</span> <span class="hljs-attr">Adams</span>"])}
+                    <span class="hljs-attr">filter</span>=<span class="hljs-string">{newPositiveAttributeFilter(Md.EmployeeName.Default,</span> ["<span class="hljs-attr">Abbie</span> <span class="hljs-attr">Adams</span>"])}
                     <span class="hljs-attr">onApply</span>=<span class="hljs-string">{this.onApply}</span>
                 /&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
@@ -122,7 +122,7 @@ The <code>onApply</code> callback receives a new filter definition that you can 
             &lt;AttributeFilterButton
                 filter={filter}
                 parentFilters={parentFilter ? [parentFilter] : []}
-                parentFilterOverAttribute={idRef(LdmExt.locationIdAttributeIdentifier)}
+                parentFilterOverAttribute={idRef("attr.restaurantlocation.locationid")}
                 fullscreenOnMobile={false}
                 onApply={setFilter}
             /&gt;
@@ -135,7 +135,7 @@ The <code>onApply</code> callback receives a new filter definition that you can 
         &lt;AttributeFilterButton
             connectToPlaceholder={filterPlaceholder}
             parentFilters={parentFilterPlaceholder ? [parentFilterPlaceholder] : []}
-            parentFilterOverAttribute={idRef(LdmExt.locationIdAttributeIdentifier)}
+            parentFilterOverAttribute={idRef("attr.restaurantlocation.locationid")}
             fullscreenOnMobile={false}
         /&gt;
     &lt;/div&gt;
