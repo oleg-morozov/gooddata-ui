@@ -76,7 +76,7 @@
 <p>The following sample KPI calculates the total sales in California:</p>
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { Kpi } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui"</span>;
 <span class="hljs-keyword">import</span> { newPositiveAttributeFilter } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
-<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Md <span class="hljs-keyword">from</span> <span class="hljs-string">"./md/full"</span>;
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Kpi</span>
     <span class="hljs-attr">measure</span>=<span class="hljs-string">{Md.$TotalSales}</span>

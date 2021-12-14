@@ -84,7 +84,7 @@
 <p><img src="/gooddata-ui/docs/assets/pivot_table_totals.png" alt="Grand Totals for Columns"></p>
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { PivotTable } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot"</span>;
 <span class="hljs-keyword">import</span> { newTotal } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
-<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Md <span class="hljs-keyword">from</span> <span class="hljs-string">"./md/full"</span>;
 
 <span class="hljs-keyword">const</span> measures = [ Md.$FranchiseFees ];
 <span class="hljs-keyword">const</span> columns = [ Md.DateMonth.Short ];
@@ -118,7 +118,7 @@ first row attribute, and this is the default sorting for tables.</p>
 <p><img src="/gooddata-ui/docs/assets/pivot_table_subtotals.png" alt="Subtotals for Columns"></p>
 <pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { PivotTable } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-pivot"</span>;
 <span class="hljs-keyword">import</span> { newTotal } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
-<span class="hljs-keyword">import</span> { Md } <span class="hljs-keyword">from</span> <span class="hljs-string">"./md"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Md <span class="hljs-keyword">from</span> <span class="hljs-string">"./md/full"</span>;
 
 <span class="hljs-keyword">const</span> measures = [ Md.$FranchiseFees ];
 <span class="hljs-keyword">const</span> columns = [ Md.DateMonth.Short ];

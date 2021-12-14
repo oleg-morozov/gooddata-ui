@@ -80,7 +80,7 @@ The following sample KPI calculates the total sales <span class="hljs-keyword">i
 ```<span class="javascript">jsx
 <span class="hljs-keyword">import</span> { Kpi } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui"</span>;
 <span class="hljs-keyword">import</span> { newPositiveAttributeFilter } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
-<span class="hljs-keyword">import</span> { Ldm } <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Ldm <span class="hljs-keyword">from</span> <span class="hljs-string">"./ldm/full"</span>;
 
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Kpi</span>
     <span class="hljs-attr">measure</span>=<span class="hljs-string">{Ldm.$TotalSales}</span>
