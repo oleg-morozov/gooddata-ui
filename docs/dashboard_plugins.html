@@ -149,12 +149,12 @@ additional feedback.</p>
 <ol>
 <li><p>Ensure that the <code>dashboardComponentDevRollout</code> platform setting is set to <code>true</code> for your GoodData domain or at least
 for the workspace where you want to use the plugins.</p></li>
-<li><p>Set up hosting for the plugins, and add it to the <code>dashboardPluginHosts</code> setting.</p>
-<p>This is a security measure. Only GoodData can add hosts to the <code>dashboardPluginHosts</code> list.
-The goal of this setting is to allow to control from where the plugins can be loaded. This should
-be a trusted and controlled location where only privileged developers can upload plugin artifacts.
-To update the list of trusted hosts, send a <a href="https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387">support ticket</a>.</p>
-<p><strong>NOTE:</strong> You can request multiple hosts to be added to the list. All hosts must run on the <code>https://</code> protocol.</p>
+<li><p>Set up hosting for the plugins, and <a href="https://support.gooddata.com/hc/en-us/requests/new?ticket_form_id=582387">request GoodData Support</a>
+to add it to the <code>dashboardPluginHosts</code> setting.</p>
+<p>This is a security measure. Only GoodData Support can add hosts to the <code>dashboardPluginHosts</code> list.
+The goal of this setting is to control from where the plugins can be loaded. This should
+be a trusted and controlled location where only privileged developers can upload plugin artifacts.</p>
+<p>You can request multiple hosts to be added to the list. All hosts must run on the HTTPS protocol.</p>
 <blockquote>
 <p><strong>IMPORTANT!</strong> Never put untrusted hosts into this list. Always put the hosts that are under your organization's
 control and appropriate review and governance. Otherwise, you run risk of malicious code leaking your data.</p>
