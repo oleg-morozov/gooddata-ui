@@ -78,7 +78,7 @@
 <p>GoodData supports SAML 2.0-based and PGP-based authentication. For more information, see <a href="https://help.gooddata.com/display/doc/Single+Sign-On+Overview">Single Sign-On Overview</a>.</p>
 <p>Setting up authentication depends on what type of SSO is implemented on your site.</p>
 <ul>
-<li><p>If you use the <a href="https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On">GoodData PGP SSO</a> implementation, you can use the <code>loginSSO</code> method from <a href="https://github.com/gooddata/gooddata-js">GoodData Javascript SDK</a>. Note that although this method requires a mandatory parameter of <code>targetUrl</code>, this parameter is used very rarely in the context of GoodData.UI, because in a typical scenario there is no need to redirect a user to any GoodData URL. But as this parameter is mandatory, set it to an arbitrary relative URL (for example, <code>/</code>).</p>
+<li><p>If you use the <a href="https://help.gooddata.com/display/doc/GoodData+PGP+Single+Sign-On">GoodData PGP SSO</a> implementation, you can use the <code>loginSSO</code> method from <a href="https://github.com/gooddata/gooddata-js">GoodData Javascript SDK</a>. Note that although this method requires a mandatory parameter of <code>targetUrl</code>, this parameter is used very rarely in the context of GoodData.UI, because in a typical scenario there is no need to redirect a user to any GoodData URL. But as this parameter is mandatory, set it to <code>/gdc/account/token</code>.</p>
 <pre><code class="hljs">  ```javascript
   import { factory } from '@gooddata/gooddata-js';
 
@@ -86,7 +86,7 @@
   const sdk = factory({ domain });
   const encryptedClaims = 'your-generated-encrypted-claims';
   const ssoProvider = 'your-sso-provider-name';
-  const targetUrl = 'your-target-url'; // set to an arbitrary relative URL
+  const targetUrl = '/gdc/account/token'; // keep this URL set to /gdc/account/token
 
   sdk.user
    .loginSso(encryptedClaims, ssoProvider, targetUrl)
