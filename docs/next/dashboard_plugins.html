@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Dashboard Plugins · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Dashboard plugins allow developers to create and integrate custom code into the KPI Dashboards component. With the plugins, you"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Dashboard Plugins · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="Dashboard plugins allow developers to create and integrate custom code into the KPI Dashboards component. With the plugins, you"/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Dashboard Plugins · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Dashboard plugins allow developers to create and integrate custom code into the Dashboard component. With the plugins, you"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Dashboard Plugins · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="Dashboard plugins allow developers to create and integrate custom code into the Dashboard component. With the plugins, you"/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -59,7 +59,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Dashboard Plugins</h1></header><article><div><span><p>Dashboard plugins allow developers to create and integrate custom code into the KPI Dashboards component. With the plugins, you
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Dashboard Plugins</h1></header><article><div><span><p>Dashboard plugins allow developers to create and integrate custom code into the Dashboard component. With the plugins, you
 as a developer can customize and enhance the default dashboard experience available to the dashboard consumers.</p>
 <p>The plugins are an essential part of the GoodData dashboard stack. For more information, see the
 <a href="/gooddata-ui/docs/next/dashboard_intro.html#dashboard-component-architecture">architecture overview</a>.</p>
@@ -108,6 +108,10 @@ that same version of the Dashboard component.</p>
 <p>This means that any changes and improvements that we make to the KPI Dashboards will not be available on the
 dashboards enhanced by the plugin until you upgrade your plugin and build it against the latest version of
 <code>@gooddata/sdk-ui-dashboard</code>.</p>
+<p>When you have more than one plugin linked to the same dashboard, all these plugins are validated with regard to the version of
+the Dashboard component they can be run with. If no version compatible with all the linked plugins on the dashboard is found,
+none of the plugins is displayed on the dashboard, and an error message is logged into the browser console. In this case,
+review the plugins and <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/tools/dashboard-plugin-template/README.template.md#how-can-i-setup-compatibility-of-the-plugin">adjust their settings</a> so that they can run on the same version of the Dashboard component.</p>
 <p>We decided to go with this strict behavior to give you strong guarantees that the plugins enhanced by your
 dashboard will work predictably regardless of how we change the default experience.</p>
 <p>In the future, we may expand on this area and allow your plugins to automatically follow the latest stable build
@@ -180,7 +184,7 @@ project will contain a Walking Skeleton for your plugin including scripts to cor
 <p>The toolkit supports additional actions:</p>
 <ul>
 <li>Adding a plugin to a workspace</li>
-<li>Link a dashboard with a plugin added to a workspace</li>
+<li>Linking a dashboard with a plugin added to a workspace</li>
 <li>Unlinking a dashboard from a plugin</li>
 </ul>
 <p>To learn more, follow the documentation in your new plugin's README file. Happy coding!</p>
