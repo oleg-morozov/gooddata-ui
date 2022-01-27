@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Connecting to an Analytical Backend · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="GoodData.UI visual components render data stored in a workspace that exists on an Analytical Backend."/><meta name="docsearch:version" content="8.7.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Connecting to an Analytical Backend · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="GoodData.UI visual components render data stored in a workspace that exists on an Analytical Backend."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png?v=2022"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png?v=2022"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg?v=2022" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.7.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class=""><a href="/gooddata-ui/docs/roadmap.html" target="_blank">Roadmap</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Connecting to an Analytical Backend</h1></header><article><div><span><p>GoodData.UI visual components render data stored in a workspace that exists on an Analytical Backend.</p>
+<p>Your application must initialize the integration with the Analytical Backend, select a workspace to work with and then
+use these in the React components.</p>
+<p>All components accept the <code>backend</code> and <code>workspace</code> properties. You can use these explicitly or use the <code>BackendProvider</code> and <code>WorkspaceProvider</code> React providers.</p>
+<h2><a class="anchor" aria-hidden="true" id="initial-setup"></a><a href="#initial-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initial setup</h2>
+<p>The following procedure implements the initial setup using the providers to pass down the configured backend and workspace:</p>
+<ol>
+<li><p>Create and set up an instance of the analytical backend to communicate with the GoodData platform:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> bearFactory, { ContextDeferredAuthProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-backend-bear"</span>;
+
+<span class="hljs-keyword">const</span> backend = bearFactory({ hostname })
+                .withAuthentication(<span class="hljs-keyword">new</span> ContextDeferredAuthProvider());
+</code></pre>
+<p>This creates a new instance of the analytical backend to communicate with the GoodData platform (codename <code>bear</code>) on
+the provided hostname. You may omit the hostname when connecting to the same origin that serves the application.</p>
+<p>The authentication is deferred fully to your application. The analytical backend expects your application code to take
+care of authentication on the GoodData platform (login/SSO). If the analytical backend finds that the context is not
+authenticated, the GoodDataSdkError with the code UNAUTHORIZED will be sent through the onError callback.</p>
+<p>See <a href="/gooddata-ui/docs/8.7.0/analytical_backend_integration.html#authentication-options">Authentication options</a> for more information about the supported authentication options.</p></li>
+<li><p>Wrap your React application with BackendProvider and WorkspaceProvider:</p>
+<pre><code class="hljs css language-jsx">&lt;BackendProvider backend={backend}&gt;
+    &lt;WorkspaceProvider workspace="your-workspace-id"&gt;
+        &lt;YourApplicationTree /&gt;
+    &lt;/WorkspaceProvider&gt;
+&lt;/BackendProvider&gt;
+</code></pre></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="authentication-options"></a><a href="#authentication-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authentication options</h2>
+<p><code>@gooddata/sdk-backend-bear</code> has the following built-in authentication providers:</p>
+<ul>
+<li><code>ContextDeferredAuthProvider</code></li>
+<li><code>FixedLoginAndPasswordAuthProvider</code></li>
+</ul>
+<p>You can also create a custom provider.</p>
+<h3><a class="anchor" aria-hidden="true" id="contextdeferredauthprovider"></a><a href="#contextdeferredauthprovider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ContextDeferredAuthProvider</h3>
+<p><code>ContextDeferredAuthProvider</code> assumes that the session is already authenticated to the GoodData platform (either by a login or by SSO).
+This is useful when you embed GoodData.UI elements into your app.</p>
+<p>To use SSO, follow the <a href="sso">SSO guide</a> and use <code>ContextDeferredAuthProvider</code> in your application as shown in <a href="/gooddata-ui/docs/8.7.0/analytical_backend_integration.html#initial-setup">Initial setup</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="fixedloginandpasswordauthprovider"></a><a href="#fixedloginandpasswordauthprovider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FixedLoginAndPasswordAuthProvider</h3>
+<p><code>FixedLoginAndPasswordAuthProvider</code> allows you to explicitly specify a username/password combination.
+This is useful when you handle the authentication yourself (for example, with a custom login form)
+or for testing (so that you can hard-code the credentials or provide them from a build script).</p>
+<p>To specify the credentials, pass them to the <code>FixedLoginAndPasswordAuthProvider</code> constructor. For example:</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> bearFactory, { FixedLoginAndPasswordAuthProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-backend-bear"</span>;
+
+<span class="hljs-keyword">const</span> backend = bearFactory({ hostname })
+                .withAuthentication(
+                    <span class="hljs-keyword">new</span> FixedLoginAndPasswordAuthProvider(<span class="hljs-string">"username"</span>, <span class="hljs-string">"password"</span>)
+                );
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="custom-authprovider"></a><a href="#custom-authprovider" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom AuthProvider</h3>
+<p>If neither of the built-in providers fits your needs, you can create your own provider by creating a class derived from <code>BearAuthProviderBase</code>.
+Check <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-backend-bear/src/auth.ts">the source code</a> out for more details.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#initial-setup">Initial setup</a></li><li><a href="#authentication-options">Authentication options</a><ul class="toc-headings"><li><a href="#contextdeferredauthprovider">ContextDeferredAuthProvider</a></li><li><a href="#fixedloginandpasswordauthprovider">FixedLoginAndPasswordAuthProvider</a></li><li><a href="#custom-authprovider">Custom AuthProvider</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2022 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.7.0"]}
+              });
+            </script></body></html>

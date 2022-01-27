@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Create Your First Application from Scratch · GoodData.UI</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&gt;**IMPORTANT:** The solution described in this article no longer works. Use the [Accelerator Toolkit](ht_create_your_first_visualization_toolkit) instead."/><meta name="docsearch:version" content="8.7.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Create Your First Application from Scratch · GoodData.UI"/><meta property="og:type" content="website"/><meta property="og:url" content="https://sdk.gooddata.com/gooddata-ui/index.html"/><meta property="og:description" content="&gt;**IMPORTANT:** The solution described in this article no longer works. Use the [Accelerator Toolkit](ht_create_your_first_visualization_toolkit) instead."/><meta property="og:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png?v=2022"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://sdk.gooddata.com/gooddata-ui/img/metaimage.png?v=2022"/><link rel="shortcut icon" href="/gooddata-ui/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-5G49LK"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'GTM-5G49LK');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/gooddata-ui/js/toggleNav.js"></script><script src="/gooddata-ui/js/scrollSpy.js"></script><link rel="stylesheet" href="/gooddata-ui/css/main.css"/><script src="/gooddata-ui/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/gooddata-ui/"><img class="logo" src="/gooddata-ui/img/gooddata.svg?v=2022" alt="GoodData.UI"/></a><a href="/gooddata-ui/versions.html"><h3>8.7.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/" target="_self">Developers</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/" target="_self">GoodData.CN</a></li><li class=""><a href="/gooddata-ui/" target="_self">GoodData.UI</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native/doc/" target="_self">Docs &amp; APIs</a></li><li class=""><a href="https://www.gooddata.com/developers/cloud-native-community-edition/" target="_self">Get GoodData.CN Community Edition</a></li><li class=""><a href="/gooddata-ui/docs/interactive_examples.html" target="_blank">Code samples</a></li><li class=""><a href="https://gdui-examples.herokuapp.com/" target="_blank">Gallery</a></li><li class=""><a href="https://github.com/gooddata/gooddata-ui-sdk/" target="_blank">GitHub</a></li><li class=""><a href="/gooddata-ui/docs/roadmap.html" target="_blank">Roadmap</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Create Your First Application from Scratch</h1></header><article><div><span><blockquote>
+<p><strong>IMPORTANT:</strong> The solution described in this article no longer works. Use the <a href="ht_create_your_first_visualization_toolkit">Accelerator Toolkit</a> instead.</p>
+</blockquote>
+<p>This tutorial will guide you through the process of creating your first analytical application from scratch, using GoodData.UI with Facebook’s <code>create-react-app</code> tool.</p>
+<p>After you complete this tutorial, you will be able to display various measures and charts from your GoodData workspace within the context of your React application.</p>
+<p>We use the <code>yarn</code> package manager in this tutorial. To install it, review its <a href="https://yarnpkg.com/lang/en/docs/install/">documentation</a>.</p>
+<p><strong>NOTE:</strong> This tutorial assumes that you already have an existing GoodData account. If you do not have a GoodData account yet, create one for free at <a href="https://www.gooddata.com/free">https://www.gooddata.com/free</a>.</p>
+<p><strong>TIP:</strong> Instead of creating the application from scratch, you can use <a href="ht_create_your_first_visualization_toolkit">GoodData <code>create-gooddata-react-app</code> and Accelerator Toolkit</a>, which will guide you through the process of creating the application step by step.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-1-run-create-react-app"></a><a href="#step-1-run-create-react-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 1. Run create-react-app</h2>
+<ol>
+<li><p>Run the following command from the command line:</p>
+<pre><code class="hljs css language-bash">npx create-react-app@4 my-first-app
+</code></pre>
+<p>This command creates a directory named <code>my-first-app</code> with a functional skeleton of a React application. We use <code>create-react-app</code> at <strong>version 4</strong> because it installs React <strong>16</strong>, which is compatible with GoodData.UI. <code>create-react-app</code> version 5 or higher is not supported. You can see the command output that looks something like the following:</p>
+<pre><code class="hljs css language-bash">Success! Created my-first-app at /Users/user-name/dev/my-first-app
+</code></pre>
+<p><strong>NOTE:</strong> The supported versions of Node are &gt;=12.15.0. Using a different version may result in errors.</p></li>
+<li><p>Change your current working directory to <code>my-first-app</code> (for example, by running <code>cd my-first-app</code> on Mac or Linux).</p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="step-2-add-gooddata-sdk-dependencies"></a><a href="#step-2-add-gooddata-sdk-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 2. Add GoodData SDK dependencies</h2>
+<p>Run the following command from the command line:</p>
+<pre><code class="hljs css language-bash">yarn add @gooddata/sdk-backend-bear @gooddata/sdk-model @gooddata/sdk-ui @gooddata/sdk-ui-charts
+</code></pre>
+<p>This command adds the necessary GoodData.UI packages to the list of your project dependencies in <code>package.json</code> and downloads all required packages.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-3-configure-the-development-server"></a><a href="#step-3-configure-the-development-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3. Configure the development server</h2>
+<p><strong>Before</strong> you start your development server, prevent cross-origin issues by <a href="cors">adding proxy settings</a>. To set up a proxy, in your project's <code>/src</code> directory, create the <code>setupProxy.js</code> file with the following content:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> proxy = <span class="hljs-built_in">require</span>(<span class="hljs-string">"http-proxy-middleware"</span>);
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">app</span>) </span>{
+     app.use(proxy(<span class="hljs-string">"/gdc"</span>, {
+         <span class="hljs-string">"changeOrigin"</span>: <span class="hljs-literal">true</span>,
+         <span class="hljs-string">"cookieDomainRewrite"</span>: <span class="hljs-string">"localhost"</span>,
+         <span class="hljs-string">"secure"</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">"target"</span>: <span class="hljs-string">"https://developer.na.gooddata.com"</span>,
+         <span class="hljs-string">"headers"</span>: {
+             <span class="hljs-string">"host"</span>: <span class="hljs-string">"developer.na.gooddata.com"</span>,
+             <span class="hljs-string">"origin"</span>: <span class="hljs-literal">null</span>
+         },
+         <span class="hljs-string">"onProxyReq"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">proxyReq, req, res</span>) </span>{
+             proxyReq.setHeader(<span class="hljs-string">"accept-encoding"</span>, <span class="hljs-string">"identity"</span>)
+         }
+     }));
+     app.use(proxy(<span class="hljs-string">"/*.html"</span>, {
+         <span class="hljs-string">"changeOrigin"</span>: <span class="hljs-literal">true</span>,
+         <span class="hljs-string">"secure"</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">"target"</span>: <span class="hljs-string">"https://developer.na.gooddata.com"</span>
+     }));
+     app.use(proxy(<span class="hljs-string">"/packages/*.{js,css}"</span>, {
+         <span class="hljs-string">"changeOrigin"</span>: <span class="hljs-literal">true</span>,
+         <span class="hljs-string">"secure"</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">"target"</span>: <span class="hljs-string">"https://developer.na.gooddata.com"</span>
+     }));
+ };
+</code></pre>
+<blockquote>
+<p><strong>Careful:</strong> Only use the proxy authentication for development. Do not use this authentication method for production.</p>
+</blockquote>
+<blockquote>
+<p><strong>Careful:</strong> If you are only using the <a href="cors#on-your-local-dev-machine">development proxy</a>, you will still need to authenticate users by going to <code>/account.html</code> or by calling the <code>sdk.user.login()</code> method, and filling in valid GoodData credentials.</p>
+</blockquote>
+<p><strong>NOTE:</strong> <code>create-react-app</code> does not support Microsoft Internet Explorer and older browsers. You have to configure the development server to support the browsers that you want to use. For more information, see <a href="https://create-react-app.dev/docs/supported-browsers-features/">Create React App - Supported Browsers and Features</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-4-start-the-development-server"></a><a href="#step-4-start-the-development-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 4. Start the development server</h2>
+<p>Start the server by running the following command:</p>
+<ul>
+<li>If you are on Mac or Linux:
+<pre><code class="hljs css language-bash">HTTPS=<span class="hljs-literal">true</span> yarn start
+</code></pre></li>
+<li>If you are on Windows:
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">set</span> HTTPS=<span class="hljs-literal">true</span>&amp;&amp;npm start
+</code></pre></li>
+</ul>
+<p><strong>Always</strong> run your local development server using HTTP<strong>S</strong> because the GoodData API responses set cookies with the <code>secure</code> flag. Specifically, it means that if you skip the <code>HTTPS=true</code> part, you will not be able to log in.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-5-establish-a-session"></a><a href="#step-5-establish-a-session" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 5. Establish a session</h2>
+<p>Open <a href="https://localhost:3000/account.html">https://localhost:3000/account.html</a> in your browser, and enter your GoodData credentials. You are now logged in to GoodData.</p>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>If you are on Windows and using Microsoft Edge or Internet Explorer, replace <code>localhost</code> in this URI with the IP address that you get after running the server.</li>
+<li>If you see a warning about an insecure connection due to using a self-signed certificate, accept the exception. You can trust your localhost.</li>
+</ul>
+<p>For the purpose of this tutorial, you are asked to establish a client session by simply logging in to GoodData.</p>
+<p>In your production environment, your end users may be authenticated using <a href="sso">single sign-on</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="step-6-add-gooddata-components"></a><a href="#step-6-add-gooddata-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 6. Add GoodData components</h2>
+<p>Open <a href="https://localhost:3000/">https://localhost:3000/</a> in your browser.
+The default page generated by the create-react-app tool is displayed and looks like the following example:</p>
+<p><img src="/gooddata-ui/docs/assets/Welcome_to_React.png" alt="screenshot &quot;Welcome to React&quot;"></p>
+<p>Now, you can start adding your first GoodData component:</p>
+<ol>
+<li><p>Open <code>src/App.js</code> in a text editor.</p></li>
+<li><p>Add the following line to the other <code>import</code>s at the beginning of the <code>App.js</code> file:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { LineChart } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-charts"</span>;
+<span class="hljs-keyword">import</span> { newMeasure, newAttribute } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> bearFactory, {ContextDeferredAuthProvider} <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-backend-bear"</span>;
+</code></pre></li>
+<li><p>Add the following line to the other <code>import</code>s at the beginning of the <code>App.js</code> file to load CSS:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-charts/styles/css/main.css"</span>;
+</code></pre></li>
+<li><p>Initialize the Analytical Backend implemented by the GoodData platform:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> backend = bearFactory().withAuthentication(<span class="hljs-keyword">new</span> ContextDeferredAuthProvider());
+</code></pre></li>
+<li><p>Add <code>BackendProvider</code> and <code>WorkspaceProvider</code> to your application:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> { BackendProvider, WorkspaceProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BackendProvider</span> <span class="hljs-attr">backend</span>=<span class="hljs-string">{backend}</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">WorkspaceProvider</span> <span class="hljs-attr">workspace</span>=<span class="hljs-string">"xms7ga4tf3g3nzucd8380o2bev8oeknp"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>placeholder<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">WorkspaceProvider</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">BackendProvider</span>&gt;</span></span>
+    );
+}
+</code></pre></li>
+<li><p>Add a simple line chart:</p>
+<p>6a. Define measures and attributes:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> measures = [ newMeasure(<span class="hljs-string">"aaEGaXAEgB7U"</span>, m =&gt; m.format(<span class="hljs-string">"#,##0"</span>)) ];
+<span class="hljs-keyword">const</span> attribute = newAttribute(<span class="hljs-string">"date.abm81lMifn6q"</span>);
+</code></pre>
+<p>6b. Replace the placeholder in your <code>App</code> functional component with the following elements:</p>
+<pre><code class="hljs css language-jsx">&lt;div style={{ height: 300 }}&gt;
+  &lt;LineChart
+      measures={measures}
+      trendBy={attribute}
+      config={{
+          colors: ["#14b2e2"]
+      }}
+  /&gt;
+&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p>This example uses the workspace ID and measure/attribute identifiers from the <a href="https://gdui-examples.herokuapp.com/">live examples</a>. If you want to use this code in your workspace, replace the properties with the appropriate values from your workspace. For more details, see <a href="/gooddata-ui/docs/8.7.0/line_chart_component.html">Line Chart</a>.</p>
+</blockquote></li>
+<li><p>Save the changes. The content of your <code>App.js</code> file should now look something like the following example:</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { newMeasure, newAttribute } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-model"</span>;
+<span class="hljs-keyword">import</span> { LineChart } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui-charts"</span>;
+<span class="hljs-keyword">import</span> bearFactory, {ContextDeferredAuthProvider} <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-backend-bear"</span>;
+<span class="hljs-keyword">import</span> { BackendProvider, WorkspaceProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">"@gooddata/sdk-ui"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@gooddata/sdk-ui-charts/styles/css/main.css"</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"./App.css"</span>;
+
+<span class="hljs-keyword">const</span> backend = bearFactory().withAuthentication(<span class="hljs-keyword">new</span> ContextDeferredAuthProvider());
+<span class="hljs-keyword">const</span> measures = [ newMeasure(<span class="hljs-string">"aaEGaXAEgB7U"</span>, m =&gt; m.format(<span class="hljs-string">"#,##0"</span>)) ];
+<span class="hljs-keyword">const</span> attribute = newAttribute(<span class="hljs-string">"date.abm81lMifn6q"</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BackendProvider</span> <span class="hljs-attr">backend</span>=<span class="hljs-string">{backend}</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">WorkspaceProvider</span> <span class="hljs-attr">workspace</span>=<span class="hljs-string">"xms7ga4tf3g3nzucd8380o2bev8oeknp"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> <span class="hljs-attr">300</span> }}&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">LineChart</span>
+                        <span class="hljs-attr">measures</span>=<span class="hljs-string">{measures}</span>
+                        <span class="hljs-attr">trendBy</span>=<span class="hljs-string">{attribute}</span>
+                        <span class="hljs-attr">config</span>=<span class="hljs-string">{{</span>
+                            <span class="hljs-attr">colors:</span> ["#<span class="hljs-attr">14b2e2</span>"]
+                        }}
+                    /&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+           <span class="hljs-tag">&lt;/<span class="hljs-name">WorkspaceProvider</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">BackendProvider</span>&gt;</span></span>
+    );
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App;
+</code></pre></li>
+<li><p>Return to your browser window. The default page now looks like the following:</p></li>
+</ol>
+<p><img src="/gooddata-ui/docs/assets/Welcome_to_React_GoodData_component.png" alt="Welcome to GoodData components"></p>
+<h2><a class="anchor" aria-hidden="true" id="next-steps"></a><a href="#next-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next steps</h2>
+<p>Here are some suggestions about what you can do after you created your first visualization:</p>
+<ul>
+<li>Add more elements: tables, charts, custom visualizations. For more information, see <a href="/gooddata-ui/docs/8.7.0/start_with_visual_components.html">Start with Visual Components</a>.</li>
+<li><a href="/gooddata-ui/docs/8.7.0/drillable_item.html">Enable drilling</a>.</li>
+<li>Add a <a href="/gooddata-ui/docs/8.7.0/theme_provider.html">customizable theme</a> to your application.</li>
+<li>Authenticate your users using <a href="sso">Single Sign-on (SSO)</a> rather than sending them to a proxied GoodData login page.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#step-1-run-create-react-app">Step 1. Run create-react-app</a></li><li><a href="#step-2-add-gooddata-sdk-dependencies">Step 2. Add GoodData SDK dependencies</a></li><li><a href="#step-3-configure-the-development-server">Step 3. Configure the development server</a></li><li><a href="#step-4-start-the-development-server">Step 4. Start the development server</a></li><li><a href="#step-5-establish-a-session">Step 5. Establish a session</a></li><li><a href="#step-6-add-gooddata-components">Step 6. Add GoodData components</a></li><li><a href="#next-steps">Next steps</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="nav-footer-links-wrapper"><div class="nav-footer-links"><span class="nav-footer-links-heading">GoodData resources:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://developer.gooddata.com/" id="developer-footer-documentation" class="nav-footer-link">Documentation</a></li></ul></div><div class="nav-footer-links"><span class="nav-footer-links-heading">Follow the community:</span><ul class="nav-footer-links-list"><li class="nav-footer-links-list-item"><a href="https://community.gooddata.com" id="developer-footer-community" class="nav-footer-link" target="_blank">Community</a></li><li class="nav-footer-links-list-item"><a href="https://github.com/gooddata/" id="developer-footer-github" class="nav-footer-link nav-footer-logo nav-footer-logo-github" target="_blank"></a></li><li class="nav-footer-links-list-item"><a href="https://twitter.com/gooddata_dev" id="developer-footer-twitter" class="nav-footer-link nav-footer-logo nav-footer-logo-twitter" target="_blank"></a></li></ul></div></section><section class="nav-footer-copyright">Copyright © 2007–2022 GoodData Corporation. All Rights Reserved. Code licensed under a dual license - <a href="https://github.com/gooddata/gooddata-ui-sdk/blob/master/LICENSE">CC BY‑NC 4.0 for trial experience and GoodData.UI EULA for commercial use</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+                indexName: 'gooddata',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["version:8.7.0"]}
+              });
+            </script></body></html>
