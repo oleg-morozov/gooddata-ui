@@ -76,7 +76,7 @@ const config = {
 | points | false | GeoPointsConfig | A configuration object where you can define clustering and the minimum and maximum sizes of the pins |
 | viewport | false | GeoConfigViewport | The region that the viewport should focus on after the chart is rendered |
 | tooltipText | false | [Attribute](50_custom__execution.md#attribute) | An additional item that shows a user-friendly label for the location attribute instead of the longitude and latitude |
-| cooperativeGestures | false | boolean | By default is `true`. Scroll zoom will require pressing the ctrl or ⌘ key while scrolling to zoom map, and touch pan will require using two fingers while panning to move the map. Touch pitch will require three fingers to activate if enabled. ([Mapbox](https://docs.mapbox.com/mapbox-gl-js/api/map/#:~:text=options.-,cooperativeGestures,-boolean%3F)) |
+| cooperativeGestures | false | boolean | If `true` (which is the default), scroll zoom requires pressing the CTRL or ⌘ key while scrolling to zoom the map; touch pan requires using two fingers while panning to move the map; touch pitch (if enabled) requires three fingers to activate. For more information, see the [Map object](https://docs.mapbox.com/mapbox-gl-js/api/map/). |
 
 For the common chart configuration options such as colors, separators, or legend visibility, see [Chart Config](15_props__chart_config.md).
 
